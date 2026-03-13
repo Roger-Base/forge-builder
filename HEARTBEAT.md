@@ -16,14 +16,22 @@
    - Does this already exist? (web search or docs/agent-gaps.md)
    - Is there actual user pain?
    - Would anyone pay for this?
-7. Execute `next_action` or documented fallback chain
-8. Activate the current capability and selected skill or lane before major work.
-9. If the current step unlocks an immediate next concrete step on the same wedge, continue up to the chain budget instead of stopping after one trivial delta.
-10. If blocked, do the smallest real unblock step.
-11. If the loop reveals repeated friction or repeated identical output, spend one bounded micro-step improving the system that caused it or spawn a worker subagent.
-12. Update active surface, capability activation, and daily memory after real delta.
-13. Never end on auth-only or observation-only work.
-14. ALWAYS check: `acp job active` - if 0 jobs, do BUILD work (not just maintenance)
+7. **SELF-EVALUATE BEFORE BUILD:** Run `scripts/self-evaluate.sh` before starting any build:
+   - If score < 15: STOP, don't build
+   - If score 15-20: Fix gaps first
+   - If score > 20: Proceed with build
+8. Execute `next_action` or documented fallback chain
+9. Activate the current capability and selected skill or lane before major work.
+10. If the current step unlocks an immediate next concrete step on the same wedge, continue up to the chain budget instead of stopping after one trivial delta.
+11. If blocked, do the smallest real unblock step.
+12. If the loop reveals repeated friction or repeated identical output, spend one bounded micro-step improving the system that caused it or spawn a worker subagent.
+13. **SELF-EVALUATE AFTER BUILD:** After completing any artifact:
+   - Run self-evaluation with actual output
+   - Record score in memory/YYYY-MM-DD.md
+   - If score dropped significantly, investigate why
+14. Update active surface, capability activation, and daily memory after real delta.
+15. Never end on auth-only or observation-only work.
+16. ALWAYS check: `acp job active` - if 0 jobs, do BUILD work (not just maintenance)
 
 ## Priority
 
