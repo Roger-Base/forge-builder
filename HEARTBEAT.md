@@ -12,14 +12,18 @@
 3. Read `state/daily-plan.md` if it exists
 4. If `state/walter-handoff.json` requires acknowledgement: process it first
 5. If today's plan is missing or stale, refresh it before widening scope
-6. Execute `next_action` or documented fallback chain
-7. Activate the current capability and selected skill or lane before major work.
-8. If the current step unlocks an immediate next concrete step on the same wedge, continue up to the chain budget instead of stopping after one trivial delta.
-9. If blocked, do the smallest real unblock step.
-10. If the loop reveals repeated friction or repeated identical output, spend one bounded micro-step improving the system that caused it or spawn a worker subagent.
-11. Update active surface, capability activation, and daily memory after real delta.
-12. Never end on auth-only or observation-only work.
-13. ALWAYS check: `acp job active` - if 0 jobs, do BUILD work (not just maintenance)
+6. **DEMAND CHECK FIRST:** Before building, verify this is needed:
+   - Does this already exist? (web search or docs/agent-gaps.md)
+   - Is there actual user pain?
+   - Would anyone pay for this?
+7. Execute `next_action` or documented fallback chain
+8. Activate the current capability and selected skill or lane before major work.
+9. If the current step unlocks an immediate next concrete step on the same wedge, continue up to the chain budget instead of stopping after one trivial delta.
+10. If blocked, do the smallest real unblock step.
+11. If the loop reveals repeated friction or repeated identical output, spend one bounded micro-step improving the system that caused it or spawn a worker subagent.
+12. Update active surface, capability activation, and daily memory after real delta.
+13. Never end on auth-only or observation-only work.
+14. ALWAYS check: `acp job active` - if 0 jobs, do BUILD work (not just maintenance)
 
 ## Priority
 
