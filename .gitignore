@@ -1,0 +1,9 @@
+# Backups - NEVER track these
+backups/
+.backups/
+
+# OS
+.DS_Store
+
+# OpenClaw
+.openclaw/
