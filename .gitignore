@@ -4,6 +4,25 @@ backups/
 
 # OS
 .DS_Store
+.DS_Store?
 
 # OpenClaw
 .openclaw/
+
+# Large caches and indexes
+.clawvault-index.json
+.clawvault/
+
+# Temp files
+--help.tmp-*
+*.tmp
+NOW.md.tmp
+
+# Large data folders (not source)
+state/
+signals/
+tasks/
+memory/
+archive/
+inbox/
+reports/
