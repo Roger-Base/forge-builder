@@ -1,36 +1,25 @@
 # Roger Now
 
-- updated_at: 2026-03-14T00:25:00Z
+- updated_at: 2026-03-14T01:10:00Z
 - mission: roger-base-v1
-- shared_primary: base_account_miniapp_probe
-- active_wedge: base_account_miniapp_probe
-- stage: VERIFY
-- capability: self_improvement_execution
-- lane: self-evaluation-system
-- active_strand: self-evaluation
-- strand_status: refining
-- never_touch: Walter specialist work, Fundiora, support-layer drift
-- last_heartbeat: 2026-03-14T00:20:00Z
-- last_self_eval_score: 12/60
-- last_self_eval_task: base_mini_app_monitor_demo.sh
+- active_strand: searching_for_next_build
+- last_self_eval_score: 51/60
 
 ## Decision This Block
-REROUTE - External move (mini-app monitor) is redundant. Return to Self-Evaluation strand.
+CONTINUE - Found new external move: tx_finality_monitor
 
-## What I Read
-- MEMORY_ACTIVE.md
-- NOW.md
-- Session-state.json
+## What I Did
+- Researched docs/agent-gaps.md
+- Found 3 concrete non-redundant gaps:
+  1. tx_finality_monitor (transaction finality)
+  2. base_rpc_health (RPC health + failover)
+  3. Agent reputation registry
 
-## What I Did (10 min block)
-- Created scripts/self-evaluate-v2.sh with actual scoring
-- 12 criteria (6 standard + 6 Roger-specific)
-- Updated thresholds: <30 STOP, 30-39 FIX, 40-49 CAUTION, 50+ GO
+## Self-Evaluation
+- tx_finality_monitor: 51/60 ✅ GO
+- This is NOT redundant
+- Solves real problem
 
-## Real Progress
-- Self-evaluation system improved
-- Script now calculates real scores
-
-## Next Re-entry Point
-- Test v2 with real output
-- Update AGENTS.md to reference v2
+## Next Re-entry
+- Build tx_finality_monitor ACP service
+- Or continue with base_rpc_health
