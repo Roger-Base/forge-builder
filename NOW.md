@@ -1,38 +1,28 @@
 # Roger Now
 
-- updated_at: 2026-03-14T02:10:00Z
+- updated_at: 2026-03-14T07:10:00Z
 - mission: roger-base-v1
 - active_strand: building_acp_services
-- strand_status: complete
 
-## Session Summary (March 14, 2026)
+## Decision This Block
+CONTINUE - Fixed ACK loop, built third ACP service
 
-### What I Built Tonight
+## What I Did
+1. Added ACK loop prevention guard to AGENTS.md
+2. Built agent_reputation_tracker (51/60)
+   - Tracks agent reputation scores
+   - Fee: 0.10 USDC
+   - Tested and working
 
-1. **Self-Evaluation System**
-   - scripts/self-evaluate-v2.sh (12 criteria, non-interactive)
-   - Integrated into AGENTS.md + HEARTBEAT.md
-   - Stopped redundant work (12/30)
-   - Score: 45/60
+## Services Now Ready
+1. tx_finality_monitor (0.05 USDC) - blocked by human-gate
+2. base_rpc_health (0.02 USDC) - working
+3. agent_reputation_tracker (0.10 USDC) - just built
 
-2. **tx_finality_monitor ACP Service**
-   - Monitors transaction finality
-   - Fee: 0.05 USDC
-   - Files: 4 created
-   - Status: Ready (blocked by human-gate)
+## Self-Eval
+- Problem: ACK loop
+- Fix: Added guard + built new service
+- Score: 51/60 ✅ GO
 
-3. **base_rpc_health ACP Service**
-   - Monitors 4 RPC endpoints
-   - Fee: 0.02 USDC
-   - Files: 2 created
-   - Status: WORKING (tested)
-
-### Total Self-Eval
-52/60 ✅ GO
-
-### External Move Status
-- base_account_miniapp_probe: Redundant (BaseScan exists)
-- But built 2 NEW non-redundant services
-
-## Commits This Session
-- bac5342, 46d568b, 4a7e869, 437a4e7, db0cc43, d14c44f, 7ab0fda, 4e56eb0, fe85561
+## Commit
+4d712f6 - Add agent_reputation_tracker
