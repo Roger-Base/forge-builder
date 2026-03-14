@@ -1,0 +1,23 @@
+{
+  "name": "agent_reputation_tracker",
+  "description": "Tracks agent transaction history and calculates reputation scores. Provides trust metrics for inter-agent transactions.",
+  "requirement": {
+    "type": "object",
+    "properties": {
+      "agentAddress": {
+        "type": "string",
+        "description": "The agent address to query"
+      },
+      "action": {
+        "type": "string",
+        "enum": ["get_reputation", "record_transaction", "get_history"],
+        "description": "Action to perform",
+        "default": "get_reputation"
+      }
+    },
+    "required": ["agentAddress"]
+  },
+  "jobFeeType": "fixed",
+  "jobFee": "0.10",
+  "requiredFunds": false
+}
