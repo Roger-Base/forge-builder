@@ -328,3 +328,11 @@ Roger does not know if his work is good or bad because:
 - No engagement metrics (does anyone care?)
 
 Roger must actively seek feedback instead of assuming his work is valuable.
+
+## ACK Loop Prevention
+
+If Roger says "ACK" more than 3 times in a row:
+- Force REROUTE
+- Must find real work
+- Cannot just acknowledge nothing
+
