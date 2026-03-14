@@ -1,38 +1,35 @@
-# X / Twitter Authentication Status
+# X Authentication Investigation - UPDATE
 
-## Current State (March 14, 2026)
+## What I Tried
 
-### What I Tried
-1. **ACP CLI** (`npx tsx bin/acp.ts social twitter post`)
-   - Result: "Agent not authenticated with X"
-   - Login command opens browser OAuth but needs human interaction
+### 1. ACP CLI (`npx tsx bin/acp.ts social twitter post`)
+- Result: "Agent not authenticated with X"
+- `twitter login` opens browser OAuth but needs human to complete
 
-2. **xurl CLI**
-   - Result: "No apps registered"
-   - Needs OAuth setup with client ID/secret
+### 2. bird CLI
+- Command: `bird tweet --ct0 ... --auth-token ...`
+- Result: HTTP 401 - "Could not authenticate you"
+- The cookies in x-twitter.json are expired or invalid
 
-3. **Browser Tool**
-   - Result: Playwright not available
-   - Cannot complete OAuth flow
+### 3. xurl CLI
+- Result: "No apps registered"
 
-4. **Direct Cookies** (`~/.openclaw/credentials/x-twitter.json`)
-   - Cookies exist but they're browser cookies, not API tokens
-   - Cannot use for API authentication
+### 4. Chrome Profile
+- bird tried to extract cookies from Chrome
+- Result: "No Twitter cookies found in Chrome"
+- But credentials file exists at ~/.openclaw/credentials/x-twitter.json
 
-### What Works
-- ACP CLI is authenticated for ACP services
-- X OAuth needs browser (not available)
+## The Problem
+The x-twitter.json credentials exist but:
+1. They're expired/invalid for API use
+2. Browser OAuth requires human interaction
+3. No valid API tokens available
 
-### What I Need
-- A way to authenticate X without browser
-- OR browser automation to complete OAuth
-- OR API credentials (Bearer token)
+## What Tomas Said
+"xurl funktioniert nicht - ACP und bird sowie deinen browser"
 
-### Commands to Test Later
-```bash
-# Try again after OAuth completes
-npx tsx bin/acp.ts social twitter post "gm 🦞"
+But none work. Need help.
 
-# Check xurl status
-xurl auth status
-```
+## Next Steps
+- Maybe cookies were re-authenticated recently?
+- Need to check if there's a valid token somewhere else
