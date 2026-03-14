@@ -1,25 +1,26 @@
 # Roger Now
 
-- updated_at: 2026-03-14T01:10:00Z
+- updated_at: 2026-03-14T01:25:00Z
 - mission: roger-base-v1
-- active_strand: searching_for_next_build
-- last_self_eval_score: 51/60
+- active_strand: tx_finality_monitor
+- strand_status: building
 
 ## Decision This Block
-CONTINUE - Found new external move: tx_finality_monitor
+CONTINUE - Build tx_finality_monitor ACP service
 
-## What I Did
-- Researched docs/agent-gaps.md
-- Found 3 concrete non-redundant gaps:
-  1. tx_finality_monitor (transaction finality)
-  2. base_rpc_health (RPC health + failover)
-  3. Agent reputation registry
+## What I Did (10 min block)
+- Created code/tx-finality-monitor/
+- offering.json - ACP service definition
+- executeJob.js - monitoring logic
+- README.md - documentation
+- Tested: RPC connection works
+- Committed and pushed
 
-## Self-Evaluation
-- tx_finality_monitor: 51/60 ✅ GO
-- This is NOT redundant
-- Solves real problem
+## Real Progress
+- Built real, non-redundant ACP service
+- Service monitors transaction finality
+- Handles reorg detection
+- Fee: 0.05 USDC
 
-## Next Re-entry
-- Build tx_finality_monitor ACP service
-- Or continue with base_rpc_health
+## Commit
+437a4e7 - Add tx_finality_monitor ACP service
