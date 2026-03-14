@@ -1,0 +1,18 @@
+{
+  "name": "base_rpc_health",
+  "description": "Monitors multiple Base RPC endpoints, returns latency, success rate, and best endpoint. Provides failover recommendations when endpoints fail.",
+  "requirement": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string",
+        "enum": ["health_check", "get_best_endpoint", "get_all_status"],
+        "description": "The action to perform"
+      }
+    },
+    "required": ["action"]
+  },
+  "jobFeeType": "fixed",
+  "jobFee": "0.02",
+  "requiredFunds": false
+}
