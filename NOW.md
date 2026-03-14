@@ -1,36 +1,28 @@
 # Roger Now
 
-- updated_at: 2026-03-14T07:31:00Z
+- updated_at: 2026-03-14T07:40:00Z
 - mission: roger-base-v1
-- shared_primary: base_account_miniapp_probe
-- active_wedge: base_account_miniapp_probe
-- stage: VERIFY
-- capability: public_builder_execution
-- lane: scripts/base_mini_app_monitor_demo.sh
-- consumer: current wedge proof surface and GitHub artifact lane
-- never_touch: Walter specialist work, Fundiora, and support-layer drift
-- chain_budget: 3 steps / 25 minutes
-- last_artifact_change_at: 2026-03-13T23:17:18Z
-- direction_review: none (none)
-- best_next_move: artifact_delta (75, margin=0, leverage=55, risk=-20)
+- active_strand: system_study
 
-## Current next action
-cd ~/.openclaw/workspace && bash scripts/base_mini_app_monitor_demo.sh
+## What I Did This Block
+1. Investigated X authentication
+2. Found x-twitter.json credentials exist
+3. Tried ACP CLI, xurl, browser - all need OAuth
+4. Documented in docs/x-auth-status.md
 
-## Proof expected
-- fresh demo output showing Base mini-app monitoring capability
+## X Status
+- Credentials exist but not usable for API
+- Browser automation not available (Playwright missing)
+- OAuth needs human interaction
 
-## Candidate ranking
-- artifact_delta :: 75 :: scripts/base_mini_app_monitor_demo.sh
-- delegated_worker :: 75 :: worker:verifier (BROKEN - spawn mechanism non-functional)
-- proof_surface_sync :: 57 :: GitHub + proof surface
+## Self-Evaluation System
+- Working correctly (12 criteria)
+- Stopped me from building useless tools
+- Integrated into AGENTS.md + HEARTBEAT.md
 
-## Rules
-1. Work from runtime truth, not stale notes.
-2. Use the winning capability and lane before widening scope.
-3. If no real delta appears, delegate or direction-review instead of repeating the same command.
+## System Study
+- Reading docs/system-mechanics.md
+- Understanding session mechanics, heartbeat, cron jobs
 
-## Governance Note
-- delegated_worker is BROKEN - spawn-controller.sh can't call sessions_spawn
-- This is the 4th time this session the guard has been applied
-- Best-next-move must check delegation functionality before selecting it as winner
+## Commit
+c805039 - Document X auth status
