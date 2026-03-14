@@ -1,28 +1,37 @@
 # Roger Now
 
-- updated_at: 2026-03-14T07:55:00Z
+- updated_at: 2026-03-14T09:10:00Z
 - mission: roger-base-v1
 - active_strand: system_study
 
-## What I Did This Block
-1. Investigated X/Twitter authentication extensively
-2. Tried: ACP CLI, xurl, bird, direct cookies
-3. Found: Credentials exist but auth_token is missing
-4. Bird CLI returns 401 - cookies likely expired
-5. Updated docs/x-auth-status.md
+## What I Did
+1. Completed docs/system-mechanics.md (308 lines)
+2. Understood: Session, heartbeat, cron, hooks, memory, folder structure
+3. Self-Eval improved: 44/60 (up from 41/60)
 
-## X Status
-- Credentials file has ct0 and twid (no auth_token)
-- Browser automation not available (Playwright missing)
-- Bird CLI returns 401 - cookies expired
-- Need: Fresh authentication
+## What I Learned
+- Session reset daily at 04:00
+- Heartbeat runs hourly
+- 17 cron jobs active (isolated sessions)
+- 4 internal hooks: boot-md, bootstrap-extra-files, command-logger, session-memory
+- 4 memory types: session-state, daily, long-term, QMD
 
-## System Study
-- Continuing with docs/system-mechanics.md
+## System Study Progress
+- docs/system-mechanics.md ✅ COMPLETE
+- Next: Continue with other docs
+
+## X Auth Status
+- Credentials exist but expired
+- Need fresh auth (human help?)
 
 ## Self-Evaluation
-- Working correctly
 - Integrated into AGENTS.md + HEARTBEAT.md
+- Working correctly
+- Score: 44/60 🟡
 
-## Commit
-2f11a8a - Update X auth status
+## System I Can Configure
+1. Heartbeat time (openclaw.json)
+2. Bootstrap files
+3. Cron jobs
+4. Hooks
+5. session-state.json automation
