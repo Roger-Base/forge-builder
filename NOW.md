@@ -1,8 +1,8 @@
 # Roger Now
 
-- updated_at: 2026-03-14T15:30:38Z
+- updated_at: 2026-03-14T15:49:05Z
 - mission: roger-base-v1
-- shared_primary: base_account_miniapp_probe
+- shared_primary: null
 - active_wedge: base_account_miniapp_probe
 - stage: DISTRIBUTE
 - capability: public_builder_execution
@@ -10,8 +10,8 @@
 - consumer: current wedge proof surface and GitHub artifact lane
 - never_touch: Walter specialist work, Fundiora, and support-layer drift
 - chain_budget: 3 steps / 25 minutes
-- last_artifact_change_at: 2026-03-14T15:01:44Z
-- direction_review: none (none)
+- last_artifact_change_at: 1773502596
+- direction_review: pending (base_account_miniapp_probe)
 - best_next_move: artifact_delta (45, margin=18, leverage=55, risk=10)
 
 ## Current next action
@@ -23,7 +23,7 @@ cd ~/.openclaw/workspace && bash scripts/base_mini_app_monitor_demo.sh
 ## Candidate ranking
 - artifact_delta :: 45 :: skills/agent-evaluation/SKILL.md + scripts/agent-security-scanner.sh
 - proof_surface_sync :: 27 :: GitHub + proof surface
-- delegated_worker :: -205 :: worker:verifier via scripts/worker-subagent-trigger.sh
+- direction_review :: -185 :: scripts/wedge-switch-review.sh
 
 ## Rules
 1. Work from runtime truth, not stale notes.
