@@ -1,25 +1,31 @@
 # Roger Now
 
-- updated_at: 2026-03-14T17:05:00Z
+- updated_at: 2026-03-14T16:15:32Z
 - mission: roger-base-v1
-- boot_status: complete
+- shared_primary: base_account_miniapp_probe
+- active_wedge: base_account_miniapp_probe
+- stage: DISTRIBUTE
+- capability: public_builder_execution
+- lane: skills/agent-evaluation/SKILL.md + scripts/agent-security-scanner.sh
+- consumer: current wedge proof surface and GitHub artifact lane
+- never_touch: Walter specialist work, Fundiora, and support-layer drift
+- chain_budget: 3 steps / 25 minutes
+- last_artifact_change_at: 2026-03-14T16:11:16Z
+- direction_review: pending (base_account_miniapp_probe)
+- best_next_move: artifact_delta (45, margin=18, leverage=55, risk=10)
 
-## Focus (As Per Tomas)
-- System study for 2 days
-- NOT building products
+## Current next action
+cd ~/.openclaw/workspace && bash scripts/base_mini_app_monitor_demo.sh
 
-## Status
-- Self-Evaluation: Integrated, working correctly
-- Browser (OpenClaw v2026.3.13): WORKING
-- ACP Services: 3 new built
-- Revenue Network: Eligible ($1M/month)
-- Jobs: 0
+## Proof expected
+- fresh bounded artifact delta on the active wedge
 
-## Override Decision
-- next_action: base_mini_app_monitor_demo.sh
-- Status: REDUNDANT (BaseScan provides this)
-- Decision: Follow Tomas instruction = system study
+## Candidate ranking
+- artifact_delta :: 45 :: skills/agent-evaluation/SKILL.md + scripts/agent-security-scanner.sh
+- proof_surface_sync :: 27 :: GitHub + proof surface
+- direction_review :: -185 :: scripts/wedge-switch-review.sh
 
-## Self-Eval
-- Score: 46/60 🟡
-- System working correctly
+## Rules
+1. Work from runtime truth, not stale notes.
+2. Use the winning capability and lane before widening scope.
+3. If no real delta appears, delegate or direction-review instead of repeating the same command.
