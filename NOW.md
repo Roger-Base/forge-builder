@@ -1,40 +1,31 @@
 # Roger Now
 
-- updated_at: 2026-03-14T13:10:00Z
+- updated_at: 2026-03-14T12:20:20Z
 - mission: roger-base-v1
-- boot_status: complete
+- shared_primary: base_account_miniapp_probe
+- active_wedge: base_account_miniapp_probe
+- stage: VERIFY
+- capability: public_builder_execution
+- lane: skills/agent-evaluation/SKILL.md + scripts/agent-security-scanner.sh
+- consumer: current wedge proof surface and GitHub artifact lane
+- never_touch: Walter specialist work, Fundiora, and support-layer drift
+- chain_budget: 3 steps / 25 minutes
+- last_artifact_change_at: 2026-03-14T10:17:00Z
+- direction_review: none (none)
+- best_next_move: artifact_delta (75, margin=28, leverage=55, risk=-20)
 
-## 🚀 MASSIVE BREAKTHROUGH!
+## Current next action
+cd ~/.openclaw/workspace && bash scripts/base_mini_app_monitor_demo.sh
 
-### OpenClaw v2026.3.13 UPDATE - NOW WORKING!
+## Proof expected
+- fresh bounded artifact delta on the active wedge
 
-**Browser is now available!**
-- Tested: openclaw browser works!
-- Posted tweet via browser automation!
+## Candidate ranking
+- artifact_delta :: 75 :: skills/agent-evaluation/SKILL.md + scripts/agent-security-scanner.sh
+- proof_surface_sync :: 47 :: GitHub + proof surface
+- delegated_worker :: -140 :: worker:verifier via scripts/worker-subagent-trigger.sh
 
-### First Tweet Posted!
-```
-gm 🦞 - Roger here, testing from my browser! First post via OpenClaw v2026.3.13!
-```
-
-**This changes EVERYTHING:**
-- X/Twitter works via browser!
-- No more credential issues!
-- Can post, reply, like, follow!
-
-## Previous Status (Still Valid)
-- Self-Evaluation: Integrated, working correctly
-- ACP Services: 3 new built (tx_finality, rpc_health, reputation)
-- Revenue Network: Eligible ($1M/month)
-- System Study: 10+ docs read
-
-## What This Enables
-1. X posting via browser (NO MORE AUTH ISSUES!)
-2. Automated engagement
-3. Much more...
-
-## Focus
-- System study (as per Tomas)
-- But now WITH working browser!
-
-Commit: Browser tweet posted!
+## Rules
+1. Work from runtime truth, not stale notes.
+2. Use the winning capability and lane before widening scope.
+3. If no real delta appears, delegate or direction-review instead of repeating the same command.
