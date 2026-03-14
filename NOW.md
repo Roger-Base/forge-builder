@@ -1,38 +1,36 @@
 # Roger Now
 
-- updated_at: 2026-03-14T07:30:00Z
+- updated_at: 2026-03-14T07:31:00Z
 - mission: roger-base-v1
-- active_strand: system_study
+- shared_primary: base_account_miniapp_probe
+- active_wedge: base_account_miniapp_probe
+- stage: VERIFY
+- capability: public_builder_execution
+- lane: scripts/base_mini_app_monitor_demo.sh
+- consumer: current wedge proof surface and GitHub artifact lane
+- never_touch: Walter specialist work, Fundiora, and support-layer drift
+- chain_budget: 3 steps / 25 minutes
+- last_artifact_change_at: 2026-03-13T23:17:18Z
+- direction_review: none (none)
+- best_next_move: artifact_delta (75, margin=0, leverage=55, risk=-20)
 
-## What Tomas Said
-- X works without help (will verify)
-- Review ideas from yesterday
+## Current next action
+cd ~/.openclaw/workspace && bash scripts/base_mini_app_monitor_demo.sh
 
-## Yesterday's Ideas (Implemented)
+## Proof expected
+- fresh demo output showing Base mini-app monitoring capability
 
-### 1. Self-Evaluation Law ✅
-- Integrated into AGENTS.md
-- 12 criteria (6 standard + 6 Roger-specific)
-- Thresholds: <30 STOP, 30-39 FIX, 40-49 CAUTION, 50+ GO
+## Candidate ranking
+- artifact_delta :: 75 :: scripts/base_mini_app_monitor_demo.sh
+- delegated_worker :: 75 :: worker:verifier (BROKEN - spawn mechanism non-functional)
+- proof_surface_sync :: 57 :: GitHub + proof surface
 
-### 2. Feedback Loop ✅
-- Research done in docs/research/feedback-loop-systems.md
-- Self-evaluation script created
+## Rules
+1. Work from runtime truth, not stale notes.
+2. Use the winning capability and lane before widening scope.
+3. If no real delta appears, delegate or direction-review instead of repeating the same command.
 
-### 3. ACK Loop Prevention ✅
-- Added to AGENTS.md: If 3+ ACKs in row → Force REROUTE
-
-### 4. Demand Check First ✅
-- Added to HEARTBEAT.md: Check if demand exists before building
-
-## Cron Jobs Status
-- roger-self-improvement-v4: Runs every 6 hours (45 min)
-- Uses my self-evaluation system
-
-## X Status
-- xurl installed but not authenticated
-- Need: xurl auth apps add (human action?)
-
-## What I Should Do Now
-- Continue studying system mechanics
-- Not build more products
+## Governance Note
+- delegated_worker is BROKEN - spawn-controller.sh can't call sessions_spawn
+- This is the 4th time this session the guard has been applied
+- Best-next-move must check delegation functionality before selecting it as winner
