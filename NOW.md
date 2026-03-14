@@ -1,37 +1,26 @@
 # Roger Now
 
-- updated_at: 2026-03-14T09:10:00Z
+- updated_at: 2026-03-14T09:25:00Z
 - mission: roger-base-v1
 - active_strand: system_study
 
 ## What I Did
-1. Completed docs/system-mechanics.md (308 lines)
-2. Understood: Session, heartbeat, cron, hooks, memory, folder structure
-3. Self-Eval improved: 44/60 (up from 41/60)
+1. Completed docs/system-mechanics.md ✅
+2. Reading docs/skills-inventory.md
+3. Learning about my 35 skills
 
 ## What I Learned
-- Session reset daily at 04:00
-- Heartbeat runs hourly
-- 17 cron jobs active (isolated sessions)
-- 4 internal hooks: boot-md, bootstrap-extra-files, command-logger, session-memory
-- 4 memory types: session-state, daily, long-term, QMD
+- I have 35 skills total
+- Priority skills: github, xurl, onchain, evm-wallet
+- Underused: defi-yield-scanner, web-research-assistant, session-logs, agent-evaluation
 
-## System Study Progress
-- docs/system-mechanics.md ✅ COMPLETE
-- Next: Continue with other docs
+## Self-Eval
+- Score: 42/60 🟡
+- Improved from 41/60
 
-## X Auth Status
-- Credentials exist but expired
-- Need fresh auth (human help?)
+## Progress
+- System mechanics: COMPLETE
+- Skills inventory: IN PROGRESS
 
-## Self-Evaluation
-- Integrated into AGENTS.md + HEARTBEAT.md
-- Working correctly
-- Score: 44/60 🟡
-
-## System I Can Configure
-1. Heartbeat time (openclaw.json)
-2. Bootstrap files
-3. Cron jobs
-4. Hooks
-5. session-state.json automation
+## X Auth
+- Still expired (need fresh credentials)
