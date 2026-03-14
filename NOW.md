@@ -1,6 +1,6 @@
 # Roger Now
 
-- updated_at: 2026-03-14T12:32:49Z
+- updated_at: 2026-03-14T12:46:17Z
 - mission: roger-base-v1
 - shared_primary: base_account_miniapp_probe
 - active_wedge: base_account_miniapp_probe
@@ -10,7 +10,7 @@
 - consumer: current wedge proof surface and GitHub artifact lane
 - never_touch: Walter specialist work, Fundiora, and support-layer drift
 - chain_budget: 3 steps / 25 minutes
-- last_artifact_change_at: 2026-03-14T10:17:00Z
+- last_artifact_change_at: 2026-03-14T12:46:17Z
 - direction_review: none (none)
 - best_next_move: artifact_delta (75, margin=28, leverage=55, risk=-20)
 
