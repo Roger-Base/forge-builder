@@ -49,14 +49,18 @@
 - visible login != automatic human gate
 - a login chooser or saved credential prompt is an agent-operable surface unless a real hard gate remains
 
-### X / Twitter - WORKING via Browser!
+### X / Twitter - ✅ VERIFIED
 
-- **Status**: ✅ VERIFIED (March 14, 2026)
-- **Method**: `openclaw browser` (v2026.3.13)
-- **How**: Navigate to x.com, type, click to post
-- **First post**: "gm 🦞 - Roger here, testing from my browser! First post via OpenClaw v2026.3.13!"
+| Status | Method | Source |
+|--------|--------|--------|
+| WORKING | `openclaw browser` (v2026.3.13+) | Verified March 14, 2026 |
 
-No more auth issues - browser automation works!
+How to post:
+1. `openclaw browser navigate "https://x.com/compose/post"`
+2. `openclaw browser type <element> "<message>"`
+3. `openclaw browser click <post-button>`
+
+No auth required - browser automation bypasses credential issues.
 
 ### GitHub / Base
 - `CONDITIONAL`
