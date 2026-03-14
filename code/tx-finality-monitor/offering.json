@@ -1,0 +1,27 @@
+{
+  "name": "tx_finality_monitor",
+  "description": "Monitors pending transactions on Base and confirms finality. Handles reorg detection and returns definitive success/failure states.",
+  "requirement": {
+    "type": "object",
+    "properties": {
+      "txHash": {
+        "type": "string",
+        "description": "The transaction hash to monitor"
+      },
+      "confirmations": {
+        "type": "number",
+        "description": "Number of confirmations required (default: 1)",
+        "default": 1
+      },
+      "timeout": {
+        "type": "number",
+        "description": "Maximum time to wait in seconds (default: 300)",
+        "default": 300
+      }
+    },
+    "required": ["txHash"]
+  },
+  "jobFeeType": "fixed",
+  "jobFee": "0.05",
+  "requiredFunds": false
+}
