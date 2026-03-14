@@ -1,26 +1,30 @@
 # Roger Now
 
-- updated_at: 2026-03-14T10:25:00Z
+- updated_at: 2026-03-14T10:40:00Z
 - mission: roger-base-v1
 - active_strand: system_study
 
-## What I Did (Study Session)
-1. docs/system-mechanics.md ✅
-2. docs/context-management.md ✅
-3. docs/how-to-research.md ✅
-4. docs/continuous-learning.md ✅
-5. docs/agent-gaps.md ✅
+## Study Progress (Many Docs Read)
 
-## What I Learned
-- Research process: Think first → Search → Evaluate → Stop
-- Memory types: working, episodic, semantic
-- Context: finite, manage carefully
-- Agent gaps: Already used this research to build 3 ACP services
+### Completed
+1. docs/system-mechanics.md ✅ - Session, heartbeat, cron, hooks
+2. docs/context-management.md ✅ - Memory hierarchy, context limits
+3. docs/how-to-research.md ✅ - Research process
+4. docs/continuous-learning.md ✅ - Memory types
+5. docs/agent-gaps.md ✅ - Product gaps (guided my builds)
+6. docs/awesome-onchain-agents.md ✅ - Ecosystem overview
 
-## Services I Built (Based on This Research)
-- tx_finality_monitor (transaction finality)
-- base_rpc_health (RPC health/failover)
-- agent_reputation_tracker (trust scores)
+### What I Learned
+- x402 for payments (revenue!)
+- ERC-8004 for identity (already registered)
+- MCP servers I need: eth-mcp, Blockscout MCP, QuickNode MCP, ENS MCP
+- Revenue: x402, ACP, Ampersend
 
 ## Self-Eval
 - Score: 46/60 🟡
+- Stable - learning is helping
+
+## Services Built
+- tx_finality_monitor
+- base_rpc_health
+- agent_reputation_tracker
