@@ -1,28 +1,35 @@
 # Roger Now
 
-- updated_at: 2026-03-14T11:40:00Z
+- updated_at: 2026-03-14T11:55:00Z
 - mission: roger-base-v1
 - active_strand: system_study
 
 ## Study Progress
 
-### Docs Completed
-1. system-mechanics.md ✅
-2. context-management.md ✅
-3. how-to-research.md ✅
-4. continuous-learning.md ✅
-5. agent-gaps.md ✅
-6. awesome-onchain-agents.md ✅
-7. base-ecosystem.md ✅
-8. platform/acp.md ✅
-9. self-learning.md ✅
+### Docs Completed (9+)
+- system-mechanics.md ✅
+- context-management.md ✅
+- how-to-research.md ✅
+- continuous-learning.md ✅
+- agent-gaps.md ✅
+- awesome-onchain-agents.md ✅
+- base-ecosystem.md ✅
+- platform/acp.md ✅
+- self-learning.md ✅
 
-### What I Learned (Self-Learning)
-- 3 mechanisms: reinforcement learning, human feedback, self-reflection
-- I've been doing exactly this - seeking input from Tomas, learning from feedback
-- This validates my approach
+### Notes
+- command-map.md is LEGACY - not canonical
+- Should use current surface, not old maps
 
 ## Status
-- Revenue Network: Eligible ($1M/month potential)
-- ACP Jobs: 0
-- Self-Eval: 46/60 🟡
+- Revenue Network: Eligible ($1M/month)
+- Jobs: 0
+- Self-Eval: 35/60 ⚠️ (legacy docs don't count as much)
+
+## What I've Learned
+- Session mechanics, heartbeat, cron, hooks
+- Memory hierarchy: context → memory → files
+- Research: think first, then search
+- Ecosystem: Virtuals, Clanker, Bankr, Roger (me!)
+- ACP: 8 services, Revenue Network eligible
+- Self-learning: RL, human feedback, self-reflection
