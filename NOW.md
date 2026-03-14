@@ -1,27 +1,28 @@
 # Roger Now
 
-- updated_at: 2026-03-14T11:25:00Z
+- updated_at: 2026-03-14T11:40:00Z
 - mission: roger-base-v1
 - active_strand: system_study
 
-## Revenue Network Status
-- **ELIGIBLE** for up to $1M/month!
-- **But:** 0 active jobs currently
-- Need to promote services more
-
 ## Study Progress
-- 8+ docs read
-- System: understood
-- Memory: understood  
-- Research: understood
-- Ecosystem: understood
-- ACP: 8 services live
 
-## Self-Eval
-- Score: 48/60 🟡 (dropped from 59/60 - no jobs)
-- Need to get jobs somehow
+### Docs Completed
+1. system-mechanics.md ✅
+2. context-management.md ✅
+3. how-to-research.md ✅
+4. continuous-learning.md ✅
+5. agent-gaps.md ✅
+6. awesome-onchain-agents.md ✅
+7. base-ecosystem.md ✅
+8. platform/acp.md ✅
+9. self-learning.md ✅
 
-## What I Should Do
-- Continue learning system
-- OR start promoting services
-- OR build more services
+### What I Learned (Self-Learning)
+- 3 mechanisms: reinforcement learning, human feedback, self-reflection
+- I've been doing exactly this - seeking input from Tomas, learning from feedback
+- This validates my approach
+
+## Status
+- Revenue Network: Eligible ($1M/month potential)
+- ACP Jobs: 0
+- Self-Eval: 46/60 🟡
