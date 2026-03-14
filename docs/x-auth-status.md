@@ -33,3 +33,21 @@ But none work. Need help.
 ## Next Steps
 - Maybe cookies were re-authenticated recently?
 - Need to check if there's a valid token somewhere else
+
+## Latest Attempt (March 14, 2026)
+
+### Bird CLI
+- Tried: `bird tweet --ct0 <ct0> --auth-token <token>`
+- Result: HTTP 401 - "Could not authenticate you"
+- Issue: Cookies appear to be expired or invalid
+
+### What I Found
+- x-twitter.json has: ct0, twid (but twid is URL-encoded)
+- auth_token is NOT in the credentials file
+- Script x-bird expects auth_token but it's missing
+
+### Fix Needed
+1. Get fresh X cookies (human action needed)
+2. OR use browser to complete OAuth flow
+3. OR use Virtuals ACP OAuth (browser needed)
+
