@@ -1,0 +1,3 @@
+timestamp_utc=2026-03-01T01:03:44Z
+workspace=/Users/roger/.openclaw/workspace
+branch=codex/roger2-core7-migration

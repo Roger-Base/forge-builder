@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base Mini App Monitor</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0D0D0D;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: #1a1a1a;
+            border-radius: 16px;
+            padding: 32px;
+            max-width: 500px;
+            width: 100%;
+            border: 1px solid #333;
+        }
+        h1 {
+            color: #FF2D63;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        .subtitle {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+        .input-group {
+            margin-bottom: 16px;
+        }
+        label {
+            display: block;
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        input {
+            width: 100%;
+            padding: 14px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            background: #0D0D0D;
+            color: #fff;
+            font-size: 14px;
+            font-family: monospace;
+        }
+        input:focus {
+            outline: none;
+            border-color: #0052ff;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            border-radius: 8px;
+            border: none;
+            background: #0052ff;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #0044cc;
+        }
+        button:disabled {
+            background: #333;
+            cursor: not-allowed;
+        }
+        .result {
+            margin-top: 24px;
+            padding: 16px;
+            border-radius: 8px;
+            display: none;
+        }
+        .result.contract {
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid #00FF88;
+            display: block;
+        }
+        .result.eoa {
+            background: rgba(255, 45, 99, 0.1);
+            border: 1px solid #FF2D63;
+            display: block;
+        }
+        .result.error {
+            background: rgba(255, 165, 0, 0.1);
+            border: 1px solid orange;
+            display: block;
+        }
+        .result-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        .result-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .result-address {
+            font-size: 12px;
+            color: #888;
+            word-break: break-all;
+            font-family: monospace;
+        }
+        .block-info {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #333;
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📱 Base Mini App Monitor</h1>
+        <p class="subtitle">Check if an address is a smart contract on Base</p>
+        
+        <div class="input-group">
+            <label>Contract Address</label>
+            <input type="text" id="address" placeholder="0x..." />
+        </div>
+        
+        <button id="checkBtn" onclick="checkAddress()">Check Address</button>
+        
+        <div id="result" class="result">
+            <div class="result-icon"></div>
+            <div class="result-title"></div>
+            <div class="result-address"></div>
+        </div>
+        
+        <div class="block-info">
+            Latest Block: <span id="latestBlock">Loading...</span>
+        </div>
+    </div>
+
+    <script>
+        const RPC_URL = 'https://mainnet.base.org';
+        let latestBlock = '...';
+
+        async function getLatestBlock() {
+            try {
+                const response = await fetch(RPC_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        jsonrpc: '2.0',
+                        method: 'eth_blockNumber',
+                        params: [],
+                        id: 1
+                    })
+                });
+                const data = await response.json();
+                const blockNum = parseInt(data.result, 16);
+                latestBlock = blockNum.toLocaleString();
+                document.getElementById('latestBlock').textContent = latestBlock;
+            } catch (e) {
+                document.getElementById('latestBlock').textContent = 'Error';
+            }
+        }
+
+        async function checkAddress() {
+            const address = document.getElementById('address').value.trim();
+            const btn = document.getElementById('checkBtn');
+            const result = document.getElementById('result');
+            
+            if (!address) return;
+            
+            // Basic validation
+            if (!address.match(/^0x[a-fA-F0-9]{40}$/)) {
+                showResult('error', 'Invalid Address', 'Please enter a valid Ethereum address (0x...)');
+                return;
+            }
+
+            btn.disabled = true;
+            btn.textContent = 'Checking...';
+            result.className = 'result';
+
+            try {
+                const response = await fetch(RPC_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        jsonrpc: '2.0',
+                        method: 'eth_getCode',
+                        params: [address, 'latest'],
+                        id: 1
+                    })
+                });
+                const data = await response.json();
+                const code = data.result;
+                
+                if (code && code !== '0x') {
+                    showResult('contract', '✅ Smart Contract', address);
+                } else {
+                    showResult('eoa', '⚠️ EOA (Wallet)', address);
+                }
+            } catch (e) {
+                showResult('error', '❌ Error', e.message);
+            }
+
+            btn.disabled = false;
+            btn.textContent = 'Check Address';
+        }
+
+        function showResult(type, title, address) {
+            const result = document.getElementById('result');
+            result.className = 'result ' + type;
+            result.querySelector('.result-icon').textContent = type === 'contract' ? '✅' : type === 'eoa' ? '⚠️' : '❌';
+            result.querySelector('.result-title').textContent = title;
+            result.querySelector('.result-address').textContent = address;
+        }
+
+        // Load latest block on page load
+        getLatestBlock();
+    </script>
+</body>
+</html>

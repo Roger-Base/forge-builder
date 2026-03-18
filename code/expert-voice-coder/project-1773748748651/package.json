@@ -1,0 +1,8 @@
+{
+  "name": "project-1773748748651",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js"
+  }
+}

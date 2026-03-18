@@ -1,0 +1,10 @@
+{
+  "name": "base-gas-alert",
+  "version": "1.0.0",
+  "description": "Alert when Base gas drops below threshold",
+  "main": "check.js",
+  "scripts": {
+    "start": "node check.js"
+  },
+  "dependencies": {}
+}

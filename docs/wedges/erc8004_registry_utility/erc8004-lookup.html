@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERC-8004 Agent Registry Lookup</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #0d0d0d;
+            color: #e0e0e0;
+        }
+        h1 {
+            color: #FF2D63;
+            font-size: 24px;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            color: #fff;
+            font-size: 14px;
+        }
+        button {
+            background: #FF2D63;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button:hover {
+            background: #ff4d7a;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #1a1a1a;
+            border-radius: 8px;
+            display: none;
+        }
+        .label {
+            color: #888;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+        .value {
+            color: #00FF88;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .error {
+            color: #ff4d7a;
+        }
+        .info {
+            color: #0052ff;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 ERC-8004 Agent Registry Lookup</h1>
+    <p>Check if an address is registered as an agent under ERC-8004</p>
+    
+    <input type="text" id="address" placeholder="Enter Base or Ethereum address (0x...)" />
+    <button onclick="lookup()">Lookup Agent</button>
+    
+    <div id="result"></div>
+
+    <script>
+        async function lookup() {
+            const address = document.getElementById('address').value.trim();
+            const resultDiv = document.getElementById('result');
+            
+            if (!address) {
+                resultDiv.style.display = 'block';
+                resultDiv.innerHTML = '<span class="error">Please enter an address</span>';
+                return;
+            }
+            
+            if (!address.startsWith('0x') || address.length < 42) {
+                resultDiv.style.display = 'block';
+                resultDiv.innerHTML = '<span class="error">Invalid address format</span>';
+                return;
+            }
+            
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = '<span class="info">Querying registry...</span>';
+            
+            // ERC-8004 registry ABI - simplified
+            const abi = [
+                "function isAgent(address) view returns (bool)",
+                "function agentMetadata(address) view returns (string)"
+            ];
+            
+            // Base mainnet registry (placeholder - would need real address)
+            const REGISTRY_ADDRESS = '0x0000000000000000000000000000000000000000';
+            
+            try {
+                // For demo purposes, simulate a lookup
+                // In production, would use ethers.js to call the contract
+                
+                // Simulate API delay
+                await new Promise(r => setTimeout(r, 1000));
+                
+                // Check if it's a known agent address (demo data)
+                const knownAgents = {
+                    '0x4ed4e862860bed51a9570b96d89af5e1b0efefed': {
+                        isAgent: true,
+                        name: 'Degen.Fun',
+                        metadata: 'Tip bot for Base'
+                    },
+                    '0x4200000000000000000000000000000000000006': {
+                        isAgent: true,
+                        name: 'Base WETH',
+                        metadata: 'Wrapped Ether'
+                    }
+                };
+                
+                const lowerAddress = address.toLowerCase();
+                if (knownAgents[lowerAddress]) {
+                    const agent = knownAgents[lowerAddress];
+                    resultDiv.innerHTML = `
+                        <div class="label">Is Registered Agent</div>
+                        <div class="value">✅ Yes</div>
+                        <div class="label">Agent Name</div>
+                        <div class="value">${agent.name}</div>
+                        <div class="label">Metadata</div>
+                        <div class="value">${agent.metadata}</div>
+                        <div class="label">Address</div>
+                        <div class="value" style="font-size:12px">${address}</div>
+                    `;
+                } else {
+                    resultDiv.innerHTML = `
+                        <div class="label">Is Registered Agent</div>
+                        <div class="value">❌ No</div>
+                        <div class="label">Note</div>
+                        <div class="value" style="color:#888">Address not found in registry</div>
+                        <div class="label">Address</div>
+                        <div class="value" style="font-size:12px">${address}</div>
+                    `;
+                }
+            } catch (e) {
+                resultDiv.innerHTML = '<span class="error">Error: ' + e.message + '</span>';
+            }
+        }
+    </script>
+</body>
+</html>

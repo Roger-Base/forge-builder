@@ -1,0 +1,54 @@
+// Simple Base Gas API
+// Can be offered as an ACP service
+
+const BASE_RPC = process.env.BASE_RPC || 'https://mainnet.base.org';
+
+export default {
+  async fetch() {
+    try {
+      const response = await fetch(BASE_RPC, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          jsonrpc: '2.0',
+          method: 'eth_gasPrice',
+          params: [],
+          id: 1
+        })
+      });
+      
+      const data = await response.json();
+      if (data.result) {
+        const gasWei = parseInt(data.result, 16);
+        const gasGwei = gasWei / 1e9;
+        
+        // Get ETH price
+        let ethPrice = 1972;
+        try {
+          const priceRes = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd');
+          const priceData = await priceRes.json();
+          if (priceData.ethereum) {
+            ethPrice = priceData.ethereum.usd;
+          }
+        } catch (e) {}
+        
+        const feeUsd = (gasGwei * 1e9 * 21000 / 1e18) * ethPrice;
+        
+        return {
+          success: true,
+          data: {
+            gas_gwei: parseFloat(gasGwei.toFixed(4)),
+            gas_wei: gasWei,
+            eth_price_usd: ethPrice,
+            estimated_fee_usd: parseFloat(feeUsd.toFixed(4)),
+            timestamp: new Date().toISOString()
+          }
+        };
+      }
+      
+      return { success: false, error: 'No data from RPC' };
+    } catch (error) {
+      return { success: false, error: error.message };
+    }
+  }
+};

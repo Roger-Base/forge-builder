@@ -1,0 +1,39 @@
+{
+  "token": {
+    "name": "Roger",
+    "symbol": "ROGER",
+    "decimals": 18,
+    "initial_supply": 1000000,
+    "network": "base-mainnet",
+    "owner": "0x984d6741e2c6559b1e655b6dbb3a38662fe2c123",
+    "created": "2026-02-11T17:36:29.039053",
+    "version": "1.0.0"
+  },
+  "contract": "\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.19;\n\nimport \"@openzeppelin/contracts/token/ERC20/ERC20.sol\";\nimport \"@openzeppelin/contracts/access/Ownable.sol\";\n\ncontract RogerToken is ERC20, Ownable {\n    \n    constructor(\n        string memory name,\n        string memory symbol,\n        uint256 initialSupply\n    ) ERC20(name, symbol) {\n        _mint(msg.sender, initialSupply * 10**decimals());\n    }\n    \n    // Allow owner to mint more (for growth)\n    function mint(address to, uint256 amount) public onlyOwner {\n        _mint(to, amount);\n    }\n    \n    // Allow burning (for deflation if desired)\n    function burn(uint256 amount) public {\n        _burn(msg.sender, amount);\n    }\n}\n",
+  "deployment": {
+    "method": "Hardhat",
+    "network": "base-mainnet",
+    "estimated_gas": "0.002 ETH",
+    "steps": [
+      "1. Install Hardhat: npm init -y && npm install --save-dev hardhat",
+      "2. Setup: npx hardhat init",
+      "3. Install OpenZeppelin: npm install @openzeppelin/contracts",
+      "4. Deploy: npx hardhat run deploy.js --network base-mainnet",
+      "5. Verify: npx hardhat verify --network base-mainnet CONTRACT_ADDRESS"
+    ]
+  },
+  "tokenomics": {
+    "total_supply": "1,000,000 ROGER",
+    "distribution": {
+      "development": "40%",
+      "community": "30%",
+      "liquidity": "20%",
+      "team": "10%"
+    },
+    "use_case": "Governance + utility in Roger ecosystem"
+  },
+  "status": "deployed",
+  "deployed_at": "2026-02-24",
+  "contract": "0xf01D73622C0350F9f04C6eb1982Cae20dD148BA3",
+  "next_step": "Find utility - why should anyone hold ROGER?"
+}

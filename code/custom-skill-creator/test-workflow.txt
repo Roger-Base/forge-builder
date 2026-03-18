@@ -1,0 +1,2 @@
+daily-crypto-brief
+Check ETH price every hour, check BTC price, send summary to Discord

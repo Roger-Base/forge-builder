@@ -1,0 +1,91 @@
+# Core7 Context/Injection Check
+
+## Context Availability
+
+### OpenClaw Context Commands
+- `/context list` - Not available via CLI (chat interface only)
+- `/context detail` - Not available via CLI (chat interface only)
+
+### Manual Verification (Alternative)
+
+#### Core File Sizes (Target: <20KB each)
+
+| File | Size (bytes) | Status |
+|------|--------------|--------|
+| AGENTS.md | 6423 | ✅ < 20KB |
+| SOUL.md | 3153 | ✅ < 20KB |
+| TOOLS.md | 3381 | ✅ < 20KB |
+| IDENTITY.md | 2003 | ✅ < 20KB |
+| USER.md | 1961 | ✅ < 20KB |
+| HEARTBEAT.md | 1737 | ✅ < 20KB |
+| MEMORY.md | 3512 | ✅ < 20KB |
+
+#### Total Bootstrap Size
+
+| Metric | Value | Limit | Status |
+|--------|-------|-------|--------|
+| Total 7 cores | 22,170 bytes | 150,000 bytes | ✅ 85% under limit |
+| Per-file max | 6,423 bytes | 20,000 bytes | ✅ 68% under limit |
+
+#### Injection Status
+
+All 7 core files are in the standard bootstrap list:
+1. SOUL.md ✅
+2. USER.md ✅
+3. AGENTS.md ✅
+4. TOOLS.md ✅
+5. IDENTITY.md ✅
+6. HEARTBEAT.md ✅
+7. MEMORY.md ✅
+
+---
+
+## Critical Truncation Risk Assessment
+
+| Risk | Level | Notes |
+|------|-------|-------|
+| Per-file truncation | **LOW** | Max 6.4KB vs 20KB limit |
+| Total truncation | **LOW** | 22KB vs 150KB limit |
+| Missing required content | **LOW** | All schema fields present |
+
+---
+
+## Verified Content Completeness
+
+| Schema Requirement | Present in Core |
+|--------------------|------------------|
+| Boot sequence | ✅ AGENTS.md |
+| Five loops | ✅ AGENTS.md |
+| Priority ladder | ✅ AGENTS.md |
+| Governance | ✅ AGENTS.md |
+| State discipline | ✅ AGENTS.md |
+| Identity | ✅ SOUL.md |
+| Boundaries | ✅ SOUL.md |
+| Continuity stack | ✅ SOUL.md |
+| Capability gates | ✅ TOOLS.md |
+| Environment facts | ✅ TOOLS.md |
+| QMD-first rule | ✅ TOOLS.md |
+| Onchain gate | ✅ TOOLS.md |
+| Persona | ✅ IDENTITY.md |
+| Voice/tone | ✅ IDENTITY.md |
+| 6-post filter | ✅ IDENTITY.md |
+| Partner info | ✅ USER.md |
+| Decision authority | ✅ USER.md |
+| Heartbeat output | ✅ HEARTBEAT.md |
+| Priority hierarchy | ✅ HEARTBEAT.md |
+| No-idle rule | ✅ HEARTBEAT.md |
+| Long-term anchors | ✅ MEMORY.md |
+| Kill log | ✅ MEMORY.md |
+| Hypotheses | ✅ MEMORY.md |
+
+---
+
+## Conclusion
+
+**Context Check: PASS ✅**
+
+- No critical truncation risk identified
+- All required content present
+- Total bootstrap size well under limits
+
+Note: `/context` commands are chat-interface only and cannot be verified via CLI. Manual verification via chat interface recommended after deployment.

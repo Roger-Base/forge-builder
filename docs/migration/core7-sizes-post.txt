@@ -1,0 +1,7 @@
+    6204 AGENTS.md
+    2099 SOUL.md
+    1502 TOOLS.md
+    1210 IDENTITY.md
+     821 USER.md
+     799 HEARTBEAT.md
+    1726 MEMORY.md

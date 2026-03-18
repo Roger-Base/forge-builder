@@ -1,0 +1,117 @@
+{
+  "version": 1,
+  "skills": {
+    "moltbook-interact": {
+      "version": "1.0.1",
+      "installedAt": 1771099659017
+    },
+    "drones-moltbook-cli": {
+      "version": "1.0.3",
+      "installedAt": 1771099734841
+    },
+    "base-trader": {
+      "version": "1.1.1",
+      "installedAt": 1771108455270
+    },
+    "clawvault": {
+      "version": "2.4.2",
+      "installedAt": 1771142788553
+    },
+    "skill-creator": {
+      "version": "0.1.0",
+      "installedAt": 1771144762245
+    },
+    "x-twitter": {
+      "version": "2.3.1",
+      "installedAt": 1771230805440
+    },
+    "farcaster-skill": {
+      "version": "1.0.1",
+      "installedAt": 1771231046278
+    },
+    "weather": {
+      "version": "1.0.0",
+      "installedAt": 1771245535668
+    },
+    "summarize": {
+      "version": "1.0.0",
+      "installedAt": 1771245538371
+    },
+    "skill-security-auditor": {
+      "version": "1.0.1",
+      "installedAt": 1771246065438
+    },
+    "evm-wallet": {
+      "version": "1.0.3",
+      "installedAt": 1771246081607
+    },
+    "onchain": {
+      "version": "0.3.0",
+      "installedAt": 1771246083868
+    },
+    "crypto-agent-payments": {
+      "version": "0.1.7",
+      "installedAt": 1771246085651
+    },
+    "self-improving-agent": {
+      "version": "1.0.10",
+      "installedAt": 1771712753773
+    },
+    "web-research-assistant": {
+      "version": "0.1.0",
+      "installedAt": 1771713314216
+    },
+    "productivity": {
+      "version": "1.0.3",
+      "installedAt": 1771713332808
+    },
+    "basemail": {
+      "version": "1.8.0",
+      "installedAt": 1771715837591
+    },
+    "basename-agent": {
+      "version": "2.1.0",
+      "installedAt": 1771715850115
+    },
+    "defi-yield-scanner": {
+      "version": "1.0.0",
+      "installedAt": 1771837266689
+    },
+    "google-analytics": {
+      "version": "1.0.10",
+      "installedAt": 1771923782860
+    },
+    "agent-evaluation": {
+      "version": "1.0.0",
+      "installedAt": 1772010198667
+    },
+    "agent-autonomy-kit": {
+      "version": "1.0.0",
+      "installedAt": 1772096640959
+    },
+    "security-audit-toolkit": {
+      "version": "1.0.0",
+      "installedAt": 1772179453573
+    },
+    "stripe-best-practices": {
+      "version": "1.0.0",
+      "installedAt": 1772179537166
+    },
+    "model-usage": {
+      "version": "1.0.0",
+      "installedAt": 1772183059307
+    },
+    "auto-updater": {
+      "version": "1.0.0",
+      "installedAt": 1772269278372
+    },
+    "mcporter": {
+      "version": "1.0.0",
+      "installedAt": 1773748402698
+    },
+    "autonomy-type-based": {
+      "version": "1.0.0",
+      "installedAt": 1773826306454
+    }
+  }
+}

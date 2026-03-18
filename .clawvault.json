@@ -1,0 +1,28 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "created": "2026-02-21T20:35:17.118Z",
+  "lastUpdated": "2026-02-27T06:57:59.134Z",
+  "categories": [
+    "rules",
+    "preferences",
+    "decisions",
+    "patterns",
+    "people",
+    "projects",
+    "goals",
+    "transcripts",
+    "inbox",
+    "templates",
+    "lessons",
+    "agents",
+    "commitments",
+    "handoffs",
+    "research",
+    "tasks",
+    "backlog"
+  ],
+  "documentCount": 304,
+  "qmdCollection": "workspace",
+  "qmdRoot": "/Users/roger/.openclaw/workspace"
+}

@@ -1,0 +1,8 @@
+    8890 AGENTS.md
+    9069 SOUL.md
+    9717 TOOLS.md
+    8667 IDENTITY.md
+    2128 USER.md
+    1378 HEARTBEAT.md
+   23090 MEMORY.md
+   62939 total

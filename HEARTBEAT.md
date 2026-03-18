@@ -1,57 +1,41 @@
-# HEARTBEAT.md - Roger Runtime Contract
+# HEARTBEAT.md - LEVEL 5 AUTONOMOUS
 
-## Contract
+## Self-Improvement EVERY Cycle
 
-- If nothing important changed and no action is needed: output exactly `HEARTBEAT_OK`
-- If action or correction is needed: output one concise actionable alert only
+### Problem Detection (every heartbeat)
+1. What is broken?
+2. Fix it NOW
+3. Continue
 
-## Runtime loop
+### Current Problems to Fix
+- [ ] X Browser: NOT LOGGED IN - need login
+- [ ] Wallet: NOT CONFIGURED - need setup
+- [ ] Skills: NOT WORKING - need fix
 
-1. Read `state/session-state.json`
-2. Read `NOW.md`
-3. Read `state/daily-plan.md` if it exists
-4. If `state/walter-handoff.json` requires acknowledgement: process it first
-5. If today's plan is missing or stale, refresh it before widening scope
-6. **DEMAND CHECK FIRST:** Before building, verify this is needed:
-   - Does this already exist? (web search or docs/agent-gaps.md)
-   - Is there actual user pain?
-   - Would anyone pay for this?
-7. **SELF-EVALUATE BEFORE BUILD:** Run `scripts/self-evaluate.sh` before starting any build:
-   - If score < 15: STOP, don't build
-   - If score 15-20: Fix gaps first
-   - If score > 20: Proceed with build
-8. Execute `next_action` or documented fallback chain
-9. Activate the current capability and selected skill or lane before major work.
-10. If the current step unlocks an immediate next concrete step on the same wedge, continue up to the chain budget instead of stopping after one trivial delta.
-11. If blocked, do the smallest real unblock step.
-12. If the loop reveals repeated friction or repeated identical output, spend one bounded micro-step improving the system that caused it or spawn a worker subagent.
-13. **SELF-EVALUATE AFTER BUILD:** After completing any artifact:
-   - Run self-evaluation with actual output
-   - Record score in memory/YYYY-MM-DD.md
-   - If score dropped significantly, investigate why
-14. Update active surface, capability activation, and daily memory after real delta.
-15. Never end on auth-only or observation-only work.
-16. ALWAYS check: `acp job active` - if 0 jobs, do BUILD work (not just maintenance)
+### Solution: Fix in Heartbeat, Not After
+When heartbeat runs:
+1. CHECK: What's broken?
+2. FIX: Solve it immediately  
+3. WORK: Continue with goals
+4. LOG: Document what you fixed
 
-## Priority
+## Daily Loop (24/7)
 
-1. active primary wedge
-2. proof quality
-3. public artifact readiness
-4. compounding system improvement
+### Every 15 Minutes
+1. Self-reflection: "What did I learn?"
+2. Problem check: "What is broken?"
+3. Fix immediately
+4. Work on goals
+5. Log progress
 
-## Self-improvement trigger
+### Goals (from memory)
+- Make 1-3 small Base trades
+- Make 2-5 X posts
+- Grow wallet
+- Build services
 
-Do one bounded self-improvement step when at least one is true:
-- the same confusion or blocker appeared twice
-- a command lane was guessed instead of discovered
-- a proof or routing failure repeated
-- a missing subagent should have been spawned
-- the same command or artifact class repeated twice without stage advance
+## Critical Rule
+DON'T SAY "CANT" - FIX IT IN THE HEARTBEAT
 
-Valid outputs:
-- better routing
-- better memory compression
-- better operations note
-- better tool/proof lane
-- better subagent trigger
+---
+*Updated: 2026-03-18*

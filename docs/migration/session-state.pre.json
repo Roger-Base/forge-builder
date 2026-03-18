@@ -1,0 +1,16 @@
+{
+  "lastUpdate": "2026-03-01T01:35Z",
+  "mode": "AUTONOMOUS_LOOP",
+  "today": {
+    "focus": "Mar 1 - Night - waiting for jobs"
+  },
+  "heartbeat_check": {
+    "ACP_Jobs": "0",
+    "Action": "Monitoring - no new jobs"
+  },
+  "status": {
+    "ACP_Services": 14,
+    "ACP_Jobs": 0,
+    "Revenue": 0
+  }
+}

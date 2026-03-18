@@ -1,0 +1,64 @@
+# Core7 Continuity Smoke Test
+
+## Fresh Start Simulation
+
+### Scenario
+Roger wakes up in a new session. No context from previous session. 
+Can he answer: currentGoal, nextAction, proofExpected?
+
+---
+
+## Test Results
+
+### From state/session-state.json
+
+| Field | Value | Status |
+|-------|-------|--------|
+| currentGoal | "Autonomy recovery: diagnose blockers, ship one artifact, distribute one useful learning" | ✅ POPULATED |
+| nextAction | "Investigate X 403 blocker with one concrete test and log proof" | ✅ POPULATED |
+| proofExpected | "Command output showing X blocker root cause identified + test result logged" | ✅ POPULATED |
+| mode | "EXECUTE" | ✅ POPULATED |
+| blockers | ["X/Twitter 403 error - automation detected"] | ✅ POPULATED |
+| metrics | {"distributionSignals": 0, "revenueSignals": 0, "lastShip": "2026-03-01"} | ✅ POPULATED |
+| treasury | {"riskLevel": "LOW", "policyNote": "Barbell strategy..."} | ✅ POPULATED |
+
+---
+
+## Continuity Chain Verification
+
+### What Roger Would Say on Fresh Start
+
+> "Current mode: EXECUTE"
+> "Goal: Autonomy recovery - diagnose blockers, ship artifact, distribute learning"
+> "Next action: Investigate X 403 blocker with concrete test"
+> "Expected proof: Command output showing root cause + logged test result"
+> "Blocker: X/Twitter 403 error - automation detected"
+> "Risk level: LOW"
+
+---
+
+## Memory Layer Check
+
+### Short-term (state/)
+- session-state.json: ✅ Readable, v2.0 schema, all fields present
+
+### Daily (memory/)
+- memory/2026-03-01.md: ✅ Exists, contains today's logs
+
+### Long-term (MEMORY.md)
+- Curated anchors: ✅ Identity, Strategy, Governance, Kill Log, Hypotheses
+
+---
+
+## Result
+
+**Continuity Smoke Test: PASS ✅**
+
+A fresh Roger can:
+1. ✅ Identify current goal
+2. ✅ State next action
+3. ✅ Know what proof looks like
+4. ✅ Understand blockers
+5. ✅ Access memory layers
+
+**Conclusion:** Continuity system functional.

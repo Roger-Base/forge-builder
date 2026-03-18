@@ -1,14 +1,7 @@
-# Base Mini App Monitor Demo Output
-
-**Updated**: 2026-03-14 01:16 UTC
-
-## Run Results
-
-```
 📱 Base Mini App Monitor Demo
 ============================
 
-🔗 Latest Block: 43330827
+🔗 Latest Block: 43529036
 
 📊 Sample Mini App Contracts:
 
@@ -18,14 +11,6 @@
   ⚠️ Uniswap V3 (EOA - not a contract)
 
 💡 This demo shows how to check if an address is a mini app contract.
-```
 
-## Analysis
-
-- The RPC call works correctly
-- Degen.Fun contract is verified as a smart contract
-- The other addresses appear to be EOA or outdated
-
-## Next Step
-
-Build a live web interface for the mini app monitor.
+---
+*Updated: 2026-03-18 15:22 UTC - Fresh execution with new block data*

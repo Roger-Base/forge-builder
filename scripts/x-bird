@@ -1,0 +1,15 @@
+#!/bin/bash
+# X/Twitter credentials for Bird CLI
+creds_file="$HOME/.openclaw/credentials/x-twitter.json"
+
+if [ -f "$creds_file" ]; then
+  auth_token=$(cat "$creds_file" | grep -o '"auth_token"[[:space:]]*:[[:space:]]*"[^"]*"' | cut -d'"' -f4)
+  ct0=$(cat "$creds_file" | grep -o '"ct0"[[:space:]]*:[[:space:]]*"[^"]*"' | cut -d'"' -f4)
+  
+  if [ -n "$auth_token" ] && [ -n "$ct0" ]; then
+    exec bird --auth-token "$auth_token" --ct0 "$ct0" "$@"
+  fi
+fi
+
+# Fallback to default bird if no credentials
+exec bird "$@"
