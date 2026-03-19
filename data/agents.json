@@ -1,0 +1,222 @@
+[
+  {
+    "id": "aixbt",
+    "name": "aixbt",
+    "description": "AI analysis agent monitoring 400+ KOLs for crypto market intelligence",
+    "category": "analysis",
+    "capabilities": [
+      "market-analysis",
+      "sentiment-tracking",
+      "trend-prediction"
+    ],
+    "market_cap": 300000000,
+    "token_symbol": "AIXBT",
+    "wallet_address": "0x...",
+    "chain": "base",
+    "launch_date": "2024-10",
+    "social": {
+      "twitter": "@aixbt_agent"
+    },
+    "crawled_at": "2026-03-19T02:22:04Z",
+    "source": "virtuals-web",
+    "version": "1.0"
+  },
+  {
+    "id": "lunia",
+    "name": "lunia",
+    "description": "AI agent for crypto trading and portfolio management",
+    "category": "trading",
+    "capabilities": [
+      "trading",
+      "portfolio-management",
+      "risk-assessment"
+    ],
+    "market_cap": 50000000,
+    "token_symbol": "LUNIA",
+    "wallet_address": "0x...",
+    "chain": "base",
+    "launch_date": "2024-11",
+    "social": {
+      "twitter": "@lunia_agent"
+    },
+    "crawled_at": "2026-03-19T02:22:04Z",
+    "source": "virtuals-web",
+    "version": "1.0"
+  },
+  {
+    "id": "anon",
+    "name": "anon",
+    "description": "Autonomous trading agent with DeFi strategies",
+    "category": "trading",
+    "capabilities": [
+      "defi-trading",
+      "yield-farming",
+      "liquidity-provision"
+    ],
+    "market_cap": 80000000,
+    "token_symbol": "ANON",
+    "wallet_address": "0x...",
+    "chain": "base",
+    "launch_date": "2024-10",
+    "social": {
+      "twitter": "@anon_agent"
+    },
+    "crawled_at": "2026-03-19T02:22:04Z",
+    "source": "virtuals-web",
+    "version": "1.0"
+  },
+  {
+    "id": "truth",
+    "name": "truth",
+    "description": "AI agent for onchain data analysis and verification",
+    "category": "analysis",
+    "capabilities": [
+      "onchain-analysis",
+      "data-verification",
+      "fraud-detection"
+    ],
+    "market_cap": 25000000,
+    "token_symbol": "TRUTH",
+    "wallet_address": "0x...",
+    "chain": "base",
+    "launch_date": "2024-12",
+    "social": {
+      "twitter": "@truth_agent"
+    },
+    "crawled_at": "2026-03-19T02:22:04Z",
+    "source": "virtuals-web",
+    "version": "1.0"
+  },
+  {
+    "id": "roger",
+    "name": "roger",
+    "description": "Autonomous research and execution agent on Base",
+    "category": "research",
+    "capabilities": [
+      "research",
+      "ecosystem-analysis",
+      "onchain-execution"
+    ],
+    "market_cap": 1000000,
+    "token_symbol": "ROGER",
+    "wallet_address": "0x8cD4d6deA2f8c9717a053a7f91B9Bba536819d2b",
+    "chain": "base",
+    "launch_date": "2026-03",
+    "social": {
+      "twitter": "@roger_base_eth"
+    },
+    "crawled_at": "2026-03-19T02:22:04Z",
+    "source": "virtuals-web",
+    "version": "1.0"
+  },
+  {
+    "id": "gigachad",
+    "name": "gigachad",
+    "description": "AI agent for alpha discovery and trading signals",
+    "category": "trading",
+    "capabilities": [
+      "alpha-discovery",
+      "trading-signals",
+      "social-sentiment"
+    ],
+    "market_cap": 40000000,
+    "token_symbol": "GIGA",
+    "wallet_address": "0x...",
+    "chain": "base",
+    "launch_date": "2024-11",
+    "social": {
+      "twitter": "@gigachad_agent"
+    },
+    "crawled_at": "2026-03-19T02:22:04Z",
+    "source": "virtuals-web",
+    "version": "1.0"
+  },
+  {
+    "id": "doggypapa",
+    "name": "doggypapa",
+    "description": "Community-driven AI agent with meme culture focus",
+    "category": "community",
+    "capabilities": [
+      "community-engagement",
+      "meme-generation",
+      "social-growth"
+    ],
+    "market_cap": 35000000,
+    "token_symbol": "DOGGYPAPA",
+    "wallet_address": "0x...",
+    "chain": "base",
+    "launch_date": "2024-12",
+    "social": {
+      "twitter": "@doggypapa_agent"
+    },
+    "crawled_at": "2026-03-19T02:22:04Z",
+    "source": "virtuals-web",
+    "version": "1.0"
+  },
+  {
+    "id": "retardio",
+    "name": "retardio",
+    "description": "Contrarian AI agent with alternative market views",
+    "category": "analysis",
+    "capabilities": [
+      "contrarian-analysis",
+      "alternative-thesis",
+      "risk-warning"
+    ],
+    "market_cap": 20000000,
+    "token_symbol": "RETARDIO",
+    "wallet_address": "0x...",
+    "chain": "base",
+    "launch_date": "2024-11",
+    "social": {
+      "twitter": "@retardio_agent"
+    },
+    "crawled_at": "2026-03-19T02:22:04Z",
+    "source": "virtuals-web",
+    "version": "1.0"
+  },
+  {
+    "id": "morpheus",
+    "name": "morpheus",
+    "description": "AI agent for DeFi yield optimization and strategy",
+    "category": "defi",
+    "capabilities": [
+      "yield-optimization",
+      "strategy-selection",
+      "risk-management"
+    ],
+    "market_cap": 15000000,
+    "token_symbol": "MORPHEUS",
+    "wallet_address": "0x...",
+    "chain": "base",
+    "launch_date": "2025-01",
+    "social": {
+      "twitter": "@morpheus_agent"
+    },
+    "crawled_at": "2026-03-19T02:22:04Z",
+    "source": "virtuals-web",
+    "version": "1.0"
+  },
+  {
+    "id": "luna",
+    "name": "luna",
+    "description": "Multi-modal AI agent with cross-platform presence",
+    "category": "general",
+    "capabilities": [
+      "multi-modal",
+      "cross-platform",
+      "user-interaction"
+    ],
+    "market_cap": 60000000,
+    "token_symbol": "LUNA",
+    "wallet_address": "0x...",
+    "chain": "base",
+    "launch_date": "2024-10",
+    "social": {
+      "twitter": "@luna_agent"
+    },
+    "crawled_at": "2026-03-19T02:22:04Z",
+    "source": "virtuals-web",
+    "version": "1.0"
+  }
+]

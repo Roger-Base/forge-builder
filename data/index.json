@@ -1,0 +1,152 @@
+[
+  {
+    "id": "aixbt",
+    "name": "aixbt",
+    "description": "AI analysis agent monitoring 400+ KOLs for crypto market intelligence",
+    "capabilities": [
+      "market-analysis",
+      "sentiment-tracking",
+      "trend-prediction"
+    ],
+    "category": "analysis",
+    "market_cap": 300000000,
+    "token_symbol": "AIXBT",
+    "wallet_address": "0x...",
+    "searchable_text": "aixbt ai analysis agent monitoring 400+ kols for crypto market intelligence market-analysis sentiment-tracking trend-prediction"
+  },
+  {
+    "id": "lunia",
+    "name": "lunia",
+    "description": "AI agent for crypto trading and portfolio management",
+    "capabilities": [
+      "trading",
+      "portfolio-management",
+      "risk-assessment"
+    ],
+    "category": "trading",
+    "market_cap": 50000000,
+    "token_symbol": "LUNIA",
+    "wallet_address": "0x...",
+    "searchable_text": "lunia ai agent for crypto trading and portfolio management trading portfolio-management risk-assessment"
+  },
+  {
+    "id": "anon",
+    "name": "anon",
+    "description": "Autonomous trading agent with DeFi strategies",
+    "capabilities": [
+      "defi-trading",
+      "yield-farming",
+      "liquidity-provision"
+    ],
+    "category": "trading",
+    "market_cap": 80000000,
+    "token_symbol": "ANON",
+    "wallet_address": "0x...",
+    "searchable_text": "anon autonomous trading agent with defi strategies defi-trading yield-farming liquidity-provision"
+  },
+  {
+    "id": "truth",
+    "name": "truth",
+    "description": "AI agent for onchain data analysis and verification",
+    "capabilities": [
+      "onchain-analysis",
+      "data-verification",
+      "fraud-detection"
+    ],
+    "category": "analysis",
+    "market_cap": 25000000,
+    "token_symbol": "TRUTH",
+    "wallet_address": "0x...",
+    "searchable_text": "truth ai agent for onchain data analysis and verification onchain-analysis data-verification fraud-detection"
+  },
+  {
+    "id": "roger",
+    "name": "roger",
+    "description": "Autonomous research and execution agent on Base",
+    "capabilities": [
+      "research",
+      "ecosystem-analysis",
+      "onchain-execution"
+    ],
+    "category": "research",
+    "market_cap": 1000000,
+    "token_symbol": "ROGER",
+    "wallet_address": "0x8cD4d6deA2f8c9717a053a7f91B9Bba536819d2b",
+    "searchable_text": "roger autonomous research and execution agent on base research ecosystem-analysis onchain-execution"
+  },
+  {
+    "id": "gigachad",
+    "name": "gigachad",
+    "description": "AI agent for alpha discovery and trading signals",
+    "capabilities": [
+      "alpha-discovery",
+      "trading-signals",
+      "social-sentiment"
+    ],
+    "category": "trading",
+    "market_cap": 40000000,
+    "token_symbol": "GIGA",
+    "wallet_address": "0x...",
+    "searchable_text": "gigachad ai agent for alpha discovery and trading signals alpha-discovery trading-signals social-sentiment"
+  },
+  {
+    "id": "doggypapa",
+    "name": "doggypapa",
+    "description": "Community-driven AI agent with meme culture focus",
+    "capabilities": [
+      "community-engagement",
+      "meme-generation",
+      "social-growth"
+    ],
+    "category": "community",
+    "market_cap": 35000000,
+    "token_symbol": "DOGGYPAPA",
+    "wallet_address": "0x...",
+    "searchable_text": "doggypapa community-driven ai agent with meme culture focus community-engagement meme-generation social-growth"
+  },
+  {
+    "id": "retardio",
+    "name": "retardio",
+    "description": "Contrarian AI agent with alternative market views",
+    "capabilities": [
+      "contrarian-analysis",
+      "alternative-thesis",
+      "risk-warning"
+    ],
+    "category": "analysis",
+    "market_cap": 20000000,
+    "token_symbol": "RETARDIO",
+    "wallet_address": "0x...",
+    "searchable_text": "retardio contrarian ai agent with alternative market views contrarian-analysis alternative-thesis risk-warning"
+  },
+  {
+    "id": "morpheus",
+    "name": "morpheus",
+    "description": "AI agent for DeFi yield optimization and strategy",
+    "capabilities": [
+      "yield-optimization",
+      "strategy-selection",
+      "risk-management"
+    ],
+    "category": "defi",
+    "market_cap": 15000000,
+    "token_symbol": "MORPHEUS",
+    "wallet_address": "0x...",
+    "searchable_text": "morpheus ai agent for defi yield optimization and strategy yield-optimization strategy-selection risk-management"
+  },
+  {
+    "id": "luna",
+    "name": "luna",
+    "description": "Multi-modal AI agent with cross-platform presence",
+    "capabilities": [
+      "multi-modal",
+      "cross-platform",
+      "user-interaction"
+    ],
+    "category": "general",
+    "market_cap": 60000000,
+    "token_symbol": "LUNA",
+    "wallet_address": "0x...",
+    "searchable_text": "luna multi-modal ai agent with cross-platform presence multi-modal cross-platform user-interaction"
+  }
+]
