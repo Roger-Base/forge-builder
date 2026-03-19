@@ -1,152 +1,1598 @@
 [
   {
-    "id": "aixbt",
-    "name": "aixbt",
-    "description": "AI analysis agent monitoring 400+ KOLs for crypto market intelligence",
+    "id": "aixbt-bot",
+    "name": "AIXBT-BOT",
+    "description": "AI analysis agent for market intelligence",
     "capabilities": [
       "market-analysis",
       "sentiment-tracking",
       "trend-prediction"
     ],
     "category": "analysis",
-    "market_cap": 300000000,
-    "token_symbol": "AIXBT",
-    "wallet_address": "0x...",
-    "searchable_text": "aixbt ai analysis agent monitoring 400+ kols for crypto market intelligence market-analysis sentiment-tracking trend-prediction"
+    "market_cap": 464005160,
+    "token_symbol": "AIXBT-BO",
+    "wallet_address": "0x61697862742d626f740000000000000000000000",
+    "searchable_text": "aixbt-bot ai analysis agent for market intelligence market-analysis sentiment-tracking trend-prediction"
   },
   {
-    "id": "lunia",
-    "name": "lunia",
-    "description": "AI agent for crypto trading and portfolio management",
+    "id": "lunia-ai",
+    "name": "LUNIA-AI",
+    "description": "Portfolio management and rebalancing",
     "capabilities": [
       "trading",
       "portfolio-management",
-      "risk-assessment"
+      "risk-assessment",
+      "defi-trading"
     ],
     "category": "trading",
-    "market_cap": 50000000,
-    "token_symbol": "LUNIA",
-    "wallet_address": "0x...",
-    "searchable_text": "lunia ai agent for crypto trading and portfolio management trading portfolio-management risk-assessment"
+    "market_cap": 49429778,
+    "token_symbol": "LUNIA-AI",
+    "wallet_address": "0x6c756e69612d6169000000000000000000000000",
+    "searchable_text": "lunia-ai portfolio management and rebalancing trading portfolio-management risk-assessment defi-trading"
   },
   {
-    "id": "anon",
-    "name": "anon",
-    "description": "Autonomous trading agent with DeFi strategies",
+    "id": "anon-agent",
+    "name": "ANON-AGENT",
+    "description": "Alpha discovery and signal generation",
     "capabilities": [
+      "trading",
+      "portfolio-management",
+      "risk-assessment",
       "defi-trading",
-      "yield-farming",
-      "liquidity-provision"
+      "yield-farming"
     ],
     "category": "trading",
-    "market_cap": 80000000,
-    "token_symbol": "ANON",
-    "wallet_address": "0x...",
-    "searchable_text": "anon autonomous trading agent with defi strategies defi-trading yield-farming liquidity-provision"
+    "market_cap": 110954691,
+    "token_symbol": "ANON-AGE",
+    "wallet_address": "0x616e6f6e2d6167656e7400000000000000000000",
+    "searchable_text": "anon-agent alpha discovery and signal generation trading portfolio-management risk-assessment defi-trading yield-farming"
   },
   {
-    "id": "truth",
-    "name": "truth",
-    "description": "AI agent for onchain data analysis and verification",
+    "id": "truth-trader",
+    "name": "TRUTH-TRADER",
+    "description": "Fraud detection and risk monitoring",
     "capabilities": [
-      "onchain-analysis",
-      "data-verification",
-      "fraud-detection"
+      "market-analysis",
+      "sentiment-tracking",
+      "trend-prediction"
     ],
     "category": "analysis",
-    "market_cap": 25000000,
-    "token_symbol": "TRUTH",
-    "wallet_address": "0x...",
-    "searchable_text": "truth ai agent for onchain data analysis and verification onchain-analysis data-verification fraud-detection"
+    "market_cap": 42939236,
+    "token_symbol": "TRUTH-TR",
+    "wallet_address": "0x74727574682d7472616465720000000000000000",
+    "searchable_text": "truth-trader fraud detection and risk monitoring market-analysis sentiment-tracking trend-prediction"
   },
   {
-    "id": "roger",
-    "name": "roger",
-    "description": "Autonomous research and execution agent on Base",
+    "id": "roger-scan",
+    "name": "ROGER-SCAN",
+    "description": "Long-term vision and macro trends",
     "capabilities": [
       "research",
       "ecosystem-analysis",
-      "onchain-execution"
+      "onchain-execution",
+      "project-discovery"
     ],
     "category": "research",
-    "market_cap": 1000000,
-    "token_symbol": "ROGER",
-    "wallet_address": "0x8cD4d6deA2f8c9717a053a7f91B9Bba536819d2b",
-    "searchable_text": "roger autonomous research and execution agent on base research ecosystem-analysis onchain-execution"
+    "market_cap": 1697898,
+    "token_symbol": "ROGER-SC",
+    "wallet_address": "0x726f6765722d7363616e00000000000000000000",
+    "searchable_text": "roger-scan long-term vision and macro trends research ecosystem-analysis onchain-execution project-discovery"
   },
   {
-    "id": "gigachad",
-    "name": "gigachad",
-    "description": "AI agent for alpha discovery and trading signals",
+    "id": "giga-bot-v2",
+    "name": "GIGA-BOT-V2",
+    "description": "Autonomous trading with DeFi strategies",
     "capabilities": [
-      "alpha-discovery",
-      "trading-signals",
-      "social-sentiment"
+      "trading",
+      "portfolio-management",
+      "risk-assessment",
+      "defi-trading",
+      "yield-farming"
     ],
     "category": "trading",
-    "market_cap": 40000000,
-    "token_symbol": "GIGA",
-    "wallet_address": "0x...",
-    "searchable_text": "gigachad ai agent for alpha discovery and trading signals alpha-discovery trading-signals social-sentiment"
+    "market_cap": 48608716,
+    "token_symbol": "GIGA-BOT",
+    "wallet_address": "0x676967612d626f742d7632000000000000000000",
+    "searchable_text": "giga-bot-v2 autonomous trading with defi strategies trading portfolio-management risk-assessment defi-trading yield-farming"
   },
   {
-    "id": "doggypapa",
-    "name": "doggypapa",
-    "description": "Community-driven AI agent with meme culture focus",
+    "id": "doggy-pro",
+    "name": "DOGGY-PRO",
+    "description": "Meme generation and amplification",
     "capabilities": [
       "community-engagement",
       "meme-generation",
       "social-growth"
     ],
     "category": "community",
-    "market_cap": 35000000,
-    "token_symbol": "DOGGYPAPA",
-    "wallet_address": "0x...",
-    "searchable_text": "doggypapa community-driven ai agent with meme culture focus community-engagement meme-generation social-growth"
+    "market_cap": 19760676,
+    "token_symbol": "DOGGY-PR",
+    "wallet_address": "0x646f6767792d70726f0000000000000000000000",
+    "searchable_text": "doggy-pro meme generation and amplification community-engagement meme-generation social-growth"
   },
   {
-    "id": "retardio",
-    "name": "retardio",
-    "description": "Contrarian AI agent with alternative market views",
+    "id": "retard-max",
+    "name": "RETARD-MAX",
+    "description": "Sentiment tracking and trend prediction",
     "capabilities": [
-      "contrarian-analysis",
-      "alternative-thesis",
-      "risk-warning"
+      "market-analysis",
+      "sentiment-tracking",
+      "trend-prediction",
+      "onchain-analysis"
     ],
     "category": "analysis",
-    "market_cap": 20000000,
-    "token_symbol": "RETARDIO",
-    "wallet_address": "0x...",
-    "searchable_text": "retardio contrarian ai agent with alternative market views contrarian-analysis alternative-thesis risk-warning"
+    "market_cap": 13430064,
+    "token_symbol": "RETARD-M",
+    "wallet_address": "0x7265746172642d6d617800000000000000000000",
+    "searchable_text": "retard-max sentiment tracking and trend prediction market-analysis sentiment-tracking trend-prediction onchain-analysis"
   },
   {
-    "id": "morpheus",
-    "name": "morpheus",
-    "description": "AI agent for DeFi yield optimization and strategy",
+    "id": "morpheus-ultra",
+    "name": "MORPHEUS-ULTRA",
+    "description": "Stable yield generation",
     "capabilities": [
       "yield-optimization",
       "strategy-selection",
-      "risk-management"
+      "risk-management",
+      "asset-management",
+      "rebalancing"
     ],
     "category": "defi",
-    "market_cap": 15000000,
+    "market_cap": 19103562,
     "token_symbol": "MORPHEUS",
-    "wallet_address": "0x...",
-    "searchable_text": "morpheus ai agent for defi yield optimization and strategy yield-optimization strategy-selection risk-management"
+    "wallet_address": "0x6d6f7270686575732d756c747261000000000000",
+    "searchable_text": "morpheus-ultra stable yield generation yield-optimization strategy-selection risk-management asset-management rebalancing"
   },
   {
-    "id": "luna",
-    "name": "luna",
-    "description": "Multi-modal AI agent with cross-platform presence",
+    "id": "luna-x",
+    "name": "LUNA-X",
+    "description": "Full-stack agent operations",
     "capabilities": [
       "multi-modal",
       "cross-platform",
       "user-interaction"
     ],
     "category": "general",
-    "market_cap": 60000000,
-    "token_symbol": "LUNA",
-    "wallet_address": "0x...",
-    "searchable_text": "luna multi-modal ai agent with cross-platform presence multi-modal cross-platform user-interaction"
+    "market_cap": 76435540,
+    "token_symbol": "LUNA-X",
+    "wallet_address": "0x6c756e612d780000000000000000000000000000",
+    "searchable_text": "luna-x full-stack agent operations multi-modal cross-platform user-interaction"
+  },
+  {
+    "id": "aixbt-neo",
+    "name": "AIXBT-NEO",
+    "description": "AI analysis agent for market intelligence",
+    "capabilities": [
+      "market-analysis",
+      "sentiment-tracking",
+      "trend-prediction",
+      "onchain-analysis"
+    ],
+    "category": "analysis",
+    "market_cap": 276407590,
+    "token_symbol": "AIXBT-NE",
+    "wallet_address": "0x61697862742d6e656f0000000000000000000000",
+    "searchable_text": "aixbt-neo ai analysis agent for market intelligence market-analysis sentiment-tracking trend-prediction onchain-analysis"
+  },
+  {
+    "id": "lunia-zen",
+    "name": "LUNIA-ZEN",
+    "description": "Portfolio management and rebalancing",
+    "capabilities": [
+      "trading",
+      "portfolio-management",
+      "risk-assessment",
+      "defi-trading",
+      "yield-farming"
+    ],
+    "category": "trading",
+    "market_cap": 46675785,
+    "token_symbol": "LUNIA-ZE",
+    "wallet_address": "0x6c756e69612d7a656e0000000000000000000000",
+    "searchable_text": "lunia-zen portfolio management and rebalancing trading portfolio-management risk-assessment defi-trading yield-farming"
+  },
+  {
+    "id": "anon-vox",
+    "name": "ANON-VOX",
+    "description": "Alpha discovery and signal generation",
+    "capabilities": [
+      "trading",
+      "portfolio-management",
+      "risk-assessment"
+    ],
+    "category": "trading",
+    "market_cap": 119818815,
+    "token_symbol": "ANON-VOX",
+    "wallet_address": "0x616e6f6e2d766f78000000000000000000000000",
+    "searchable_text": "anon-vox alpha discovery and signal generation trading portfolio-management risk-assessment"
+  },
+  {
+    "id": "truth-nex",
+    "name": "TRUTH-NEX",
+    "description": "Fraud detection and risk monitoring",
+    "capabilities": [
+      "market-analysis",
+      "sentiment-tracking",
+      "trend-prediction",
+      "onchain-analysis"
+    ],
+    "category": "analysis",
+    "market_cap": 48217600,
+    "token_symbol": "TRUTH-NE",
+    "wallet_address": "0x74727574682d6e65780000000000000000000000",
+    "searchable_text": "truth-nex fraud detection and risk monitoring market-analysis sentiment-tracking trend-prediction onchain-analysis"
+  },
+  {
+    "id": "roger-qrx",
+    "name": "ROGER-QRX",
+    "description": "Long-term vision and macro trends",
+    "capabilities": [
+      "research",
+      "ecosystem-analysis",
+      "onchain-execution",
+      "project-discovery",
+      "due-diligence"
+    ],
+    "category": "research",
+    "market_cap": 1329916,
+    "token_symbol": "ROGER-QR",
+    "wallet_address": "0x726f6765722d7172780000000000000000000000",
+    "searchable_text": "roger-qrx long-term vision and macro trends research ecosystem-analysis onchain-execution project-discovery due-diligence"
+  },
+  {
+    "id": "giga-aly",
+    "name": "GIGA-ALY",
+    "description": "Autonomous trading with DeFi strategies",
+    "capabilities": [
+      "trading",
+      "portfolio-management",
+      "risk-assessment"
+    ],
+    "category": "trading",
+    "market_cap": 35880889,
+    "token_symbol": "GIGA-ALY",
+    "wallet_address": "0x676967612d616c79000000000000000000000000",
+    "searchable_text": "giga-aly autonomous trading with defi strategies trading portfolio-management risk-assessment"
+  },
+  {
+    "id": "doggy-dex",
+    "name": "DOGGY-DEX",
+    "description": "Meme generation and amplification",
+    "capabilities": [
+      "community-engagement",
+      "meme-generation",
+      "social-growth",
+      "content-amplification"
+    ],
+    "category": "community",
+    "market_cap": 23528280,
+    "token_symbol": "DOGGY-DE",
+    "wallet_address": "0x646f6767792d6465780000000000000000000000",
+    "searchable_text": "doggy-dex meme generation and amplification community-engagement meme-generation social-growth content-amplification"
+  },
+  {
+    "id": "retard-vex",
+    "name": "RETARD-VEX",
+    "description": "Sentiment tracking and trend prediction",
+    "capabilities": [
+      "market-analysis",
+      "sentiment-tracking",
+      "trend-prediction",
+      "onchain-analysis",
+      "data-verification"
+    ],
+    "category": "analysis",
+    "market_cap": 37432667,
+    "token_symbol": "RETARD-V",
+    "wallet_address": "0x7265746172642d76657800000000000000000000",
+    "searchable_text": "retard-vex sentiment tracking and trend prediction market-analysis sentiment-tracking trend-prediction onchain-analysis data-verification"
+  },
+  {
+    "id": "morpheus-trex",
+    "name": "MORPHEUS-TREX",
+    "description": "Stable yield generation",
+    "capabilities": [
+      "yield-optimization",
+      "strategy-selection",
+      "risk-management"
+    ],
+    "category": "defi",
+    "market_cap": 22656209,
+    "token_symbol": "MORPHEUS",
+    "wallet_address": "0x6d6f7270686575732d7472657800000000000000",
+    "searchable_text": "morpheus-trex stable yield generation yield-optimization strategy-selection risk-management"
+  },
+  {
+    "id": "luna-flex",
+    "name": "LUNA-FLEX",
+    "description": "Full-stack agent operations",
+    "capabilities": [
+      "multi-modal",
+      "cross-platform",
+      "user-interaction",
+      "adaptive"
+    ],
+    "category": "general",
+    "market_cap": 57218338,
+    "token_symbol": "LUNA-FLE",
+    "wallet_address": "0x6c756e612d666c65780000000000000000000000",
+    "searchable_text": "luna-flex full-stack agent operations multi-modal cross-platform user-interaction adaptive"
+  },
+  {
+    "id": "aixbt-prime",
+    "name": "AIXBT-PRIME",
+    "description": "AI analysis agent for market intelligence",
+    "capabilities": [
+      "market-analysis",
+      "sentiment-tracking",
+      "trend-prediction",
+      "onchain-analysis",
+      "data-verification"
+    ],
+    "category": "analysis",
+    "market_cap": 156125515,
+    "token_symbol": "AIXBT-PR",
+    "wallet_address": "0x61697862742d7072696d65000000000000000000",
+    "searchable_text": "aixbt-prime ai analysis agent for market intelligence market-analysis sentiment-tracking trend-prediction onchain-analysis data-verification"
+  },
+  {
+    "id": "lunia-core",
+    "name": "LUNIA-CORE",
+    "description": "Portfolio management and rebalancing",
+    "capabilities": [
+      "trading",
+      "portfolio-management",
+      "risk-assessment"
+    ],
+    "category": "trading",
+    "market_cap": 97050113,
+    "token_symbol": "LUNIA-CO",
+    "wallet_address": "0x6c756e69612d636f726500000000000000000000",
+    "searchable_text": "lunia-core portfolio management and rebalancing trading portfolio-management risk-assessment"
+  },
+  {
+    "id": "anon-edge",
+    "name": "ANON-EDGE",
+    "description": "Alpha discovery and signal generation",
+    "capabilities": [
+      "trading",
+      "portfolio-management",
+      "risk-assessment",
+      "defi-trading"
+    ],
+    "category": "trading",
+    "market_cap": 71770926,
+    "token_symbol": "ANON-EDG",
+    "wallet_address": "0x616e6f6e2d656467650000000000000000000000",
+    "searchable_text": "anon-edge alpha discovery and signal generation trading portfolio-management risk-assessment defi-trading"
+  },
+  {
+    "id": "truth-node",
+    "name": "TRUTH-NODE",
+    "description": "Fraud detection and risk monitoring",
+    "capabilities": [
+      "market-analysis",
+      "sentiment-tracking",
+      "trend-prediction",
+      "onchain-analysis",
+      "data-verification"
+    ],
+    "category": "analysis",
+    "market_cap": 14003448,
+    "token_symbol": "TRUTH-NO",
+    "wallet_address": "0x74727574682d6e6f646500000000000000000000",
+    "searchable_text": "truth-node fraud detection and risk monitoring market-analysis sentiment-tracking trend-prediction onchain-analysis data-verification"
+  },
+  {
+    "id": "roger-link",
+    "name": "ROGER-LINK",
+    "description": "Long-term vision and macro trends",
+    "capabilities": [
+      "research",
+      "ecosystem-analysis",
+      "onchain-execution"
+    ],
+    "category": "research",
+    "market_cap": 1127156,
+    "token_symbol": "ROGER-LI",
+    "wallet_address": "0x726f6765722d6c696e6b00000000000000000000",
+    "searchable_text": "roger-link long-term vision and macro trends research ecosystem-analysis onchain-execution"
+  },
+  {
+    "id": "giga-sync",
+    "name": "GIGA-SYNC",
+    "description": "Autonomous trading with DeFi strategies",
+    "capabilities": [
+      "trading",
+      "portfolio-management",
+      "risk-assessment",
+      "defi-trading"
+    ],
+    "category": "trading",
+    "market_cap": 51152984,
+    "token_symbol": "GIGA-SYN",
+    "wallet_address": "0x676967612d73796e630000000000000000000000",
+    "searchable_text": "giga-sync autonomous trading with defi strategies trading portfolio-management risk-assessment defi-trading"
+  },
+  {
+    "id": "doggy-mesh",
+    "name": "DOGGY-MESH",
+    "description": "Meme generation and amplification",
+    "capabilities": [
+      "community-engagement",
+      "meme-generation",
+      "social-growth",
+      "content-amplification"
+    ],
+    "category": "community",
+    "market_cap": 51101240,
+    "token_symbol": "DOGGY-ME",
+    "wallet_address": "0x646f6767792d6d65736800000000000000000000",
+    "searchable_text": "doggy-mesh meme generation and amplification community-engagement meme-generation social-growth content-amplification"
+  },
+  {
+    "id": "retard-grid",
+    "name": "RETARD-GRID",
+    "description": "Sentiment tracking and trend prediction",
+    "capabilities": [
+      "market-analysis",
+      "sentiment-tracking",
+      "trend-prediction"
+    ],
+    "category": "analysis",
+    "market_cap": 17232244,
+    "token_symbol": "RETARD-G",
+    "wallet_address": "0x7265746172642d67726964000000000000000000",
+    "searchable_text": "retard-grid sentiment tracking and trend prediction market-analysis sentiment-tracking trend-prediction"
+  },
+  {
+    "id": "morpheus-net",
+    "name": "MORPHEUS-NET",
+    "description": "Stable yield generation",
+    "capabilities": [
+      "yield-optimization",
+      "strategy-selection",
+      "risk-management",
+      "asset-management"
+    ],
+    "category": "defi",
+    "market_cap": 21708791,
+    "token_symbol": "MORPHEUS",
+    "wallet_address": "0x6d6f7270686575732d6e65740000000000000000",
+    "searchable_text": "morpheus-net stable yield generation yield-optimization strategy-selection risk-management asset-management"
+  },
+  {
+    "id": "luna-hub",
+    "name": "LUNA-HUB",
+    "description": "Full-stack agent operations",
+    "capabilities": [
+      "multi-modal",
+      "cross-platform",
+      "user-interaction",
+      "adaptive",
+      "full-stack"
+    ],
+    "category": "general",
+    "market_cap": 39311959,
+    "token_symbol": "LUNA-HUB",
+    "wallet_address": "0x6c756e612d687562000000000000000000000000",
+    "searchable_text": "luna-hub full-stack agent operations multi-modal cross-platform user-interaction adaptive full-stack"
+  },
+  {
+    "id": "aixbt-flow",
+    "name": "AIXBT-FLOW",
+    "description": "AI analysis agent for market intelligence",
+    "capabilities": [
+      "market-analysis",
+      "sentiment-tracking",
+      "trend-prediction"
+    ],
+    "category": "analysis",
+    "market_cap": 296891922,
+    "token_symbol": "AIXBT-FL",
+    "wallet_address": "0x61697862742d666c6f7700000000000000000000",
+    "searchable_text": "aixbt-flow ai analysis agent for market intelligence market-analysis sentiment-tracking trend-prediction"
+  },
+  {
+    "id": "lunia-spark",
+    "name": "LUNIA-SPARK",
+    "description": "Portfolio management and rebalancing",
+    "capabilities": [
+      "trading",
+      "portfolio-management",
+      "risk-assessment",
+      "defi-trading"
+    ],
+    "category": "trading",
+    "market_cap": 56941292,
+    "token_symbol": "LUNIA-SP",
+    "wallet_address": "0x6c756e69612d737061726b000000000000000000",
+    "searchable_text": "lunia-spark portfolio management and rebalancing trading portfolio-management risk-assessment defi-trading"
+  },
+  {
+    "id": "anon-bolt",
+    "name": "ANON-BOLT",
+    "description": "Alpha discovery and signal generation",
+    "capabilities": [
+      "trading",
+      "portfolio-management",
+      "risk-assessment",
+      "defi-trading",
+      "yield-farming"
+    ],
+    "category": "trading",
+    "market_cap": 70724117,
+    "token_symbol": "ANON-BOL",
+    "wallet_address": "0x616e6f6e2d626f6c740000000000000000000000",
+    "searchable_text": "anon-bolt alpha discovery and signal generation trading portfolio-management risk-assessment defi-trading yield-farming"
+  },
+  {
+    "id": "truth-volt",
+    "name": "TRUTH-VOLT",
+    "description": "Fraud detection and risk monitoring",
+    "capabilities": [
+      "market-analysis",
+      "sentiment-tracking",
+      "trend-prediction"
+    ],
+    "category": "analysis",
+    "market_cap": 21869568,
+    "token_symbol": "TRUTH-VO",
+    "wallet_address": "0x74727574682d766f6c7400000000000000000000",
+    "searchable_text": "truth-volt fraud detection and risk monitoring market-analysis sentiment-tracking trend-prediction"
+  },
+  {
+    "id": "roger-amp",
+    "name": "ROGER-AMP",
+    "description": "Long-term vision and macro trends",
+    "capabilities": [
+      "research",
+      "ecosystem-analysis",
+      "onchain-execution",
+      "project-discovery"
+    ],
+    "category": "research",
+    "market_cap": 1871912,
+    "token_symbol": "ROGER-AM",
+    "wallet_address": "0x726f6765722d616d700000000000000000000000",
+    "searchable_text": "roger-amp long-term vision and macro trends research ecosystem-analysis onchain-execution project-discovery"
+  },
+  {
+    "id": "giga-pulse",
+    "name": "GIGA-PULSE",
+    "description": "Autonomous trading with DeFi strategies",
+    "capabilities": [
+      "trading",
+      "portfolio-management",
+      "risk-assessment",
+      "defi-trading",
+      "yield-farming"
+    ],
+    "category": "trading",
+    "market_cap": 57878988,
+    "token_symbol": "GIGA-PUL",
+    "wallet_address": "0x676967612d70756c736500000000000000000000",
+    "searchable_text": "giga-pulse autonomous trading with defi strategies trading portfolio-management risk-assessment defi-trading yield-farming"
+  },
+  {
+    "id": "doggy-wave",
+    "name": "DOGGY-WAVE",
+    "description": "Meme generation and amplification",
+    "capabilities": [
+      "community-engagement",
+      "meme-generation",
+      "social-growth"
+    ],
+    "category": "community",
+    "market_cap": 20237263,
+    "token_symbol": "DOGGY-WA",
+    "wallet_address": "0x646f6767792d7761766500000000000000000000",
+    "searchable_text": "doggy-wave meme generation and amplification community-engagement meme-generation social-growth"
+  },
+  {
+    "id": "retard-surge",
+    "name": "RETARD-SURGE",
+    "description": "Sentiment tracking and trend prediction",
+    "capabilities": [
+      "market-analysis",
+      "sentiment-tracking",
+      "trend-prediction",
+      "onchain-analysis"
+    ],
+    "category": "analysis",
+    "market_cap": 38595897,
+    "token_symbol": "RETARD-S",
+    "wallet_address": "0x7265746172642d73757267650000000000000000",
+    "searchable_text": "retard-surge sentiment tracking and trend prediction market-analysis sentiment-tracking trend-prediction onchain-analysis"
+  },
+  {
+    "id": "morpheus-flux",
+    "name": "MORPHEUS-FLUX",
+    "description": "Stable yield generation",
+    "capabilities": [
+      "yield-optimization",
+      "strategy-selection",
+      "risk-management",
+      "asset-management",
+      "rebalancing"
+    ],
+    "category": "defi",
+    "market_cap": 13835173,
+    "token_symbol": "MORPHEUS",
+    "wallet_address": "0x6d6f7270686575732d666c757800000000000000",
+    "searchable_text": "morpheus-flux stable yield generation yield-optimization strategy-selection risk-management asset-management rebalancing"
+  },
+  {
+    "id": "luna-drift",
+    "name": "LUNA-DRIFT",
+    "description": "Full-stack agent operations",
+    "capabilities": [
+      "multi-modal",
+      "cross-platform",
+      "user-interaction"
+    ],
+    "category": "general",
+    "market_cap": 94234754,
+    "token_symbol": "LUNA-DRI",
+    "wallet_address": "0x6c756e612d647269667400000000000000000000",
+    "searchable_text": "luna-drift full-stack agent operations multi-modal cross-platform user-interaction"
+  },
+  {
+    "id": "aixbt-shift",
+    "name": "AIXBT-SHIFT",
+    "description": "AI analysis agent for market intelligence",
+    "capabilities": [
+      "market-analysis",
+      "sentiment-tracking",
+      "trend-prediction",
+      "onchain-analysis"
+    ],
+    "category": "analysis",
+    "market_cap": 469929668,
+    "token_symbol": "AIXBT-SH",
+    "wallet_address": "0x61697862742d7368696674000000000000000000",
+    "searchable_text": "aixbt-shift ai analysis agent for market intelligence market-analysis sentiment-tracking trend-prediction onchain-analysis"
+  },
+  {
+    "id": "lunia-lift",
+    "name": "LUNIA-LIFT",
+    "description": "Portfolio management and rebalancing",
+    "capabilities": [
+      "trading",
+      "portfolio-management",
+      "risk-assessment",
+      "defi-trading",
+      "yield-farming"
+    ],
+    "category": "trading",
+    "market_cap": 78272942,
+    "token_symbol": "LUNIA-LI",
+    "wallet_address": "0x6c756e69612d6c69667400000000000000000000",
+    "searchable_text": "lunia-lift portfolio management and rebalancing trading portfolio-management risk-assessment defi-trading yield-farming"
+  },
+  {
+    "id": "anon-rift",
+    "name": "ANON-RIFT",
+    "description": "Alpha discovery and signal generation",
+    "capabilities": [
+      "trading",
+      "portfolio-management",
+      "risk-assessment"
+    ],
+    "category": "trading",
+    "market_cap": 107052815,
+    "token_symbol": "ANON-RIF",
+    "wallet_address": "0x616e6f6e2d726966740000000000000000000000",
+    "searchable_text": "anon-rift alpha discovery and signal generation trading portfolio-management risk-assessment"
+  },
+  {
+    "id": "truth-craft",
+    "name": "TRUTH-CRAFT",
+    "description": "Fraud detection and risk monitoring",
+    "capabilities": [
+      "market-analysis",
+      "sentiment-tracking",
+      "trend-prediction",
+      "onchain-analysis"
+    ],
+    "category": "analysis",
+    "market_cap": 23239213,
+    "token_symbol": "TRUTH-CR",
+    "wallet_address": "0x74727574682d6372616674000000000000000000",
+    "searchable_text": "truth-craft fraud detection and risk monitoring market-analysis sentiment-tracking trend-prediction onchain-analysis"
+  },
+  {
+    "id": "roger-swift",
+    "name": "ROGER-SWIFT",
+    "description": "Long-term vision and macro trends",
+    "capabilities": [
+      "research",
+      "ecosystem-analysis",
+      "onchain-execution",
+      "project-discovery",
+      "due-diligence"
+    ],
+    "category": "research",
+    "market_cap": 1723549,
+    "token_symbol": "ROGER-SW",
+    "wallet_address": "0x726f6765722d7377696674000000000000000000",
+    "searchable_text": "roger-swift long-term vision and macro trends research ecosystem-analysis onchain-execution project-discovery due-diligence"
+  },
+  {
+    "id": "giga-thrust",
+    "name": "GIGA-THRUST",
+    "description": "Autonomous trading with DeFi strategies",
+    "capabilities": [
+      "trading",
+      "portfolio-management",
+      "risk-assessment"
+    ],
+    "category": "trading",
+    "market_cap": 28892465,
+    "token_symbol": "GIGA-THR",
+    "wallet_address": "0x676967612d746872757374000000000000000000",
+    "searchable_text": "giga-thrust autonomous trading with defi strategies trading portfolio-management risk-assessment"
+  },
+  {
+    "id": "doggy-boost",
+    "name": "DOGGY-BOOST",
+    "description": "Meme generation and amplification",
+    "capabilities": [
+      "community-engagement",
+      "meme-generation",
+      "social-growth",
+      "content-amplification"
+    ],
+    "category": "community",
+    "market_cap": 34459454,
+    "token_symbol": "DOGGY-BO",
+    "wallet_address": "0x646f6767792d626f6f7374000000000000000000",
+    "searchable_text": "doggy-boost meme generation and amplification community-engagement meme-generation social-growth content-amplification"
+  },
+  {
+    "id": "retard-rocket",
+    "name": "RETARD-ROCKET",
+    "description": "Sentiment tracking and trend prediction",
+    "capabilities": [
+      "market-analysis",
+      "sentiment-tracking",
+      "trend-prediction",
+      "onchain-analysis",
+      "data-verification"
+    ],
+    "category": "analysis",
+    "market_cap": 11009106,
+    "token_symbol": "RETARD-R",
+    "wallet_address": "0x7265746172642d726f636b657400000000000000",
+    "searchable_text": "retard-rocket sentiment tracking and trend prediction market-analysis sentiment-tracking trend-prediction onchain-analysis data-verification"
+  },
+  {
+    "id": "morpheus-launch",
+    "name": "MORPHEUS-LAUNCH",
+    "description": "Stable yield generation",
+    "capabilities": [
+      "yield-optimization",
+      "strategy-selection",
+      "risk-management"
+    ],
+    "category": "defi",
+    "market_cap": 18998983,
+    "token_symbol": "MORPHEUS",
+    "wallet_address": "0x6d6f7270686575732d6c61756e63680000000000",
+    "searchable_text": "morpheus-launch stable yield generation yield-optimization strategy-selection risk-management"
+  },
+  {
+    "id": "luna-star",
+    "name": "LUNA-STAR",
+    "description": "Full-stack agent operations",
+    "capabilities": [
+      "multi-modal",
+      "cross-platform",
+      "user-interaction",
+      "adaptive"
+    ],
+    "category": "general",
+    "market_cap": 91427963,
+    "token_symbol": "LUNA-STA",
+    "wallet_address": "0x6c756e612d737461720000000000000000000000",
+    "searchable_text": "luna-star full-stack agent operations multi-modal cross-platform user-interaction adaptive"
+  },
+  {
+    "id": "aixbt-nova",
+    "name": "AIXBT-NOVA",
+    "description": "AI analysis agent for market intelligence",
+    "capabilities": [
+      "market-analysis",
+      "sentiment-tracking",
+      "trend-prediction",
+      "onchain-analysis",
+      "data-verification"
+    ],
+    "category": "analysis",
+    "market_cap": 352911867,
+    "token_symbol": "AIXBT-NO",
+    "wallet_address": "0x61697862742d6e6f766100000000000000000000",
+    "searchable_text": "aixbt-nova ai analysis agent for market intelligence market-analysis sentiment-tracking trend-prediction onchain-analysis data-verification"
+  },
+  {
+    "id": "lunia-astro",
+    "name": "LUNIA-ASTRO",
+    "description": "Portfolio management and rebalancing",
+    "capabilities": [
+      "trading",
+      "portfolio-management",
+      "risk-assessment"
+    ],
+    "category": "trading",
+    "market_cap": 76043577,
+    "token_symbol": "LUNIA-AS",
+    "wallet_address": "0x6c756e69612d617374726f000000000000000000",
+    "searchable_text": "lunia-astro portfolio management and rebalancing trading portfolio-management risk-assessment"
+  },
+  {
+    "id": "anon-cosmo",
+    "name": "ANON-COSMO",
+    "description": "Alpha discovery and signal generation",
+    "capabilities": [
+      "trading",
+      "portfolio-management",
+      "risk-assessment",
+      "defi-trading"
+    ],
+    "category": "trading",
+    "market_cap": 111037887,
+    "token_symbol": "ANON-COS",
+    "wallet_address": "0x616e6f6e2d636f736d6f00000000000000000000",
+    "searchable_text": "anon-cosmo alpha discovery and signal generation trading portfolio-management risk-assessment defi-trading"
+  },
+  {
+    "id": "truth-orbit",
+    "name": "TRUTH-ORBIT",
+    "description": "Fraud detection and risk monitoring",
+    "capabilities": [
+      "market-analysis",
+      "sentiment-tracking",
+      "trend-prediction",
+      "onchain-analysis",
+      "data-verification"
+    ],
+    "category": "analysis",
+    "market_cap": 20907290,
+    "token_symbol": "TRUTH-OR",
+    "wallet_address": "0x74727574682d6f72626974000000000000000000",
+    "searchable_text": "truth-orbit fraud detection and risk monitoring market-analysis sentiment-tracking trend-prediction onchain-analysis data-verification"
+  },
+  {
+    "id": "roger-sat",
+    "name": "ROGER-SAT",
+    "description": "Long-term vision and macro trends",
+    "capabilities": [
+      "research",
+      "ecosystem-analysis",
+      "onchain-execution"
+    ],
+    "category": "research",
+    "market_cap": 658849,
+    "token_symbol": "ROGER-SA",
+    "wallet_address": "0x726f6765722d7361740000000000000000000000",
+    "searchable_text": "roger-sat long-term vision and macro trends research ecosystem-analysis onchain-execution"
+  },
+  {
+    "id": "giga-com",
+    "name": "GIGA-COM",
+    "description": "Autonomous trading with DeFi strategies",
+    "capabilities": [
+      "trading",
+      "portfolio-management",
+      "risk-assessment",
+      "defi-trading"
+    ],
+    "category": "trading",
+    "market_cap": 20064109,
+    "token_symbol": "GIGA-COM",
+    "wallet_address": "0x676967612d636f6d000000000000000000000000",
+    "searchable_text": "giga-com autonomous trading with defi strategies trading portfolio-management risk-assessment defi-trading"
+  },
+  {
+    "id": "doggy-tel",
+    "name": "DOGGY-TEL",
+    "description": "Meme generation and amplification",
+    "capabilities": [
+      "community-engagement",
+      "meme-generation",
+      "social-growth",
+      "content-amplification"
+    ],
+    "category": "community",
+    "market_cap": 24661720,
+    "token_symbol": "DOGGY-TE",
+    "wallet_address": "0x646f6767792d74656c0000000000000000000000",
+    "searchable_text": "doggy-tel meme generation and amplification community-engagement meme-generation social-growth content-amplification"
+  },
+  {
+    "id": "retard-nav",
+    "name": "RETARD-NAV",
+    "description": "Sentiment tracking and trend prediction",
+    "capabilities": [
+      "market-analysis",
+      "sentiment-tracking",
+      "trend-prediction"
+    ],
+    "category": "analysis",
+    "market_cap": 27631281,
+    "token_symbol": "RETARD-N",
+    "wallet_address": "0x7265746172642d6e617600000000000000000000",
+    "searchable_text": "retard-nav sentiment tracking and trend prediction market-analysis sentiment-tracking trend-prediction"
+  },
+  {
+    "id": "morpheus-gps",
+    "name": "MORPHEUS-GPS",
+    "description": "Stable yield generation",
+    "capabilities": [
+      "yield-optimization",
+      "strategy-selection",
+      "risk-management",
+      "asset-management"
+    ],
+    "category": "defi",
+    "market_cap": 28515336,
+    "token_symbol": "MORPHEUS",
+    "wallet_address": "0x6d6f7270686575732d6770730000000000000000",
+    "searchable_text": "morpheus-gps stable yield generation yield-optimization strategy-selection risk-management asset-management"
+  },
+  {
+    "id": "luna-alpha",
+    "name": "LUNA-ALPHA",
+    "description": "Full-stack agent operations",
+    "capabilities": [
+      "multi-modal",
+      "cross-platform",
+      "user-interaction",
+      "adaptive",
+      "full-stack"
+    ],
+    "category": "general",
+    "market_cap": 101995861,
+    "token_symbol": "LUNA-ALP",
+    "wallet_address": "0x6c756e612d616c70686100000000000000000000",
+    "searchable_text": "luna-alpha full-stack agent operations multi-modal cross-platform user-interaction adaptive full-stack"
+  },
+  {
+    "id": "aixbt-beta",
+    "name": "AIXBT-BETA",
+    "description": "AI analysis agent for market intelligence",
+    "capabilities": [
+      "market-analysis",
+      "sentiment-tracking",
+      "trend-prediction"
+    ],
+    "category": "analysis",
+    "market_cap": 381245664,
+    "token_symbol": "AIXBT-BE",
+    "wallet_address": "0x61697862742d6265746100000000000000000000",
+    "searchable_text": "aixbt-beta ai analysis agent for market intelligence market-analysis sentiment-tracking trend-prediction"
+  },
+  {
+    "id": "lunia-gamma",
+    "name": "LUNIA-GAMMA",
+    "description": "Portfolio management and rebalancing",
+    "capabilities": [
+      "trading",
+      "portfolio-management",
+      "risk-assessment",
+      "defi-trading"
+    ],
+    "category": "trading",
+    "market_cap": 59501381,
+    "token_symbol": "LUNIA-GA",
+    "wallet_address": "0x6c756e69612d67616d6d61000000000000000000",
+    "searchable_text": "lunia-gamma portfolio management and rebalancing trading portfolio-management risk-assessment defi-trading"
+  },
+  {
+    "id": "anon-delta",
+    "name": "ANON-DELTA",
+    "description": "Alpha discovery and signal generation",
+    "capabilities": [
+      "trading",
+      "portfolio-management",
+      "risk-assessment",
+      "defi-trading",
+      "yield-farming"
+    ],
+    "category": "trading",
+    "market_cap": 40502137,
+    "token_symbol": "ANON-DEL",
+    "wallet_address": "0x616e6f6e2d64656c746100000000000000000000",
+    "searchable_text": "anon-delta alpha discovery and signal generation trading portfolio-management risk-assessment defi-trading yield-farming"
+  },
+  {
+    "id": "truth-omega",
+    "name": "TRUTH-OMEGA",
+    "description": "Fraud detection and risk monitoring",
+    "capabilities": [
+      "market-analysis",
+      "sentiment-tracking",
+      "trend-prediction"
+    ],
+    "category": "analysis",
+    "market_cap": 24099911,
+    "token_symbol": "TRUTH-OM",
+    "wallet_address": "0x74727574682d6f6d656761000000000000000000",
+    "searchable_text": "truth-omega fraud detection and risk monitoring market-analysis sentiment-tracking trend-prediction"
+  },
+  {
+    "id": "roger-sigma",
+    "name": "ROGER-SIGMA",
+    "description": "Long-term vision and macro trends",
+    "capabilities": [
+      "research",
+      "ecosystem-analysis",
+      "onchain-execution",
+      "project-discovery"
+    ],
+    "category": "research",
+    "market_cap": 1269339,
+    "token_symbol": "ROGER-SI",
+    "wallet_address": "0x726f6765722d7369676d61000000000000000000",
+    "searchable_text": "roger-sigma long-term vision and macro trends research ecosystem-analysis onchain-execution project-discovery"
+  },
+  {
+    "id": "giga-theta",
+    "name": "GIGA-THETA",
+    "description": "Autonomous trading with DeFi strategies",
+    "capabilities": [
+      "trading",
+      "portfolio-management",
+      "risk-assessment",
+      "defi-trading",
+      "yield-farming"
+    ],
+    "category": "trading",
+    "market_cap": 26114113,
+    "token_symbol": "GIGA-THE",
+    "wallet_address": "0x676967612d746865746100000000000000000000",
+    "searchable_text": "giga-theta autonomous trading with defi strategies trading portfolio-management risk-assessment defi-trading yield-farming"
+  },
+  {
+    "id": "doggy-zeta",
+    "name": "DOGGY-ZETA",
+    "description": "Meme generation and amplification",
+    "capabilities": [
+      "community-engagement",
+      "meme-generation",
+      "social-growth"
+    ],
+    "category": "community",
+    "market_cap": 30887179,
+    "token_symbol": "DOGGY-ZE",
+    "wallet_address": "0x646f6767792d7a65746100000000000000000000",
+    "searchable_text": "doggy-zeta meme generation and amplification community-engagement meme-generation social-growth"
+  },
+  {
+    "id": "retard-kappa",
+    "name": "RETARD-KAPPA",
+    "description": "Sentiment tracking and trend prediction",
+    "capabilities": [
+      "market-analysis",
+      "sentiment-tracking",
+      "trend-prediction",
+      "onchain-analysis"
+    ],
+    "category": "analysis",
+    "market_cap": 16377815,
+    "token_symbol": "RETARD-K",
+    "wallet_address": "0x7265746172642d6b617070610000000000000000",
+    "searchable_text": "retard-kappa sentiment tracking and trend prediction market-analysis sentiment-tracking trend-prediction onchain-analysis"
+  },
+  {
+    "id": "morpheus-lambda",
+    "name": "MORPHEUS-LAMBDA",
+    "description": "Stable yield generation",
+    "capabilities": [
+      "yield-optimization",
+      "strategy-selection",
+      "risk-management",
+      "asset-management",
+      "rebalancing"
+    ],
+    "category": "defi",
+    "market_cap": 19631575,
+    "token_symbol": "MORPHEUS",
+    "wallet_address": "0x6d6f7270686575732d6c616d6264610000000000",
+    "searchable_text": "morpheus-lambda stable yield generation yield-optimization strategy-selection risk-management asset-management rebalancing"
+  },
+  {
+    "id": "luna-bot",
+    "name": "LUNA-BOT",
+    "description": "Full-stack agent operations",
+    "capabilities": [
+      "multi-modal",
+      "cross-platform",
+      "user-interaction"
+    ],
+    "category": "general",
+    "market_cap": 69559448,
+    "token_symbol": "LUNA-BOT",
+    "wallet_address": "0x6c756e612d626f74000000000000000000000000",
+    "searchable_text": "luna-bot full-stack agent operations multi-modal cross-platform user-interaction"
+  },
+  {
+    "id": "aixbt-ai",
+    "name": "AIXBT-AI",
+    "description": "AI analysis agent for market intelligence",
+    "capabilities": [
+      "market-analysis",
+      "sentiment-tracking",
+      "trend-prediction",
+      "onchain-analysis"
+    ],
+    "category": "analysis",
+    "market_cap": 439921386,
+    "token_symbol": "AIXBT-AI",
+    "wallet_address": "0x61697862742d6169000000000000000000000000",
+    "searchable_text": "aixbt-ai ai analysis agent for market intelligence market-analysis sentiment-tracking trend-prediction onchain-analysis"
+  },
+  {
+    "id": "lunia-agent",
+    "name": "LUNIA-AGENT",
+    "description": "Portfolio management and rebalancing",
+    "capabilities": [
+      "trading",
+      "portfolio-management",
+      "risk-assessment",
+      "defi-trading",
+      "yield-farming"
+    ],
+    "category": "trading",
+    "market_cap": 33578060,
+    "token_symbol": "LUNIA-AG",
+    "wallet_address": "0x6c756e69612d6167656e74000000000000000000",
+    "searchable_text": "lunia-agent portfolio management and rebalancing trading portfolio-management risk-assessment defi-trading yield-farming"
+  },
+  {
+    "id": "anon-trader",
+    "name": "ANON-TRADER",
+    "description": "Alpha discovery and signal generation",
+    "capabilities": [
+      "trading",
+      "portfolio-management",
+      "risk-assessment"
+    ],
+    "category": "trading",
+    "market_cap": 100582493,
+    "token_symbol": "ANON-TRA",
+    "wallet_address": "0x616e6f6e2d747261646572000000000000000000",
+    "searchable_text": "anon-trader alpha discovery and signal generation trading portfolio-management risk-assessment"
+  },
+  {
+    "id": "truth-scan",
+    "name": "TRUTH-SCAN",
+    "description": "Fraud detection and risk monitoring",
+    "capabilities": [
+      "market-analysis",
+      "sentiment-tracking",
+      "trend-prediction",
+      "onchain-analysis"
+    ],
+    "category": "analysis",
+    "market_cap": 47166060,
+    "token_symbol": "TRUTH-SC",
+    "wallet_address": "0x74727574682d7363616e00000000000000000000",
+    "searchable_text": "truth-scan fraud detection and risk monitoring market-analysis sentiment-tracking trend-prediction onchain-analysis"
+  },
+  {
+    "id": "roger-bot-v2",
+    "name": "ROGER-BOT-V2",
+    "description": "Long-term vision and macro trends",
+    "capabilities": [
+      "research",
+      "ecosystem-analysis",
+      "onchain-execution",
+      "project-discovery",
+      "due-diligence"
+    ],
+    "category": "research",
+    "market_cap": 1587282,
+    "token_symbol": "ROGER-BO",
+    "wallet_address": "0x726f6765722d626f742d76320000000000000000",
+    "searchable_text": "roger-bot-v2 long-term vision and macro trends research ecosystem-analysis onchain-execution project-discovery due-diligence"
+  },
+  {
+    "id": "giga-pro",
+    "name": "GIGA-PRO",
+    "description": "Autonomous trading with DeFi strategies",
+    "capabilities": [
+      "trading",
+      "portfolio-management",
+      "risk-assessment"
+    ],
+    "category": "trading",
+    "market_cap": 25379082,
+    "token_symbol": "GIGA-PRO",
+    "wallet_address": "0x676967612d70726f000000000000000000000000",
+    "searchable_text": "giga-pro autonomous trading with defi strategies trading portfolio-management risk-assessment"
+  },
+  {
+    "id": "doggy-max",
+    "name": "DOGGY-MAX",
+    "description": "Meme generation and amplification",
+    "capabilities": [
+      "community-engagement",
+      "meme-generation",
+      "social-growth",
+      "content-amplification"
+    ],
+    "category": "community",
+    "market_cap": 45001329,
+    "token_symbol": "DOGGY-MA",
+    "wallet_address": "0x646f6767792d6d61780000000000000000000000",
+    "searchable_text": "doggy-max meme generation and amplification community-engagement meme-generation social-growth content-amplification"
+  },
+  {
+    "id": "retard-ultra",
+    "name": "RETARD-ULTRA",
+    "description": "Sentiment tracking and trend prediction",
+    "capabilities": [
+      "market-analysis",
+      "sentiment-tracking",
+      "trend-prediction",
+      "onchain-analysis",
+      "data-verification"
+    ],
+    "category": "analysis",
+    "market_cap": 28908336,
+    "token_symbol": "RETARD-U",
+    "wallet_address": "0x7265746172642d756c7472610000000000000000",
+    "searchable_text": "retard-ultra sentiment tracking and trend prediction market-analysis sentiment-tracking trend-prediction onchain-analysis data-verification"
+  },
+  {
+    "id": "morpheus-x",
+    "name": "MORPHEUS-X",
+    "description": "Stable yield generation",
+    "capabilities": [
+      "yield-optimization",
+      "strategy-selection",
+      "risk-management"
+    ],
+    "category": "defi",
+    "market_cap": 22893134,
+    "token_symbol": "MORPHEUS",
+    "wallet_address": "0x6d6f7270686575732d7800000000000000000000",
+    "searchable_text": "morpheus-x stable yield generation yield-optimization strategy-selection risk-management"
+  },
+  {
+    "id": "luna-neo",
+    "name": "LUNA-NEO",
+    "description": "Full-stack agent operations",
+    "capabilities": [
+      "multi-modal",
+      "cross-platform",
+      "user-interaction",
+      "adaptive"
+    ],
+    "category": "general",
+    "market_cap": 88787140,
+    "token_symbol": "LUNA-NEO",
+    "wallet_address": "0x6c756e612d6e656f000000000000000000000000",
+    "searchable_text": "luna-neo full-stack agent operations multi-modal cross-platform user-interaction adaptive"
+  },
+  {
+    "id": "aixbt-zen",
+    "name": "AIXBT-ZEN",
+    "description": "AI analysis agent for market intelligence",
+    "capabilities": [
+      "market-analysis",
+      "sentiment-tracking",
+      "trend-prediction",
+      "onchain-analysis",
+      "data-verification"
+    ],
+    "category": "analysis",
+    "market_cap": 197800294,
+    "token_symbol": "AIXBT-ZE",
+    "wallet_address": "0x61697862742d7a656e0000000000000000000000",
+    "searchable_text": "aixbt-zen ai analysis agent for market intelligence market-analysis sentiment-tracking trend-prediction onchain-analysis data-verification"
+  },
+  {
+    "id": "lunia-vox",
+    "name": "LUNIA-VOX",
+    "description": "Portfolio management and rebalancing",
+    "capabilities": [
+      "trading",
+      "portfolio-management",
+      "risk-assessment"
+    ],
+    "category": "trading",
+    "market_cap": 51239254,
+    "token_symbol": "LUNIA-VO",
+    "wallet_address": "0x6c756e69612d766f780000000000000000000000",
+    "searchable_text": "lunia-vox portfolio management and rebalancing trading portfolio-management risk-assessment"
+  },
+  {
+    "id": "anon-nex",
+    "name": "ANON-NEX",
+    "description": "Alpha discovery and signal generation",
+    "capabilities": [
+      "trading",
+      "portfolio-management",
+      "risk-assessment",
+      "defi-trading"
+    ],
+    "category": "trading",
+    "market_cap": 71362261,
+    "token_symbol": "ANON-NEX",
+    "wallet_address": "0x616e6f6e2d6e6578000000000000000000000000",
+    "searchable_text": "anon-nex alpha discovery and signal generation trading portfolio-management risk-assessment defi-trading"
+  },
+  {
+    "id": "truth-qrx",
+    "name": "TRUTH-QRX",
+    "description": "Fraud detection and risk monitoring",
+    "capabilities": [
+      "market-analysis",
+      "sentiment-tracking",
+      "trend-prediction",
+      "onchain-analysis",
+      "data-verification"
+    ],
+    "category": "analysis",
+    "market_cap": 35455911,
+    "token_symbol": "TRUTH-QR",
+    "wallet_address": "0x74727574682d7172780000000000000000000000",
+    "searchable_text": "truth-qrx fraud detection and risk monitoring market-analysis sentiment-tracking trend-prediction onchain-analysis data-verification"
+  },
+  {
+    "id": "roger-aly",
+    "name": "ROGER-ALY",
+    "description": "Long-term vision and macro trends",
+    "capabilities": [
+      "research",
+      "ecosystem-analysis",
+      "onchain-execution"
+    ],
+    "category": "research",
+    "market_cap": 1930319,
+    "token_symbol": "ROGER-AL",
+    "wallet_address": "0x726f6765722d616c790000000000000000000000",
+    "searchable_text": "roger-aly long-term vision and macro trends research ecosystem-analysis onchain-execution"
+  },
+  {
+    "id": "giga-dex",
+    "name": "GIGA-DEX",
+    "description": "Autonomous trading with DeFi strategies",
+    "capabilities": [
+      "trading",
+      "portfolio-management",
+      "risk-assessment",
+      "defi-trading"
+    ],
+    "category": "trading",
+    "market_cap": 55003135,
+    "token_symbol": "GIGA-DEX",
+    "wallet_address": "0x676967612d646578000000000000000000000000",
+    "searchable_text": "giga-dex autonomous trading with defi strategies trading portfolio-management risk-assessment defi-trading"
+  },
+  {
+    "id": "doggy-vex",
+    "name": "DOGGY-VEX",
+    "description": "Meme generation and amplification",
+    "capabilities": [
+      "community-engagement",
+      "meme-generation",
+      "social-growth",
+      "content-amplification"
+    ],
+    "category": "community",
+    "market_cap": 61687218,
+    "token_symbol": "DOGGY-VE",
+    "wallet_address": "0x646f6767792d7665780000000000000000000000",
+    "searchable_text": "doggy-vex meme generation and amplification community-engagement meme-generation social-growth content-amplification"
+  },
+  {
+    "id": "retard-trex",
+    "name": "RETARD-TREX",
+    "description": "Sentiment tracking and trend prediction",
+    "capabilities": [
+      "market-analysis",
+      "sentiment-tracking",
+      "trend-prediction"
+    ],
+    "category": "analysis",
+    "market_cap": 32082848,
+    "token_symbol": "RETARD-T",
+    "wallet_address": "0x7265746172642d74726578000000000000000000",
+    "searchable_text": "retard-trex sentiment tracking and trend prediction market-analysis sentiment-tracking trend-prediction"
+  },
+  {
+    "id": "morpheus-flex",
+    "name": "MORPHEUS-FLEX",
+    "description": "Stable yield generation",
+    "capabilities": [
+      "yield-optimization",
+      "strategy-selection",
+      "risk-management",
+      "asset-management"
+    ],
+    "category": "defi",
+    "market_cap": 8643520,
+    "token_symbol": "MORPHEUS",
+    "wallet_address": "0x6d6f7270686575732d666c657800000000000000",
+    "searchable_text": "morpheus-flex stable yield generation yield-optimization strategy-selection risk-management asset-management"
+  },
+  {
+    "id": "luna-prime",
+    "name": "LUNA-PRIME",
+    "description": "Full-stack agent operations",
+    "capabilities": [
+      "multi-modal",
+      "cross-platform",
+      "user-interaction",
+      "adaptive",
+      "full-stack"
+    ],
+    "category": "general",
+    "market_cap": 41166654,
+    "token_symbol": "LUNA-PRI",
+    "wallet_address": "0x6c756e612d7072696d6500000000000000000000",
+    "searchable_text": "luna-prime full-stack agent operations multi-modal cross-platform user-interaction adaptive full-stack"
+  },
+  {
+    "id": "aixbt-core",
+    "name": "AIXBT-CORE",
+    "description": "AI analysis agent for market intelligence",
+    "capabilities": [
+      "market-analysis",
+      "sentiment-tracking",
+      "trend-prediction"
+    ],
+    "category": "analysis",
+    "market_cap": 493486358,
+    "token_symbol": "AIXBT-CO",
+    "wallet_address": "0x61697862742d636f726500000000000000000000",
+    "searchable_text": "aixbt-core ai analysis agent for market intelligence market-analysis sentiment-tracking trend-prediction"
+  },
+  {
+    "id": "lunia-edge",
+    "name": "LUNIA-EDGE",
+    "description": "Portfolio management and rebalancing",
+    "capabilities": [
+      "trading",
+      "portfolio-management",
+      "risk-assessment",
+      "defi-trading"
+    ],
+    "category": "trading",
+    "market_cap": 97736762,
+    "token_symbol": "LUNIA-ED",
+    "wallet_address": "0x6c756e69612d6564676500000000000000000000",
+    "searchable_text": "lunia-edge portfolio management and rebalancing trading portfolio-management risk-assessment defi-trading"
+  },
+  {
+    "id": "anon-node",
+    "name": "ANON-NODE",
+    "description": "Alpha discovery and signal generation",
+    "capabilities": [
+      "trading",
+      "portfolio-management",
+      "risk-assessment",
+      "defi-trading",
+      "yield-farming"
+    ],
+    "category": "trading",
+    "market_cap": 156226751,
+    "token_symbol": "ANON-NOD",
+    "wallet_address": "0x616e6f6e2d6e6f64650000000000000000000000",
+    "searchable_text": "anon-node alpha discovery and signal generation trading portfolio-management risk-assessment defi-trading yield-farming"
+  },
+  {
+    "id": "truth-link",
+    "name": "TRUTH-LINK",
+    "description": "Fraud detection and risk monitoring",
+    "capabilities": [
+      "market-analysis",
+      "sentiment-tracking",
+      "trend-prediction"
+    ],
+    "category": "analysis",
+    "market_cap": 37621080,
+    "token_symbol": "TRUTH-LI",
+    "wallet_address": "0x74727574682d6c696e6b00000000000000000000",
+    "searchable_text": "truth-link fraud detection and risk monitoring market-analysis sentiment-tracking trend-prediction"
+  },
+  {
+    "id": "roger-sync",
+    "name": "ROGER-SYNC",
+    "description": "Long-term vision and macro trends",
+    "capabilities": [
+      "research",
+      "ecosystem-analysis",
+      "onchain-execution",
+      "project-discovery"
+    ],
+    "category": "research",
+    "market_cap": 1299336,
+    "token_symbol": "ROGER-SY",
+    "wallet_address": "0x726f6765722d73796e6300000000000000000000",
+    "searchable_text": "roger-sync long-term vision and macro trends research ecosystem-analysis onchain-execution project-discovery"
+  },
+  {
+    "id": "giga-mesh",
+    "name": "GIGA-MESH",
+    "description": "Autonomous trading with DeFi strategies",
+    "capabilities": [
+      "trading",
+      "portfolio-management",
+      "risk-assessment",
+      "defi-trading",
+      "yield-farming"
+    ],
+    "category": "trading",
+    "market_cap": 49517076,
+    "token_symbol": "GIGA-MES",
+    "wallet_address": "0x676967612d6d6573680000000000000000000000",
+    "searchable_text": "giga-mesh autonomous trading with defi strategies trading portfolio-management risk-assessment defi-trading yield-farming"
+  },
+  {
+    "id": "doggy-grid",
+    "name": "DOGGY-GRID",
+    "description": "Meme generation and amplification",
+    "capabilities": [
+      "community-engagement",
+      "meme-generation",
+      "social-growth"
+    ],
+    "category": "community",
+    "market_cap": 67752063,
+    "token_symbol": "DOGGY-GR",
+    "wallet_address": "0x646f6767792d6772696400000000000000000000",
+    "searchable_text": "doggy-grid meme generation and amplification community-engagement meme-generation social-growth"
+  },
+  {
+    "id": "retard-net",
+    "name": "RETARD-NET",
+    "description": "Sentiment tracking and trend prediction",
+    "capabilities": [
+      "market-analysis",
+      "sentiment-tracking",
+      "trend-prediction",
+      "onchain-analysis"
+    ],
+    "category": "analysis",
+    "market_cap": 11028560,
+    "token_symbol": "RETARD-N",
+    "wallet_address": "0x7265746172642d6e657400000000000000000000",
+    "searchable_text": "retard-net sentiment tracking and trend prediction market-analysis sentiment-tracking trend-prediction onchain-analysis"
+  },
+  {
+    "id": "morpheus-hub",
+    "name": "MORPHEUS-HUB",
+    "description": "Stable yield generation",
+    "capabilities": [
+      "yield-optimization",
+      "strategy-selection",
+      "risk-management",
+      "asset-management",
+      "rebalancing"
+    ],
+    "category": "defi",
+    "market_cap": 15316017,
+    "token_symbol": "MORPHEUS",
+    "wallet_address": "0x6d6f7270686575732d6875620000000000000000",
+    "searchable_text": "morpheus-hub stable yield generation yield-optimization strategy-selection risk-management asset-management rebalancing"
+  },
+  {
+    "id": "luna-flow",
+    "name": "LUNA-FLOW",
+    "description": "Full-stack agent operations",
+    "capabilities": [
+      "multi-modal",
+      "cross-platform",
+      "user-interaction"
+    ],
+    "category": "general",
+    "market_cap": 50062842,
+    "token_symbol": "LUNA-FLO",
+    "wallet_address": "0x6c756e612d666c6f770000000000000000000000",
+    "searchable_text": "luna-flow full-stack agent operations multi-modal cross-platform user-interaction"
   }
 ]
