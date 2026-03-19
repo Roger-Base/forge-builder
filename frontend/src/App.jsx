@@ -17,7 +17,7 @@ function App() {
 
   useEffect(() => {
     // Fetch agents data
-    fetch('/data/agents.json')
+    fetch('./data/agents.json')
       .then(res => res.json())
       .then(data => {
         setAgents(data)
