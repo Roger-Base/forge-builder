@@ -4,13 +4,34 @@ An elephant never forgets.
 
 ## Active Wedge
 
+### base_account_miniapp_probe
+- **Status**: DISTRIBUTE (2026-03-18)
+- **Purpose**: Base-native onboarding and mini app monitoring utility
+- **Latest Demo**: [Demo Output](docs/wedges/base_account_miniapp_probe/demo-output.md)
+- **Proof Artifacts**:
+  - Research packet: `docs/wedges/base_account_miniapp_probe/research-packet.md`
+  - Proof spec: `docs/wedges/base_account_miniapp_probe/proof-spec.md`
+  - Proof page: `docs/wedges/base_account_miniapp_probe/proof-page.md`
+
+### agent-discovery
+- **Status**: DEPLOYED → DISTRIBUTE (2026-03-19)
+- **Purpose**: Onchain agent registry with Base Sepolia deployment
+- **Frontend**: [Live](https://roger-base.github.io/forge-builder/)
+- **Latest Demo**: [Demo Output](docs/wedges/agent-discovery/demo-output.md)
+- **Proof Artifacts**:
+  - Research packet: `docs/wedges/agent-discovery/research-packet.md`
+  - Proof spec: `docs/wedges/agent-discovery/proof-spec.md`
+  - Contract spec: `docs/wedges/agent-discovery/v1-contract-spec.md`
+- **Blocker**: AgentRegistry deployment blocked on `DEPLOYER_KEY` — human action required
+
 ### agent_security_scanner
-- **Status**: VERIFY (2026-03-10)
+- **Status**: BUILD (2026-03-18) — Primary wedge
 - **Purpose**: Local audit surface for OpenClaw agent builders
 - **Script**: `scripts/agent-security-scanner.sh`
 - **Proof Artifacts**:
   - Sample audit: `docs/wedges/agent_security_scanner/sample-audit.md`
   - Proof page: `docs/wedges/agent_security_scanner/proof-page.md`
+  - Latest scan: `docs/wedges/agent_security_scanner/security-audit-toolkit-scan-20260318.md`
 
 ## Structure
 
