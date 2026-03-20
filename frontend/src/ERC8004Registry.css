@@ -1,0 +1,139 @@
+.erc8004-registry {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.erc8004-registry h2 {
+  color: #1a1a2e;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.wallet-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+}
+
+.wallet-section button {
+  background: #0052ff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.wallet-section button:hover {
+  background: #0047e6;
+}
+
+.wallet-section button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.account {
+  color: #666;
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
+.stats {
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.stats p {
+  margin: 0;
+  color: #1a1a2e;
+}
+
+.actions {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.actions h3 {
+  color: #1a1a2e;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.actions input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.actions input:focus {
+  outline: none;
+  border-color: #0052ff;
+}
+
+.actions button {
+  background: #0052ff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.2s;
+}
+
+.actions button:hover {
+  background: #0047e6;
+}
+
+.actions button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.status {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #e8f4fd;
+  border-left: 4px solid #0052ff;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: #1a1a2e;
+  word-break: break-all;
+}
+
+@media (max-width: 768px) {
+  .erc8004-registry {
+    padding: 1rem;
+  }
+  
+  .wallet-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .actions button {
+    width: 100%;
+  }
+}
