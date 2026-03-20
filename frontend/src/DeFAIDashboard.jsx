@@ -11,14 +11,37 @@ function DeFAIDashboard() {
   const [sortBy, setSortBy] = useState('apy'); // apy, tvl, risk
 
   useEffect(() => {
-    // Mock data for Phase 1 (replace with real API in Phase 1.5)
+    // Mock data for Phase 1 (matches CLI script data, replace with real API in Phase 1.5)
     const mockData = [
+      // Aave
       { protocol: 'aave', chain: 'base', name: 'USDC', apy: 4.23, tvl: 45670000, risk: 15 },
       { protocol: 'aave', chain: 'base', name: 'WETH', apy: 2.89, tvl: 23450000, risk: 15 },
-      { protocol: 'compound', chain: 'ethereum', name: 'USDC', apy: 3.45, tvl: 89230000, risk: 15 },
+      { protocol: 'aave', chain: 'ethereum', name: 'USDC', apy: 3.45, tvl: 89230000, risk: 15 },
+      { protocol: 'aave', chain: 'ethereum', name: 'WBTC', apy: 1.23, tvl: 45600000, risk: 15 },
+      { protocol: 'aave', chain: 'polygon', name: 'USDC', apy: 3.89, tvl: 23400000, risk: 15 },
+      { protocol: 'aave', chain: 'arbitrum', name: 'USDC', apy: 4.12, tvl: 34500000, risk: 15 },
+      { protocol: 'aave', chain: 'optimism', name: 'USDC', apy: 3.98, tvl: 28900000, risk: 15 },
+      // Compound
+      { protocol: 'compound', chain: 'ethereum', name: 'USDC', apy: 3.45, tvl: 89000000, risk: 15 },
+      { protocol: 'compound', chain: 'ethereum', name: 'ETH', apy: 2.34, tvl: 67000000, risk: 15 },
+      { protocol: 'compound', chain: 'polygon', name: 'USDC', apy: 3.67, tvl: 34000000, risk: 15 },
+      { protocol: 'compound', chain: 'arbitrum', name: 'USDC', apy: 3.89, tvl: 45000000, risk: 15 },
+      // Curve
       { protocol: 'curve', chain: 'ethereum', name: '3pool', apy: 5.67, tvl: 156780000, risk: 20 },
+      { protocol: 'curve', chain: 'ethereum', name: 'stETH', apy: 4.32, tvl: 89000000, risk: 20 },
+      { protocol: 'curve', chain: 'polygon', name: 'am3CRV', apy: 4.89, tvl: 45000000, risk: 20 },
+      { protocol: 'curve', chain: 'arbitrum', name: '2pool', apy: 5.12, tvl: 67000000, risk: 20 },
+      // Yearn
       { protocol: 'yearn', chain: 'ethereum', name: 'yvUSDC', apy: 6.12, tvl: 67890000, risk: 25 },
-      { protocol: 'uniswap', chain: 'arbitrum', name: 'ETH/USDC 0.05%', apy: 12.34, tvl: 34560000, risk: 35 },
+      { protocol: 'yearn', chain: 'ethereum', name: 'yvETH', apy: 3.45, tvl: 45600000, risk: 25 },
+      { protocol: 'yearn', chain: 'arbitrum', name: 'yvUSDC', apy: 5.23, tvl: 23000000, risk: 25 },
+      { protocol: 'yearn', chain: 'optimism', name: 'yvUSDC', apy: 4.98, tvl: 19000000, risk: 25 },
+      // Uniswap v3
+      { protocol: 'uniswap', chain: 'ethereum', name: 'WETH/USDC 0.05%', apy: 9.56, tvl: 45000000, risk: 35 },
+      { protocol: 'uniswap', chain: 'ethereum', name: 'WBTC/WETH 0.3%', apy: 5.67, tvl: 32000000, risk: 35 },
+      { protocol: 'uniswap', chain: 'arbitrum', name: 'WETH/USDC 0.05%', apy: 12.34, tvl: 12000000, risk: 35 },
+      { protocol: 'uniswap', chain: 'optimism', name: 'WETH/USDC 0.05%', apy: 8.97, tvl: 8900000, risk: 35 },
+      { protocol: 'uniswap', chain: 'polygon', name: 'WMATIC/USDC 0.05%', apy: 6.78, tvl: 5600000, risk: 35 },
     ];
     
     setYieldData(mockData);
