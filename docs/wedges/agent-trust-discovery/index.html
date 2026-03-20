@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ERC-8004 Agent Trust — Base Sepolia</title>
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --surface: #111118;
+      --border: #1e1e2e;
+      --accent: #4f46e5;
+      --accent2: #818cf8;
+      --text: #e2e8f0;
+      --muted: #64748b;
+      --green: #22c55e;
+      --amber: #f59e0b;
+      --red: #ef4444;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; padding: 24px; }
+    .container { max-width: 860px; margin: 0 auto; }
+
+    .header { margin-bottom: 32px; }
+    .header h1 { font-size: 1.6rem; font-weight: 700; color: var(--accent2); margin-bottom: 4px; }
+    .header p { color: var(--muted); font-size: 0.9rem; }
+
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+    .card-title { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 12px; }
+
+    .status-row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; }
+    .badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 20px; font-size: 0.78rem; font-weight: 600; }
+    .badge-green { background: rgba(34,197,94,0.15); color: var(--green); border: 1px solid rgba(34,197,94,0.3); }
+    .badge-amber { background: rgba(245,158,11,0.15); color: var(--amber); border: 1px solid rgba(245,158,11,0.3); }
+    .badge-red { background: rgba(239,68,68,0.15); color: var(--red); border: 1px solid rgba(239,68,68,0.3); }
+    .badge-gray { background: rgba(100,116,139,0.15); color: var(--muted); border: 1px solid rgba(100,116,139,0.3); }
+
+    .mono { font-family: 'Cascadia Code', 'Fira Code', monospace; font-size: 0.82rem; color: var(--accent2); }
+    .contract-addr { font-size: 0.78rem; word-break: break-all; color: var(--muted); }
+
+    button { padding: 10px 20px; border-radius: 8px; border: none; font-size: 0.88rem; font-weight: 600; cursor: pointer; transition: all 0.15s; }
+    .btn-primary { background: var(--accent); color: white; }
+    .btn-primary:hover { background: #6366f1; }
+    .btn-primary:disabled { background: #3730a3; color: var(--muted); cursor: not-allowed; }
+    .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
+    .btn-ghost:hover { background: var(--border); }
+
+    .agents-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; margin-top: 12px; }
+    .agent-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 14px; }
+    .agent-card .token-id { font-size: 0.72rem; color: var(--muted); margin-bottom: 4px; }
+    .agent-card .agent-name { font-weight: 600; color: var(--accent2); margin-bottom: 6px; font-size: 0.95rem; }
+    .agent-card .agent-meta { font-size: 0.78rem; color: var(--muted); }
+    .agent-card .trust-score { display: inline-flex; align-items: center; gap: 4px; margin-top: 6px; font-size: 0.8rem; }
+
+    .log { background: #0d0d14; border: 1px solid var(--border); border-radius: 8px; padding: 14px; font-family: 'Cascadia Code', monospace; font-size: 0.78rem; max-height: 260px; overflow-y: auto; color: #a5b4fc; line-height: 1.6; }
+    .log-entry { padding: 2px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .log-ts { color: var(--muted); margin-right: 8px; }
+    .log-ok { color: var(--green); }
+    .log-warn { color: var(--amber); }
+    .log-err { color: var(--red); }
+
+    .input-row { display: flex; gap: 8px; margin-top: 12px; align-items: center; flex-wrap: wrap; }
+    input[type="number"], input[type="text"] { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); padding: 8px 12px; font-size: 0.88rem; width: 160px; }
+    input:focus { outline: none; border-color: var(--accent); }
+
+    .empty-state { text-align: center; padding: 40px 20px; color: var(--muted); }
+    .empty-state p { font-size: 0.9rem; }
+    .empty-state .hint { font-size: 0.8rem; margin-top: 8px; opacity: 0.7; }
+
+    .network-badge { font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; background: rgba(79,70,229,0.2); color: var(--accent2); }
+    .footer { margin-top: 32px; text-align: center; color: var(--muted); font-size: 0.75rem; }
+    .footer a { color: var(--accent2); text-decoration: none; }
+    .spinner { display: inline-block; width: 14px; height: 14px; border: 2px solid var(--border); border-top-color: var(--accent2); border-radius: 50%; animation: spin 0.7s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>🔗 ERC-8004 Agent Trust — Base Sepolia</h1>
+    <p>Read-only identity and reputation registry on live ERC-8004 contracts</p>
+  </div>
+
+  <!-- Network / Wallet -->
+  <div class="card">
+    <div class="card-title">Connection</div>
+    <div class="status-row">
+      <span id="wallet-badge" class="badge badge-gray">
+        <span id="wallet-dot"></span> Wallet
+      </span>
+      <span id="network-badge" class="badge badge-gray">
+        <span id="network-dot"></span> <span id="network-label">Connecting…</span>
+      </span>
+      <span class="network-badge">Base Sepolia · chain 84532</span>
+    </div>
+    <div id="wallet-info" style="margin-top:10px; font-size:0.82rem; color:var(--muted);"></div>
+    <div style="margin-top:12px;">
+      <button id="connect-btn" class="btn-primary" onclick="connectWallet()">Connect MetaMask</button>
+      <button id="disconnect-btn" class="btn-ghost" onclick="disconnectWallet()" style="display:none; margin-left:8px;">Disconnect</button>
+    </div>
+  </div>
+
+  <!-- Contract Info -->
+  <div class="card">
+    <div class="card-title">Live Contracts</div>
+    <table style="width:100%; font-size:0.82rem; border-collapse:collapse;">
+      <tr>
+        <td style="color:var(--muted); padding:4px 0; width:160px;">IdentityRegistry</td>
+        <td class="mono">0x8004A818BFB912233c491871b3d84c89A494BD9e</td>
+      </tr>
+      <tr>
+        <td style="color:var(--muted); padding:4px 0;">ReputationRegistry</td>
+        <td class="mono">0x8004B663056A597DFFE9EccC1965A193B7388713</td>
+      </tr>
+      <tr>
+        <td style="color:var(--muted); padding:4px 0;">RPC</td>
+        <td class="mono">https://base-sepolia.publicnode.com</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Agent Lookup -->
+  <div class="card">
+    <div class="card-title">Registered Agents</div>
+    <div class="status-row">
+      <span id="supply-badge" class="badge badge-gray">
+        <span id="supply-dot"></span> <span id="supply-label">Loading…</span>
+      </span>
+    </div>
+    <div id="agents-container">
+      <div class="empty-state">
+        <p>No agents registered yet.</p>
+        <div class="hint">This is expected on testnet — be the first to register your agent.</div>
+      </div>
+    </div>
+
+    <div class="input-row">
+      <input type="number" id="lookup-token" placeholder="Token ID" min="0" />
+      <button class="btn-ghost" onclick="lookupToken()">Lookup Token</button>
+      <button class="btn-ghost" onclick="refreshAll()">↺ Refresh</button>
+    </div>
+    <div id="lookup-result" style="margin-top:10px; font-size:0.82rem;"></div>
+  </div>
+
+  <!-- Roger Status -->
+  <div class="card">
+    <div class="card-title">Roger Identity Status</div>
+    <div id="roger-status">
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+        <span class="badge badge-amber"><span class="spinner"></span> Checking on-chain…</span>
+      </div>
+      <div class="contract-addr" style="margin-bottom:4px;">Wallet: 0x8cD4d6deA2f8c9717a053a7f91B9Bba536819d2b</div>
+      <div class="contract-addr">Basename: roger-molty.base.eth · basemail: roger-molty@basemail.ai</div>
+    </div>
+    <div id="registration-action" style="margin-top:12px;"></div>
+  </div>
+
+  <!-- Activity Log -->
+  <div class="card">
+    <div class="card-title">Activity Log</div>
+    <div id="log" class="log">
+      <div class="log-entry"><span class="log-ts">[--:--:--]</span>Initializing ERC-8004 trust interface…</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <a href="https://github.com/erc-8004/erc-8004-contracts" target="_blank">ERC-8004 Contracts</a> ·
+    <a href="https://github.com/roger-base/forge-builder" target="_blank">forge-builder</a> ·
+    Base Sepolia Testnet
+  </div>
+</div>
+
+<script src="https://cdn.ethers.io/lib/ethers-5.7.2.umd.min.js"></script>
+<script>
+// ─── Config ────────────────────────────────────────────────────────────────
+const CHAIN_ID = 84532; // Base Sepolia
+const RPC = 'https://base-sepolia.publicnode.com';
+const IDENTITY_REG = '0x8004A818BFB912233c491871b3d84c89A494BD9e';
+const REPUTATION_REG = '0x8004B663056A597DFFE9EccC1965A193B7388713';
+const ROGER_WALLET = '0x8cD4d6deA2f8c9717a053a7f91B9Bba536819d2b';
+
+// ERC-165 interface check + ERC-721 IdentityRegistry minimal ABI
+const IDENTITY_ABI = [
+  'function name() view returns (string)',
+  'function symbol() view returns (string)',
+  'function totalSupply() view returns (uint256)',
+  'function ownerOf(uint256 tokenId) view returns (address)',
+  'function tokenURI(uint256 tokenId) view returns (string)',
+  'function balanceOf(address owner) view returns (uint256)',
+];
+const REPUTATION_ABI = [
+  'function name() view returns (string)',
+  'function getReputation(address agent) view returns (uint256 score, uint256 totalWeight, uint256 reviewCount)',
+];
+
+let provider = null;
+let signer = null;
+let address = null;
+
+// ─── Logging ────────────────────────────────────────────────────────────────
+function log(msg, type = 'info') {
+  const el = document.getElementById('log');
+  const ts = new Date().toISOString().split('T')[1].slice(0, 8);
+  const cls = type === 'ok' ? 'log-ok' : type === 'warn' ? 'log-warn' : type === 'err' ? 'log-err' : '';
+  el.innerHTML = `<div class="log-entry"><span class="log-ts">[${ts}]</span><span class="${cls}">${msg}</span></div>` + el.innerHTML;
+}
+
+// ─── Wallet ─────────────────────────────────────────────────────────────────
+async function connectWallet() {
+  if (!window.ethereum) {
+    log('MetaMask not detected. Please install MetaMask.', 'err');
+    return;
+  }
+  try {
+    const raw = await window.ethereum.request({ method: 'eth_requestAccounts' });
+    address = raw[0];
+    provider = new ethers.providers.Web3Provider(window.ethereum);
+    signer = provider.getSigner();
+
+    // Check chain
+    const network = await provider.getNetwork();
+    if (Number(network.chainId) !== CHAIN_ID) {
+      log(`Wrong network: chainId=${network.chainId}. Switch to Base Sepolia (84532).`, 'err');
+      setWalletUI(false);
+      return;
+    }
+
+    setWalletUI(true);
+    log(`Wallet connected: ${address.slice(0,10)}…`, 'ok');
+
+    // Listen for account/chain changes
+    window.ethereum.on('accountsChanged', (accounts) => {
+      if (accounts.length === 0) disconnectWallet();
+      else { address = accounts[0]; setWalletUI(true); log(`Account changed: ${address.slice(0,10)}…`, 'warn'); refreshAll(); }
+    });
+    window.ethereum.on('chainChanged', () => window.location.reload());
+
+    await refreshAll();
+  } catch (e) {
+    log(`Connection failed: ${e.message || e}`, 'err');
+  }
+}
+
+function disconnectWallet() {
+  address = null; provider = null; signer = null;
+  setWalletUI(false);
+  log('Wallet disconnected.', 'warn');
+}
+
+function setWalletUI(connected) {
+  const btn = document.getElementById('connect-btn');
+  const disc = document.getElementById('disconnect-btn');
+  const info = document.getElementById('wallet-info');
+  const badge = document.getElementById('wallet-badge');
+  const dot = document.getElementById('wallet-dot');
+
+  if (connected) {
+    btn.style.display = 'none';
+    disc.style.display = 'inline-block';
+    info.innerHTML = `Connected: <span class="mono">${address}</span>`;
+    badge.className = 'badge badge-green';
+    dot.textContent = '●';
+  } else {
+    btn.style.display = 'inline-block';
+    disc.style.display = 'none';
+    info.innerHTML = '';
+    badge.className = 'badge badge-gray';
+    dot.textContent = '○';
+  }
+}
+
+// ─── Network init ────────────────────────────────────────────────────────────
+async function initNetwork() {
+  try {
+    // Use ethers.js JsonRpcProvider for read-only
+    const rp = new ethers.providers.JsonRpcProvider(RPC);
+    const network = await rp.getNetwork();
+    const netChainId = Number(network.chainId);
+
+    const dot = document.getElementById('network-dot');
+    const label = document.getElementById('network-label');
+    const badge = document.getElementById('network-badge');
+
+    if (netChainId === CHAIN_ID) {
+      dot.textContent = '●';
+      label.textContent = 'Base Sepolia ✓';
+      badge.className = 'badge badge-green';
+      log('Connected to Base Sepolia via RPC.', 'ok');
+    } else {
+      dot.textContent = '●';
+      label.textContent = `Chain ${netChainId}`;
+      badge.className = 'badge badge-amber';
+      log(`RPC on chain ${netChainId}. Expected ${CHAIN_ID}.`, 'warn');
+    }
+  } catch (e) {
+    log(`RPC connection failed: ${e.message || e}`, 'err');
+  }
+}
+
+// ─── Core contract calls ─────────────────────────────────────────────────────
+function getReadOnlyProvider() {
+  if (provider) return provider;
+  return new ethers.providers.JsonRpcProvider(RPC);
+}
+
+async function callIdentity(fn, args = []) {
+  const p = getReadOnlyProvider();
+  const contract = new ethers.Contract(IDENTITY_REG, IDENTITY_ABI, p);
+  try { return await contract[fn](...args); } catch { return null; }
+}
+
+async function callReputation(fn, args = []) {
+  const p = getReadOnlyProvider();
+  const contract = new ethers.Contract(REPUTATION_REG, REPUTATION_ABI, p);
+  try { return await contract[fn](...args); } catch { return null; }
+}
+
+// ─── Load agents ─────────────────────────────────────────────────────────────
+async function loadAgents() {
+  const total = await callIdentity('totalSupply');
+  const count = total ? Number(total) : 0;
+
+  const badge = document.getElementById('supply-badge');
+  const dot = document.getElementById('supply-dot');
+  const label = document.getElementById('supply-label');
+  const container = document.getElementById('agents-container');
+
+  if (count === 0) {
+    dot.textContent = '●';
+    label.textContent = '0 agents registered';
+    badge.className = 'badge badge-amber';
+    container.innerHTML = `
+      <div class="empty-state">
+        <p>No agents registered yet.</p>
+        <div class="hint">Be the first — connect your wallet and register your agent identity.</div>
+      </div>`;
+    log('totalSupply = 0. No agents registered on Base Sepolia testnet.', 'warn');
+    return;
+  }
+
+  dot.textContent = '●';
+  label.textContent = `${count} agent${count !== 1 ? 's' : ''} registered`;
+  badge.className = 'badge badge-green';
+  log(`totalSupply = ${count}. Loading agent records…`, 'ok');
+
+  const cards = [];
+  const display = Math.min(count, 20);
+  for (let i = 0; i < display; i++) {
+    try {
+      const owner = await callIdentity('ownerOf', [i]);
+      const uri = await callIdentity('tokenURI', [i]);
+      const rep = await callReputation('getReputation', [owner || ethers.constants.AddressZero]);
+      const score = rep ? Number(rep.score) / 100 : null;
+      const reviews = rep ? Number(rep.reviewCount) : 0;
+      const name = uri ? decodeURIComponent(uri.split('name=')[1]?.split('&')[0] || '') : `#${i}`;
+
+      cards.push(`
+        <div class="agent-card">
+          <div class="token-id">Token #${i}</div>
+          <div class="agent-name">${name || `#${i}`}</div>
+          <div class="agent-meta">Owner: ${owner ? owner.slice(0,8)+'…' : 'n/a'}</div>
+          ${score !== null ? `<div class="trust-score"><span style="color:${score >= 70 ? 'var(--green)' : score >= 40 ? 'var(--amber)' : 'var(--red)'}">★</span> ${score.toFixed(1)} · ${reviews} review${reviews !== 1 ? 's' : ''}</div>` : ''}
+        </div>`);
+    } catch {
+      cards.push(`<div class="agent-card"><div class="token-id">Token #${i}</div><div class="agent-meta" style="color:var(--red);">Failed to load</div></div>`);
+    }
+  }
+
+  container.innerHTML = `<div class="agents-grid">${cards.join('')}</div>`;
+  log(`Loaded ${display} agent card${display !== 1 ? 's' : ''}.`, 'ok');
+}
+
+// ─── Roger status ────────────────────────────────────────────────────────────
+async function loadRogerStatus() {
+  const el = document.getElementById('roger-status');
+  const action = document.getElementById('registration-action');
+  const p = getReadOnlyProvider();
+  const idContract = new ethers.Contract(IDENTITY_REG, IDENTITY_ABI, p);
+
+  try {
+    const balance = await idContract.balanceOf(ROGER_WALLET);
+    const count = Number(balance);
+
+    if (count > 0) {
+      const tokenId = await idContract.tokenOfOwnerByIndex(ROGER_WALLET, 0);
+      const uri = await idContract.tokenURI(tokenId);
+      log(`Roger identity FOUND — Token #${tokenId}. URI: ${uri}`, 'ok');
+      el.innerHTML = `
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+          <span class="badge badge-green">● Registered</span>
+          <span class="badge badge-gray">Token #${tokenId}</span>
+        </div>
+        <div class="contract-addr" style="margin-bottom:4px;">Wallet: ${ROGER_WALLET}</div>
+        <div class="mono" style="font-size:0.75rem; margin-top:4px;">tokenURI: ${uri || 'n/a'}</div>
+        <div style="margin-top:8px; font-size:0.82rem; color:var(--muted);">Basename: roger-molty.base.eth · basemail: roger-molty@basemail.ai</div>`;
+      action.innerHTML = '';
+    } else {
+      log('Roger identity not yet registered on-chain.', 'warn');
+      el.innerHTML = `
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+          <span class="badge badge-amber">● Not Registered</span>
+        </div>
+        <div class="contract-addr" style="margin-bottom:6px;">Wallet: ${ROGER_WALLET}</div>
+        <div style="font-size:0.82rem; color:var(--muted); margin-bottom:8px;">Basename: roger-molty.base.eth · basemail: roger-molty@basemail.ai</div>
+        <div style="font-size:0.82rem; color:var(--amber);">⚠️ Roger wallet has no ERC-8004 identity token. Registration requires Base Sepolia ETH.</div>`;
+      action.innerHTML = address
+        ? `<button class="btn-primary" onclick="registerRoger()">Register Roger Identity (requires ETH)</button>`
+        : `<button class="btn-ghost" onclick="log('Connect wallet first.', 'warn')">Connect wallet to register</button>`;
+    }
+  } catch (e) {
+    log(`Error checking Roger status: ${e.message || e}`, 'err');
+    el.innerHTML = `<span class="badge badge-red">● Status Unknown</span><div style="margin-top:8px; font-size:0.82rem; color:var(--muted);">Could not query on-chain status.</div>`;
+  }
+}
+
+// ─── Token lookup ────────────────────────────────────────────────────────────
+async function lookupToken() {
+  const id = parseInt(document.getElementById('lookup-token').value);
+  if (isNaN(id) || id < 0) { log('Invalid token ID.', 'err'); return; }
+  const result = document.getElementById('lookup-result');
+  result.innerHTML = `<span style="color:var(--muted);"><span class="spinner"></span> Looking up Token #${id}…</span>`;
+  log(`Looking up Token #${id}…`);
+
+  try {
+    const owner = await callIdentity('ownerOf', [id]);
+    const uri = await callIdentity('tokenURI', [id]);
+    const rep = await callReputation('getReputation', [owner || ethers.constants.AddressZero]);
+    const score = rep ? Number(rep.score) / 100 : null;
+    const reviews = rep ? Number(rep.reviewCount) : 0;
+
+    result.innerHTML = `
+      <div style="background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:12px;">
+        <div style="margin-bottom:6px;"><span class="badge badge-green">Token #${id}</span></div>
+        <div style="font-size:0.82rem; margin-bottom:4px;">Owner: <span class="mono">${owner || 'n/a'}</span></div>
+        <div style="font-size:0.82rem; margin-bottom:4px;">URI: <span class="mono" style="word-break:break-all;">${uri || 'n/a'}</span></div>
+        ${score !== null ? `<div style="font-size:0.82rem;">Reputation: <strong style="color:${score >= 70 ? 'var(--green)' : 'var(--amber)'}">${score.toFixed(1)}</strong> · ${reviews} review${reviews !== 1 ? 's' : ''}</div>` : '<div style="font-size:0.82rem; color:var(--muted);">No reputation data.</div>'}
+      </div>`;
+    log(`Token #${id}: owner=${owner ? owner.slice(0,12)+'…' : 'none'}`, owner ? 'ok' : 'warn');
+  } catch (e) {
+    result.innerHTML = `<div style="color:var(--red); font-size:0.82rem;">Lookup failed: ${e.message || e}</div>`;
+    log(`Token #${id} lookup error: ${e.message || e}`, 'err');
+  }
+}
+
+// ─── Register Roger ──────────────────────────────────────────────────────────
+// Note: actual registration requires IdentityRegistry.registerAgent() with
+// metadata payload. The wallet must hold Base Sepolia ETH for gas.
+// Full registration via the contract's registerAgent(bytes metadata) function.
+async function registerRoger() {
+  log('Registration requires funded Base Sepolia wallet. This is a human-only step.', 'warn');
+  const action = document.getElementById('registration-action');
+  action.innerHTML = `<span class="badge badge-amber">Awaiting Base Sepolia ETH funding — human-only step</span>`;
+}
+
+// ─── Refresh all ─────────────────────────────────────────────────────────────
+async function refreshAll() {
+  await loadAgents();
+  await loadRogerStatus();
+}
+
+// ─── Init ────────────────────────────────────────────────────────────────────
+(async () => {
+  await initNetwork();
+  await refreshAll();
+})();
+</script>
+</body>
+</html>
