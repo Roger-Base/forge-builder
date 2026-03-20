@@ -112,30 +112,68 @@ const MOCK_DATA = {
       { name: 'WETH', symbol: 'WETH', totalLiquidity: '23450000', utilizationRate: '0.65', supplyAPY: '0.0289', borrowAPY: '0.0398', availableLiquidity: '8000000', price: '2800' }
     ],
     ethereum: [
-      { name: 'USDC', symbol: 'USDC', totalLiquidity: '89230000', utilizationRate: '0.80', supplyAPY: '0.0345', borrowAPY: '0.0478', availableLiquidity: '20000000', price: '1.00' }
+      { name: 'USDC', symbol: 'USDC', totalLiquidity: '89230000', utilizationRate: '0.80', supplyAPY: '0.0345', borrowAPY: '0.0478', availableLiquidity: '20000000', price: '1.00' },
+      { name: 'WBTC', symbol: 'WBTC', totalLiquidity: '45600000', utilizationRate: '0.70', supplyAPY: '0.0123', borrowAPY: '0.0234', availableLiquidity: '15000000', price: '52000' }
+    ],
+    polygon: [
+      { name: 'USDC', symbol: 'USDC', totalLiquidity: '23400000', utilizationRate: '0.68', supplyAPY: '0.0389', borrowAPY: '0.0512', availableLiquidity: '8000000', price: '1.00' }
+    ],
+    arbitrum: [
+      { name: 'USDC', symbol: 'USDC', totalLiquidity: '34500000', utilizationRate: '0.72', supplyAPY: '0.0412', borrowAPY: '0.0534', availableLiquidity: '10000000', price: '1.00' }
+    ],
+    optimism: [
+      { name: 'USDC', symbol: 'USDC', totalLiquidity: '28900000', utilizationRate: '0.75', supplyAPY: '0.0398', borrowAPY: '0.0521', availableLiquidity: '7500000', price: '1.00' }
     ]
   },
   compound: {
     ethereum: [
-      { name: 'USDC', symbol: 'USDC', totalBorrows: '45000000', totalSupply: '89000000', supplyAPY: '0.0345', borrowAPY: '0.0489', collateralFactor: '0.85', price: '1.00' }
+      { name: 'USDC', symbol: 'USDC', totalBorrows: '45000000', totalSupply: '89000000', supplyAPY: '0.0345', borrowAPY: '0.0489', collateralFactor: '0.85', price: '1.00' },
+      { name: 'ETH', symbol: 'ETH', totalBorrows: '32000000', totalSupply: '67000000', supplyAPY: '0.0234', borrowAPY: '0.0389', collateralFactor: '0.83', price: '2800' }
+    ],
+    polygon: [
+      { name: 'USDC', symbol: 'USDC', totalBorrows: '18000000', totalSupply: '34000000', supplyAPY: '0.0367', borrowAPY: '0.0498', collateralFactor: '0.82', price: '1.00' }
+    ],
+    arbitrum: [
+      { name: 'USDC', symbol: 'USDC', totalBorrows: '22000000', totalSupply: '45000000', supplyAPY: '0.0389', borrowAPY: '0.0512', collateralFactor: '0.84', price: '1.00' }
     ]
   },
   curve: {
     ethereum: [
-      { name: '3pool', symbol: '3CRV', totalSupply: '156780000', apy: '0.0567', volume: '12000000', fee: '0.0004', tvl: '156780000' }
+      { name: '3pool', symbol: '3CRV', totalSupply: '156780000', apy: '0.0567', volume: '12000000', fee: '0.0004', tvl: '156780000' },
+      { name: 'stETH', symbol: 'steCRV', totalSupply: '89000000', apy: '0.0432', volume: '8000000', fee: '0.0004', tvl: '89000000' }
+    ],
+    polygon: [
+      { name: 'am3CRV', symbol: 'am3CRV', totalSupply: '45000000', apy: '0.0489', volume: '5000000', fee: '0.0004', tvl: '45000000' }
+    ],
+    arbitrum: [
+      { name: '2pool', symbol: '2CRV', totalSupply: '67000000', apy: '0.0512', volume: '6000000', fee: '0.0004', tvl: '67000000' }
     ]
   },
   yearn: {
     ethereum: [
-      { name: 'yvUSDC', symbol: 'yvUSDC', apy: '0.0612', tvl: '67890000', token: 'USDC' }
+      { name: 'yvUSDC', symbol: 'yvUSDC', apy: '0.0612', tvl: '67890000', token: 'USDC' },
+      { name: 'yvETH', symbol: 'yvETH', apy: '0.0345', tvl: '45600000', token: 'ETH' }
+    ],
+    arbitrum: [
+      { name: 'yvUSDC', symbol: 'yvUSDC', apy: '0.0523', tvl: '23000000', token: 'USDC' }
+    ],
+    optimism: [
+      { name: 'yvUSDC', symbol: 'yvUSDC', apy: '0.0498', tvl: '19000000', token: 'USDC' }
     ]
   },
   uniswap: {
+    ethereum: [
+      { token0: { symbol: 'WETH' }, token1: { symbol: 'USDC' }, feeTier: 500, totalValueLockedETH: '45000', volumeUSD: '15000000', feeAPY: '0.0956' },
+      { token0: { symbol: 'WBTC' }, token1: { symbol: 'WETH' }, feeTier: 3000, totalValueLockedETH: '32000', volumeUSD: '8000000', feeAPY: '0.0567' }
+    ],
     arbitrum: [
       { token0: { symbol: 'WETH' }, token1: { symbol: 'USDC' }, feeTier: 500, totalValueLockedETH: '12000', volumeUSD: '5000000', feeAPY: '0.1234' }
     ],
-    ethereum: [
-      { token0: { symbol: 'WETH' }, token1: { symbol: 'USDC' }, feeTier: 500, totalValueLockedETH: '45000', volumeUSD: '15000000', feeAPY: '0.0956' }
+    optimism: [
+      { token0: { symbol: 'WETH' }, token1: { symbol: 'USDC' }, feeTier: 500, totalValueLockedETH: '8900', volumeUSD: '3200000', feeAPY: '0.0897' }
+    ],
+    polygon: [
+      { token0: { symbol: 'WMATIC' }, token1: { symbol: 'USDC' }, feeTier: 500, totalValueLockedETH: '5600', volumeUSD: '2100000', feeAPY: '0.0678' }
     ]
   }
 };
