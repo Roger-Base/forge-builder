@@ -2,6 +2,7 @@ import './App.css';
 import ERC8004Registry from './ERC8004Registry';
 import AgentBrowser from './AgentBrowser';
 import DeFAIDashboard from './DeFAIDashboard';
+import ERC8004Integration from './ERC8004Integration';
 
 function App() {
   return (
@@ -14,6 +15,12 @@ function App() {
       <main>
         <section className="registry-section">
           <ERC8004Registry />
+        </section>
+        
+        <section className="erc8004-section">
+          <h2>Onchain Agent Registry</h2>
+          <p>Live ERC-8004 identity + reputation on Base</p>
+          <ERC8004Integration />
         </section>
         
         <section className="agents-section">
