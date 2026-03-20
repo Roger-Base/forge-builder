@@ -132,7 +132,10 @@ const MOCK_DATA = {
   },
   uniswap: {
     arbitrum: [
-      { token0: { symbol: 'WETH' }, token1: { symbol: 'USDC' }, feeTier: '500', totalValueLockedETH: '12000', volumeUSD: '5000000', feeAPY: '0.1234' }
+      { token0: { symbol: 'WETH' }, token1: { symbol: 'USDC' }, feeTier: 500, totalValueLockedETH: '12000', volumeUSD: '5000000', feeAPY: '0.1234' }
+    ],
+    ethereum: [
+      { token0: { symbol: 'WETH' }, token1: { symbol: 'USDC' }, feeTier: 500, totalValueLockedETH: '45000', volumeUSD: '15000000', feeAPY: '0.0956' }
     ]
   }
 };
@@ -228,7 +231,15 @@ function formatOutput(protocol, chain, data) {
       const tvl = parseFloat(item.totalLiquidity || item.totalSupply || item.tvl || item.totalValueLockedETH || 0);
       const risk = calculateRisk(protocol, item);
       
-      console.log(`${idx + 1}. ${item.name || item.symbol || 'Unknown'}`);
+      // Build name from token symbols for Uniswap pools
+      let name = item.name || item.symbol;
+      if (!name && item.token0 && item.token1) {
+        const token1Symbol = typeof item.token1 === 'object' ? item.token1.symbol : item.token1;
+        name = `${item.token0.symbol}/${token1Symbol} ${item.feeTier ? '0.' + item.feeTier + '%' : ''}`;
+      }
+      if (!name) name = 'Unknown';
+      
+      console.log(`${idx + 1}. ${name}`);
       console.log(`   APY: ${apy.toFixed(2)}%`);
       console.log(`   TVL: $${(tvl / 1e6).toFixed(2)}M`);
       console.log(`   Risk Score: ${risk}/100 (${risk < 20 ? 'Low' : risk < 40 ? 'Medium' : 'High'})`);
