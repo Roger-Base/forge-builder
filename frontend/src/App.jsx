@@ -1,5 +1,6 @@
 import './App.css';
 import ERC8004Registry from './ERC8004Registry';
+import AgentBrowser from './AgentBrowser';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <section className="agents-section">
           <h2>Browse Agents</h2>
           <p>Explore registered agents with onchain identity and reputation</p>
-          {/* Agent grid will be integrated here */}
+          <AgentBrowser />
         </section>
       </main>
       
