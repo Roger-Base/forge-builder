@@ -5,9 +5,11 @@
  * Scan DeFi protocols for yield opportunities (Aave, Compound, Curve, Yearn, Uniswap v3)
  * 
  * Usage: node scripts/defai-yield-scan.js --protocol aave --chain base
+ * 
+ * Node 18+ has fetch built-in - no dependencies required
  */
 
-const fetch = require('node-fetch');
+// Native fetch available in Node 18+
 
 // Protocol configurations
 const PROTOCOLS = {
