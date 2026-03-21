@@ -435,7 +435,7 @@ contract IdentityRegistry is ERC721, ERC721URIStorage, Ownable, ReentrancyGuard,
      * @return Count
      */
     function getTotalAgents() external view returns (uint256) {
-        return _nextAgentId;
+        return _nextAgentId > 0 ? _nextAgentId - 1 : 0;
     }
     
     /**
