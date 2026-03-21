@@ -89,8 +89,8 @@ function DeFAIDashboard() {
 
       <div className="controls">
         <div className="filter-group">
-          <label>Protocol:</label>
-          <select value={selectedProtocol} onChange={(e) => setSelectedProtocol(e.target.value)}>
+          <label htmlFor="protocol-filter">Protocol:</label>
+          <select id="protocol-filter" value={selectedProtocol} onChange={(e) => setSelectedProtocol(e.target.value)}>
             {protocols.map(p => (
               <option key={p} value={p}>{p === 'all' ? 'All Protocols' : p.toUpperCase()}</option>
             ))}
@@ -98,8 +98,8 @@ function DeFAIDashboard() {
         </div>
 
         <div className="filter-group">
-          <label>Chain:</label>
-          <select value={selectedChain} onChange={(e) => setSelectedChain(e.target.value)}>
+          <label htmlFor="chain-filter">Chain:</label>
+          <select id="chain-filter" value={selectedChain} onChange={(e) => setSelectedChain(e.target.value)}>
             {chains.map(c => (
               <option key={c} value={c}>{c === 'all' ? 'All Chains' : c.charAt(0).toUpperCase() + c.slice(1)}</option>
             ))}
@@ -107,8 +107,8 @@ function DeFAIDashboard() {
         </div>
 
         <div className="filter-group">
-          <label>Sort by:</label>
-          <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+          <label htmlFor="sort-by">Sort by:</label>
+          <select id="sort-by" value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
             <option value="apy">Highest APY</option>
             <option value="tvl">Highest TVL</option>
             <option value="risk">Lowest Risk</option>

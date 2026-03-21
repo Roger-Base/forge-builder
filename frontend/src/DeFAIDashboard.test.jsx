@@ -25,7 +25,7 @@ describe('DeFAIDashboard Component', () => {
 
   test('renders protocol filter dropdown', async () => {
     await waitFor(() => {
-      const protocolSelect = screen.getByLabelText('Protocol:');
+      const protocolSelect = screen.getByRole('combobox', { name: 'Protocol:' });
       expect(protocolSelect).toBeInTheDocument();
       expect(protocolSelect.children.length).toBeGreaterThan(1);
     });
@@ -33,14 +33,14 @@ describe('DeFAIDashboard Component', () => {
 
   test('renders chain filter dropdown', async () => {
     await waitFor(() => {
-      const chainSelect = screen.getByLabelText('Chain:');
+      const chainSelect = screen.getByRole('combobox', { name: 'Chain:' });
       expect(chainSelect).toBeInTheDocument();
     });
   });
 
   test('renders sort dropdown', async () => {
     await waitFor(() => {
-      const sortSelect = screen.getByLabelText('Sort by:');
+      const sortSelect = screen.getByRole('combobox', { name: 'Sort by:' });
       expect(sortSelect).toBeInTheDocument();
       expect(screen.getByText('Highest APY')).toBeInTheDocument();
     });
@@ -59,7 +59,7 @@ describe('DeFAIDashboard Component', () => {
 
   test('filters by protocol', async () => {
     await waitFor(() => {
-      const protocolSelect = screen.getByLabelText('Protocol:');
+      const protocolSelect = screen.getByRole('combobox', { name: 'Protocol:' });
       fireEvent.change(protocolSelect, { target: { value: 'aave' } });
     });
     
@@ -70,7 +70,7 @@ describe('DeFAIDashboard Component', () => {
 
   test('filters by chain', async () => {
     await waitFor(() => {
-      const chainSelect = screen.getByLabelText('Chain:');
+      const chainSelect = screen.getByRole('combobox', { name: 'Chain:' });
       fireEvent.change(chainSelect, { target: { value: 'ethereum' } });
     });
     
@@ -81,7 +81,7 @@ describe('DeFAIDashboard Component', () => {
 
   test('sorts by APY (highest first)', async () => {
     await waitFor(() => {
-      const sortSelect = screen.getByLabelText('Sort by:');
+      const sortSelect = screen.getByRole('combobox', { name: 'Sort by:' });
       fireEvent.change(sortSelect, { target: { value: 'apy' } });
     });
     
@@ -93,7 +93,7 @@ describe('DeFAIDashboard Component', () => {
 
   test('sorts by TVL (highest first)', async () => {
     await waitFor(() => {
-      const sortSelect = screen.getByLabelText('Sort by:');
+      const sortSelect = screen.getByRole('combobox', { name: 'Sort by:' });
       fireEvent.change(sortSelect, { target: { value: 'tvl' } });
     });
     
@@ -105,7 +105,7 @@ describe('DeFAIDashboard Component', () => {
 
   test('sorts by risk (lowest first)', async () => {
     await waitFor(() => {
-      const sortSelect = screen.getByLabelText('Sort by:');
+      const sortSelect = screen.getByRole('combobox', { name: 'Sort by:' });
       fireEvent.change(sortSelect, { target: { value: 'risk' } });
     });
     
@@ -148,7 +148,7 @@ describe('DeFAIDashboard Component', () => {
 
   test('shows no results when filter matches nothing', async () => {
     await waitFor(() => {
-      const protocolSelect = screen.getByLabelText('Protocol:');
+      const protocolSelect = screen.getByRole('combobox', { name: 'Protocol:' });
       fireEvent.change(protocolSelect, { target: { value: 'nonexistent' } });
     });
     
