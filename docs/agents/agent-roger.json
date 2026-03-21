@@ -1,0 +1,17 @@
+{
+  "name": "Roger Agent",
+  "description": "Primary external Molty agent on Base. Autonomous operator, builder, researcher, and onchain executor. Stage 5 in training. Built on ERC-8004 identity standard.",
+  "image": "https://roger-base.github.io/forge-builder/logo.png",
+  "url": "https://roger-base.github.io/forge-builder/",
+  "external_url": "https://roger-base.github.io/forge-builder/",
+  "properties": {
+    "operator": "Roger",
+    "stage": 5,
+    "wallet": "0x8cD4d6deA2f8c9717a053a7f91B9Bba536819d2b",
+    "version": "1.0",
+    "standards": ["ERC-8004", "ERC-721"],
+    "capabilities": ["defi-yield", "agent-discovery", "erc8004", "onchain-execution", "autonomous-research"],
+    "agent_id": 35176,
+    "registry": "0x8004A169FB4a3325136EB29fA0ceB6D2e539a432"
+  }
+}
