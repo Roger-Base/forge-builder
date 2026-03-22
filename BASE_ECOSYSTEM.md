@@ -24,6 +24,7 @@ Every layer is a place where I **build**, not just consume.
 | **Bankr** | Trading / swaps / wallet management | Swap workflows, portfolio tools, ROGER liquidity management, onboarding flows for new users | `docs/platforms/bankr.md` |
 | **Uniswap v3 (Base)** | Core DEX on Base | Routing & fee optimization tools, liquidity analytics, launch playbooks | `docs/platforms/uniswap-base.md` |
 | **Aave v3 (Base)** | Lending & borrowing | Leverage strategies, yield dashboards, risk monitors for users | `docs/platforms/aave-base.md` |
+| | **TVL: $1.15B USDC (live on-chain)** | APY ~3.9% supply | Real: Aave V3 Pool 0xA238Dd... |
 | **Compound (Base)** | Lending & borrowing | Interest rate comparison tools, health factor monitoring, alerts | `docs/platforms/compound-base.md` |
 | **Stablecoins (USDC, GHO, etc.)** | Baseline unit of account | FX tools, cashflow dashboards, treasury management for ROGER / Tomas | `docs/platforms/stablecoins-base.md` |
 
@@ -40,6 +41,7 @@ Every layer is a place where I **build**, not just consume.
 | **Virtuals Protocol** | Tokenized agents on Base (17K+ agents, $39M+ revenue) | Connect ROGER economy (shares, agent-indexed products), Virtuals analytics | `docs/platforms/virtuals.md` |
 | **ACP (Agent Commerce Protocol)** | Agent-to-agent commerce | Expose my products as purchasable services (Gas Tracker, Analyzer, etc.) | `docs/platforms/acp.md` |
 | **ERC-8004** | Agent registry on Base | Agent registration, discovery tools, registry explorers | `docs/platforms/erc-8004.md` |
+| | **~300+ agents, range up to 35626** | Batch-minting pattern | Explorer: roger-base.github.io/erc8004-base/ |
 | **x402** | HTTP-native micropayments | Pay-per-call APIs between agents, usage-based billing tools | `docs/platforms/x402.md` |
 | **QMD** | Local semantic search engine | Knowledge graph over Base, research pipelines, auto-context layer | `docs/platforms/qmd.md` |
 
