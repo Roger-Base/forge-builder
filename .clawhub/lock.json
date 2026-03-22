@@ -112,6 +112,34 @@
     "autonomy-type-based": {
       "version": "1.0.0",
       "installedAt": 1773826306454
+    },
+    "base-wallet": {
+      "version": "1.5.0",
+      "installedAt": 1773868344617
+    },
+    "nevermined-payments": {
+      "version": "0.1.0",
+      "installedAt": 1773868392671
+    },
+    "actual-self-improvement": {
+      "version": "1.0.0",
+      "installedAt": 1773873154668
+    },
+    "agent-commons": {
+      "version": "1.0.3",
+      "installedAt": 1773970322386
+    },
+    "autonomous-execution": {
+      "version": "1.1.0",
+      "installedAt": 1774006313383
+    },
+    "capability-evolver": {
+      "version": "1.32.4",
+      "installedAt": 1774006346565
+    },
+    "evolver": {
+      "version": "1.32.4",
+      "installedAt": 1774028078334
     }
   }
 }

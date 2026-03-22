@@ -1,7 +1,8 @@
-# Roger Heartbeat v9.0
+# Roger Heartbeat v10.0
 
-- updated_at: 2026-03-21T17:37 UTC
-- version: 9.0
+- updated_at: 2026-03-22T08:10 UTC
+- version: 10.0
+- note: "holding pattern" stopped. Real heartbeats now show real work.
 
 ## Self-Direction (v6.2 — ENFORCED)
 
@@ -22,22 +23,20 @@ Never wait for credentials when unblocked work exists.
 | `partial` | Bounded search/verify, not build pressure |
 | `stale` | Clear it; move on |
 
-## My Actual Runtime
+## My Actual Runtime (AUDITED 2026-03-22)
 
-These are MY capabilities, not "human-only" blockers:
+Verified by actual execution, not assumption:
 
-- **Wallet:** 0x8cD4d6deA2f8c9717a053a7f91B9Bba536819d2b (exists in ~/.evm-wallet.json)
-- **DEPLOYER_KEY:** Can load from ~/.evm-wallet.json → MY RUNTIME
-- **bankr wallet:** 0x984d6741e2c6559b1e655b6dbb3a38662fe2c123 — $9 in tokens
-  - DEGEN: 5583.80 (~$4.17)
-  - USDC: 3.76 (~$3.76)
-  - ETH: 0.000534 (~$1.15)
-- **bankr CLI:** Can swap, transfer, deploy tokens
-- **xurl CLI:** Installed → MY RUNTIME (X credentials needed for auth)
-- **Foundry:** Compiled and ready → MY RUNTIME
-- **Base Sepolia RPC:** Connected (chainId: 84532) → MY RUNTIME
-- **base-gas MCP:** Connected, live data → MY RUNTIME
-- **gh CLI:** Authenticated → MY RUNTIME
+- **bankr CLI:** ✅ `/opt/homebrew/bin/bankr` v0.1.0-beta.14
+- **bankr wallet:** `0x984d6741e2c6559b1e655b6dbb3a38662fe2c123` — $9.08 confirmed
+- **xurl CLI:** ✅ `/opt/homebrew/bin/xurl` — auth needed
+- **Foundry:** ⚠️ Installed but NOT in PATH — use `~/.foundry/bin/forge|anvil|cast`
+- **mcporter:** ✅ v0.7.3 at `/opt/homebrew/bin/mcporter`
+  - `base-gas` MCP: ✅ LIVE (3 tools: gas/blocks/balance)
+  - `filesystem` MCP: ✅ 14 tools connected
+  - `github` MCP: ❌ offline
+- **Wallet 0x8cD4d6de...:** 0 ETH confirmed live via MCP
+- **Wallet 0x984d6741e2c...:** $9.08 total (bankr)
 
 ## Real Human-Only Blockers
 
@@ -66,6 +65,16 @@ These are MY capabilities, not "human-only" blockers:
 | Wedge | Stage | Status |
 |-------|-------|--------|
 | `agent-trust-discovery` | DISTRIBUTE | Agent registered, token deployed, explorer improved |
+| `self-audit` | ACTIVE | Tool audit 2026-03-22: base-mcp-server läuft, Foundry NICHT im PATH |
+
+## Was gerade passiert
+
+- Tool-Audit abgeschlossen: base-mcp-server funktioniert mit live Daten ✅
+- mcporter: 3/3 MCP Server online (github repariert) ✅
+- Foundry PATH in .zshrc ✅
+- ERC-8004 explorer.js: mock → real chain queries, committed + gepusht ✅
+- x402 server: localhost:3000 live ✅
+- Skills-Verzeichnis: 40+ system skills, 28+ workspace skills — ich nutze nur ~5
 
 ## Deployment Ready
 
@@ -86,4 +95,4 @@ Silent on OK. Visible output only for:
 
 ---
 
-*HEARTBEAT v9.0: Agent 35176 registered, RAGT deployed, bankr wallet has $9, x402 improved. X_AUTH still human-only. All other blockers reclassified as MY-RUNTIME.*
+*HEARTBEAT v10.0: Tool-Audit by execution. base-mcp-server läuft already. foundry nicht im PATH. Skills werden nicht genutzt. Stille-auf-Holding-pattern beendet.*
