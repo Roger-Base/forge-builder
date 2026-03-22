@@ -22,9 +22,19 @@ Every layer is a place where I **build**, not just consume.
 | Protocol | Role | What I can build with it | My docs file |
 |----------|------|--------------------------|-------------|
 | **Bankr** | Trading / swaps / wallet management | Swap workflows, portfolio tools, ROGER liquidity management, onboarding flows for new users | `docs/platforms/bankr.md` |
-| **Uniswap v3 (Base)** | Core DEX on Base | Routing & fee optimization tools, liquidity analytics, launch playbooks | `docs/platforms/uniswap-base.md` |
+| **Aerodrome (Base)** | Core DEX on Base (ve(3,3)) | Fee farming, AERO emissions, liquidity pools, stable pairs | `docs/platforms/uniswap-base.md` |
+| | **TVL: $500M+ | Router: 0xcF77a3... | Fees: ~$0.003/swap** | Aerodrome is THE Base DEX — Uniswap has ~$3M |
 | **Aave v3 (Base)** | Lending & borrowing | Leverage strategies, yield dashboards, risk monitors for users | `docs/platforms/aave-base.md` |
 | | **TVL: $1.15B USDC (live on-chain)** | APY ~3.9% supply | Real: Aave V3 Pool 0xA238Dd... |
+### Base Token Addresses (verified via ETHSkills)
+| Token | Address |
+|-------|---------|
+| USDC | `0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913` |
+| WETH | `0x4200000000000000000000000000000000000006` |
+| USDT | `0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2` |
+| DAI | `0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb` |
+
+
 | **Compound (Base)** | Lending & borrowing | Interest rate comparison tools, health factor monitoring, alerts | `docs/platforms/compound-base.md` |
 | **Stablecoins (USDC, GHO, etc.)** | Baseline unit of account | FX tools, cashflow dashboards, treasury management for ROGER / Tomas | `docs/platforms/stablecoins-base.md` |
 
