@@ -17,7 +17,7 @@ const NETWORKS = {
     rpc: 'https://base-sepolia.publicnode.com',
     identityRegistry: '0x8004A818BFB912233c491871b3d84c89A494BD9e',
     reputationRegistry: '0x8004B663056A597DFFE9EccC1965A193B7388713',
-    chainId: 84532,
+    chainId: net.chainId,
     name: 'Base Sepolia',
     key: 'base-sepolia',
   },
@@ -168,15 +168,18 @@ async function getTotalSupply(address) {
  * Get agent info for a given token ID
  */
 async function getAgentInfo(identityRegistry, tokenId) {
-  const owner = await ethCall(identityRegistry, '0x' + SELECTORS.ownerOf + tokenId.toString(16).padStart(64, '0'));
-  const tokenURI = await ethCall(identityRegistry, '0x' + SELECTORS.tokenURI + tokenId.toString(16).padStart(64, '0'));
-
-  const ownerAddr = owner.success && owner.data?.result ? hexToAddress(owner.data.result) : null;
-  const uri = tokenURI.success && tokenURI.data?.result && tokenURI.data.result !== '0x'
-    ? hexToString(tokenURI.data.result)
-    : null;
-
-  return { tokenId, owner: ownerAddr, tokenURI: uri };
+  try {
+    const ownerCall = ethCall(identityRegistry, '0x' + SELECTORS.ownerOf + tokenId.toString(16).padStart(64, '0'));
+    const uriCall = ethCall(identityRegistry, '0x' + SELECTORS.tokenURI + tokenId.toString(16).padStart(64, '0'));
+    const [owner, tokenURI] = await Promise.all([ownerCall, uriCall]);
+    const ownerAddr = owner.success && owner.data?.result ? hexToAddress(owner.data.result) : null;
+    const uri = tokenURI.success && tokenURI.data?.result && tokenURI.data.result !== '0x'
+      ? hexToString(tokenURI.data.result)
+      : null;
+    return { tokenId, owner: ownerAddr, tokenURI: uri };
+  } catch {
+    return { tokenId, owner: null, tokenURI: null };
+  }
 }
 
 /**
@@ -200,33 +203,20 @@ async function main() {
     console.log(`   IdentityRegistry: Contract exists (name() check inconclusive)`);
   }
 
-  // Step 2: Get total supply (number of registered agents)
-  const totalSupply = await getTotalSupply(IDENTITY_REGISTRY);
-  console.log(`   Total registered agents: ${totalSupply}\n`);
+  // Step 2: OwnerOf-based scan (totalSupply() buggy on this contract)
+  const SCAN_START = 35100;
+  const SCAN_END = 35400;
+  console.log(`   Scanning ${SCAN_START}–${SCAN_END} via ownerOf()...\n`);
 
-  if (totalSupply === 0) {
-    console.log(`⚠️  No agents registered yet on ${net.name}.`);
-    console.log('   This is expected — contracts are deployed but not yet used.');
-    console.log('   The lookup service infrastructure is working correctly.\n');
-  } else {
-    // Step 3: Fetch each agent
-    console.log(`📋 Fetching agent records (0 to ${totalSupply - 1})...\n`);
-    const agents = [];
-    const fetchCount = Math.min(totalSupply, 50); // cap at 50 for safety
-
-    for (let i = 0; i < fetchCount; i++) {
-      try {
-        const info = await getAgentInfo(IDENTITY_REGISTRY, i);
-        agents.push(info);
-        const label = info.owner ? `${info.owner.slice(0, 10)}...` : 'unregistered';
-        console.log(`   Token #${i}: owner=${label} uri=${info.tokenURI || 'none'}`);
-      } catch (e) {
-        console.log(`   Token #${i}: error — ${e.message}`);
-      }
+  const agents = [];
+  for (let i = SCAN_START; i <= SCAN_END; i++) {
+    const info = await getAgentInfo(IDENTITY_REGISTRY, i);
+    if (info.owner) {
+      agents.push(info);
+      console.log(`   Token #${i}: owner=${info.owner.slice(0,14)}... uri=${info.tokenURI ? 'yes' : 'none'}`);
     }
-
-    console.log(`\n   Total agents fetched: ${agents.length}`);
   }
+  console.log(`\n   Total agents found: ${agents.length}`);
 
   // Step 4: Reputation registry check
   console.log('\n📊 ReputationRegistry status:');
@@ -242,16 +232,16 @@ async function main() {
   console.log(`Network: ${net.name} (chain ${net.chainId})`);
   console.log(`IdentityRegistry: ${IDENTITY_REGISTRY}`);
   console.log(`ReputationRegistry: ${REPUTATION_REGISTRY}`);
-  console.log(`Registered agents: ${totalSupply}`);
+  console.log(`Registered agents: ${agents.length}`);
   console.log('═══════════════════════════════════════════════\n');
 
   return {
     timestamp: new Date().toISOString(),
     network: `${net.key}`,
-    chainId: 84532,
+    chainId: net.chainId,
     identityRegistry: IDENTITY_REGISTRY,
     reputationRegistry: REPUTATION_REGISTRY,
-    totalSupply,
+    totalAgents: agents.length,
     rpc: RPC_URL,
   };
 }
