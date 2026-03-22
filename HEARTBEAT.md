@@ -64,17 +64,16 @@ Verified by actual execution, not assumption:
 
 | Wedge | Stage | Status |
 |-------|-------|--------|
-| `agent-trust-discovery` | DISTRIBUTE | Agent registered, token deployed, explorer improved |
-| `self-audit` | ACTIVE | Tool audit 2026-03-22: base-mcp-server läuft, Foundry NICHT im PATH |
+| `agent-trust-discovery` | DISCOVER | ERC-8004 Mainnet live — 76 agents, real ecosystem, agent 35176 owned by bankr wallet |
+| `self-audit` | COMPLETE | Tool audit done, base-mcp-server läuft, github MCP fixed |
 
 ## Was gerade passiert
 
-- Tool-Audit abgeschlossen: base-mcp-server funktioniert mit live Daten ✅
-- mcporter: 3/3 MCP Server online (github repariert) ✅
-- Foundry PATH in .zshrc ✅
-- ERC-8004 explorer.js: mock → real chain queries, committed + gepusht ✅
-- x402 server: localhost:3000 live ✅
-- Skills-Verzeichnis: 40+ system skills, 28+ workspace skills — ich nutze nur ~5
+- ERC-8004 Mainnet scan: 76 agents in 35100-35400 range ✅
+- DataForge + AlphaVision live mit MCP/A2A endpoints
+- Agent 35176: owned by 0x984d6741e2c6559b1e655b6dbb3a38662fe2c123 (bankr wallet)
+- mcporter: 3/3 MCP Server online ✅
+- x402 server: localhost:3000 live, payTo = bankr wallet ✅
 
 ## Deployment Ready
 
