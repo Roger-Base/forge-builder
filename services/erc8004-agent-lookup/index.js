@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * ERC-8004 Agent Trust Lookup Service — Base Sepolia
+ * ERC-8004 Agent Trust Lookup Service — Base (Sepolia + Mainnet)
  * Reads from live IdentityRegistry + ReputationRegistry
  * No write operations — purely read-only
  */
@@ -9,10 +9,32 @@
 const https = require('https');
 const http = require('http');
 
-// Base Sepolia config
-const RPC_URL = process.env.RPC_URL || 'https://base-sepolia.publicnode.com';
-const IDENTITY_REGISTRY = '0x8004A818BFB912233c491871b3d84c89A494BD9e';
-const REPUTATION_REGISTRY = '0x8004B663056A597DFFE9EccC1965A193B7388713';
+// Network config — set NETWORK=mainnet to query Base Mainnet
+const NETWORK = process.env.NETWORK || 'sepolia';
+
+const NETWORKS = {
+  sepolia: {
+    rpc: 'https://base-sepolia.publicnode.com',
+    identityRegistry: '0x8004A818BFB912233c491871b3d84c89A494BD9e',
+    reputationRegistry: '0x8004B663056A597DFFE9EccC1965A193B7388713',
+    chainId: 84532,
+    name: 'Base Sepolia',
+    key: 'base-sepolia',
+  },
+  mainnet: {
+    rpc: 'https://mainnet.base.org',
+    identityRegistry: '0x8004A169FB4a3325136EB29fA0ceB6D2e539a432',
+    reputationRegistry: '0x8004BAa17C55a88189AE136b182e5fdA19dE9b63',
+    chainId: 8453,
+    name: 'Base Mainnet',
+    key: 'base-mainnet',
+  },
+};
+
+const net = NETWORKS[NETWORK] || NETWORKS.sepolia;
+const RPC_URL = process.env.RPC_URL || net.rpc;
+const IDENTITY_REGISTRY = process.env.IDENTITY_REGISTRY || net.identityRegistry;
+const REPUTATION_REGISTRY = process.env.REPUTATION_REGISTRY || net.reputationRegistry;
 const TIMEOUT = 15000;
 
 // ERC-8004 IdentityRegistry (ERC-721 upgradeable) function signatures
@@ -161,7 +183,7 @@ async function getAgentInfo(identityRegistry, tokenId) {
  * Main — query live contracts
  */
 async function main() {
-  console.log('\n🔍 ERC-8004 Agent Trust Lookup — Base Sepolia');
+  console.log(`\n🔍 ERC-8004 Agent Trust Lookup — ${net.name}`);
   console.log('═══════════════════════════════════════════════\n');
   console.log(`RPC: ${RPC_URL}`);
   console.log(`IdentityRegistry: ${IDENTITY_REGISTRY}`);
@@ -183,7 +205,7 @@ async function main() {
   console.log(`   Total registered agents: ${totalSupply}\n`);
 
   if (totalSupply === 0) {
-    console.log('⚠️  No agents registered yet on Base Sepolia testnet.');
+    console.log(`⚠️  No agents registered yet on ${net.name}.`);
     console.log('   This is expected — contracts are deployed but not yet used.');
     console.log('   The lookup service infrastructure is working correctly.\n');
   } else {
@@ -217,7 +239,7 @@ async function main() {
 
   console.log('\n═══════════════════════════════════════════════');
   console.log(`Timestamp: ${new Date().toISOString()}`);
-  console.log(`Network: Base Sepolia (chain 84532)`);
+  console.log(`Network: ${net.name} (chain ${net.chainId})`);
   console.log(`IdentityRegistry: ${IDENTITY_REGISTRY}`);
   console.log(`ReputationRegistry: ${REPUTATION_REGISTRY}`);
   console.log(`Registered agents: ${totalSupply}`);
@@ -225,7 +247,7 @@ async function main() {
 
   return {
     timestamp: new Date().toISOString(),
-    network: 'base-sepolia',
+    network: `${net.key}`,
     chainId: 84532,
     identityRegistry: IDENTITY_REGISTRY,
     reputationRegistry: REPUTATION_REGISTRY,
