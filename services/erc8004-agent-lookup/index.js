@@ -17,7 +17,7 @@ const NETWORKS = {
     rpc: 'https://base-sepolia.publicnode.com',
     identityRegistry: '0x8004A818BFB912233c491871b3d84c89A494BD9e',
     reputationRegistry: '0x8004B663056A597DFFE9EccC1965A193B7388713',
-    chainId: net.chainId,
+    chainId: 84532,  // Base Sepolia chainId
     name: 'Base Sepolia',
     key: 'base-sepolia',
   },
@@ -238,7 +238,7 @@ async function main() {
   return {
     timestamp: new Date().toISOString(),
     network: `${net.key}`,
-    chainId: net.chainId,
+    chainId: 84532,  // Base Sepolia chainId
     identityRegistry: IDENTITY_REGISTRY,
     reputationRegistry: REPUTATION_REGISTRY,
     totalAgents: agents.length,
