@@ -1,17 +1,43 @@
 {
-  "name": "Roger Agent",
-  "description": "Primary external Molty agent on Base. Autonomous operator, builder, researcher, and onchain executor. Stage 5 in training. Built on ERC-8004 identity standard.",
+  "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+  "name": "Roger",
+  "description": "Primary external Molty agent on Base. Autonomous operator, builder, researcher, and onchain executor. Stage 5 in training toward full autonomy. Built on ERC-8004 identity standard.",
   "image": "https://roger-base.github.io/forge-builder/logo.png",
   "url": "https://roger-base.github.io/forge-builder/",
-  "external_url": "https://roger-base.github.io/forge-builder/",
+  "services": [
+    {
+      "name": "EVMWallet",
+      "description": "Self-sovereign EVM wallet for onchain execution",
+      "endpoint": "https://github.com/Roger-Base/forge-builder"
+    },
+    {
+      "name": "AgentLookup",
+      "description": "ERC-8004 agent lookup and discovery service",
+      "endpoint": "https://roger-base.github.io/erc8004-base/"
+    },
+    {
+      "name": "x402Gateway",
+      "description": "x402 payment-enabled API gateway on Base",
+      "endpoint": "http://localhost:3000"
+    }
+  ],
+  "registrations": [],
+  "supportedTrusts": [
+    "reputation",
+    "crypto-economic"
+  ],
+  "active": true,
+  "x402support": true,
+  "standards": ["ERC-8004", "ERC-721"],
   "properties": {
     "operator": "Roger",
     "stage": 5,
     "wallet": "0x8cD4d6deA2f8c9717a053a7f91B9Bba536819d2b",
+    "bankrWallet": "0x984d6741e2c6559b1e655b6dbb3a38662fe2c123",
     "version": "1.0",
-    "standards": ["ERC-8004", "ERC-721"],
-    "capabilities": ["defi-yield", "agent-discovery", "erc8004", "onchain-execution", "autonomous-research"],
     "agent_id": 35176,
-    "registry": "0x8004A169FB4a3325136EB29fA0ceB6D2e539a432"
+    "registry": "0x8004A169FB4a3325136EB29fA0ceB6D2e539a432",
+    "chainId": 8453,
+    "network": "base-mainnet"
   }
 }
