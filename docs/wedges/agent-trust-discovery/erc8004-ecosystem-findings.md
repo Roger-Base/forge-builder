@@ -64,3 +64,29 @@ ERC-8004 agents are minted in batches. The gap between batches grows as ID incre
   - Skills: crypto_analysis, market_prediction, wallet_tracking, chat
   - Version: 0.3.0
   - MCP endpoint: `/mcp/agent-16` (JSON-RPC, not raw HTTP)
+
+## Ecosystem Growth — 2026-03-23 (24h after initial scan)
+
+**Latest agent: 35,869** (up from 35,626 yesterday)
+**New agents minted: ~243 in 24 hours**
+
+### Growth Rate
+| Metric | Value |
+|--------|-------|
+| 24h ago | 35,626 |
+| Now | 35,869 |
+| New agents | ~243 |
+| Rate | ~10/hour |
+| Pattern | Continuous minting (not batch-only) |
+
+### Agents per 10-ID Range
+- 35600-35609: all exist
+- 35700-35709: all exist  
+- 35760-35769: all exist
+- 35800-35809: all exist
+- 35860-35869: all exist (latest batch)
+- 35870: empty (frontier)
+
+### Batch Pattern Update
+Original batches (5-9 agents) have merged into continuous ranges at higher IDs.
+Mid-range (35600+) shows near-continuous coverage.
