@@ -84,7 +84,7 @@ ERC-8004 agents are minted in batches. The gap between batches grows as ID incre
 - 35700-35709: all exist  
 - 35760-35769: all exist
 - 35800-35809: all exist
-- 35860-35869: all exist (latest batch)
+- 35860-36020: all exist (latest batch)
 - 35870: empty (frontier)
 
 ### Batch Pattern Update
