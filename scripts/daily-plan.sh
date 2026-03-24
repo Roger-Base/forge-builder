@@ -15,8 +15,8 @@ STAGE="$(jq -r '.active_wedge.stage' "$STATE")"
 NEXT="$(jq -r '.next_action.command' "$STATE")"
 ARTIFACT="$(jq -r '.last_artifact_change_at // "unknown"' "$STATE")"
 PROOF="$(jq -r '.next_action.proof_expected // "real wedge delta"' "$STATE")"
-PRIMARY="$(jq -r '.roger.primary_wedge // "agent_security_scanner"' "$SPINE")"
-RESERVE="$(jq -r '.roger.reserve_wedge // "base_account_miniapp_probe"' "$SPINE")"
+PRIMARY="$(jq -r '.roger.primary_wedge // "agent-trust-discovery"' "$SPINE")"
+RESERVE="$(jq -r '.roger.reserve_wedge // "agent-discovery"' "$SPINE")"
 CAPABILITY="$(jq -r '.selected_capability' "$ACT")"
 LANE="$(jq -r '.selected_skill_or_lane' "$ACT")"
 CONSUMER="$(jq -r '.consumer' "$ACT")"
@@ -84,7 +84,7 @@ cat > "$OUT" <<PLAN
 2. Activate the chosen capability and lane.
 3. Execute 2-3 chained steps only if each unlocks the next on the same lane and the winning move still dominates.
 4. Verify the resulting delta.
-5. Route durable learning into MEMORY_ACTIVE.md, MEMORY.md, SKILLS.md, or shared pattern radar.
+5. Route durable learning into synthesis/CURRENT.md, MEMORY_ACTIVE.md, MEMORY.md, SKILLS.md, or shared pattern radar.
 
 ## Anti-drift
 - daily-plan is derived, not portfolio authority.

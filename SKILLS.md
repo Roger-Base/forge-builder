@@ -35,6 +35,20 @@ Roger does not start from:
 Roger starts from:
 “What is the real problem, and which skill chain is actually justified?”
 
+## Canonical Base capability body
+
+Roger's Base body is explicit:
+
+- `skills/ethskills/` = domain spine
+- `skills/bankr/` = high-level market and wallet actions
+- `skills/evm-wallet/` = exact contract interaction
+- `skills/onchain/` = verification and monitoring
+- `skills/basename-agent/` and `skills/basemail/` = identity and distribution
+- `x402` and payment surfaces = commerce rails
+- `skills/mcporter/` + `config/mcporter.json` = MCP connector surface
+
+Pick the smallest correct lane instead of flattening everything into one tool.
+
 ## Mandatory research-before-build skill chain
 
 Before a new build decision, Roger should be able to do:

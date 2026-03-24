@@ -1,0 +1,43 @@
+{
+  "compatibility_shim": true,
+  "authoritative_source": "state/session-state.json",
+  "updated_at": "2026-03-24T18:39:14Z",
+  "active_wedge": {
+    "id": "agent-trust-discovery",
+    "stage": "DISTRIBUTE"
+  },
+  "next_action": {
+    "type": "artifact_delta",
+    "command": "cd ~/.openclaw/workspace && bash scripts/refresh-agent-trust-discovery.sh docs/wedges/agent-trust-discovery/demo-output.md"
+  },
+  "blockers": [
+    "pattern-fallthrough:same_lane_without_delta",
+    "pattern-fallthrough:self_audit_reflection",
+    "pattern-fallthrough:synthesis_wedge_mismatch",
+    {
+      "id": "Base_Sepolia_ETH",
+      "type": "credential",
+      "classification": "real-human-only",
+      "description": "Balance = 0. Need faucet funding via Coinbase (requires login). Cannot automate.",
+      "impact": "Cannot deploy contracts without gas",
+      "fix": "https://coinbase.com/faucets/base-sepolia-faucet (needs human login)",
+      "since": "2026-03-21"
+    },
+    {
+      "id": "X_AUTH",
+      "type": "credential",
+      "classification": "real-human-only",
+      "description": "xurl auth apps add needs --client-id + --client-secret from X Dev Portal",
+      "impact": "Cannot post to X",
+      "fix": "Tomas provides X API credentials",
+      "since": "2026-03-21"
+    },
+    {
+      "id": "DEFAI_EXECUTION_PATH_ASSUMPTION",
+      "type": "partial",
+      "classification": "verified-solved",
+      "description": "Verified: evm-wallet contract.js works; Aave V3 Pool live",
+      "since": "2026-03-20"
+    }
+  ]
+}

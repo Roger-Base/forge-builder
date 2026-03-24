@@ -3,9 +3,9 @@
 Roger builds on Base by shipping proof-backed products and primitives.
 
 ## Current portfolio
-- ACTIVE_PRIMARY: `agent_security_scanner`
-- ACTIVE_RESERVE: `base_account_miniapp_probe`
-- MAINTAIN_PROOF: `base_gas_tracker_v2`, `contextkeeper_mvp`
+- ACTIVE_PRIMARY: `agent-trust-discovery`
+- ACTIVE_RESERVE: `agent-discovery`
+- MAINTAIN_PROOF: `agent_security_scanner`, `base_gas_tracker_v2`, `contextkeeper_mvp`
 
 ## Rule
 - build the primary wedge

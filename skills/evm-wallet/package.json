@@ -12,9 +12,16 @@
     "check-update": "node src/check-update.js"
   },
   "dependencies": {
+    "@bgd-labs/aave-address-book": "^4.44.22",
     "viem": "^2.21.54"
   },
-  "keywords": ["wallet", "ethereum", "evm", "crypto", "clawdbot"],
+  "keywords": [
+    "wallet",
+    "ethereum",
+    "evm",
+    "crypto",
+    "clawdbot"
+  ],
   "author": "Clawdbot",
   "license": "MIT"
 }

@@ -36,6 +36,9 @@ const RPC_URL = process.env.RPC_URL || net.rpc;
 const IDENTITY_REGISTRY = process.env.IDENTITY_REGISTRY || net.identityRegistry;
 const REPUTATION_REGISTRY = process.env.REPUTATION_REGISTRY || net.reputationRegistry;
 const TIMEOUT = 15000;
+const SCAN_START = Number.parseInt(process.env.SCAN_START || '35100', 10);
+const SCAN_END = Number.parseInt(process.env.SCAN_END || '35400', 10);
+const SCAN_CONCURRENCY = Math.max(1, Number.parseInt(process.env.SCAN_CONCURRENCY || '12', 10));
 
 // ERC-8004 IdentityRegistry (ERC-721 upgradeable) function signatures
 const SELECTORS = {
@@ -204,16 +207,19 @@ async function main() {
   }
 
   // Step 2: OwnerOf-based scan (totalSupply() buggy on this contract)
-  const SCAN_START = 35100;
-  const SCAN_END = 35400;
   console.log(`   Scanning ${SCAN_START}–${SCAN_END} via ownerOf()...\n`);
 
   const agents = [];
-  for (let i = SCAN_START; i <= SCAN_END; i++) {
-    const info = await getAgentInfo(IDENTITY_REGISTRY, i);
-    if (info.owner) {
-      agents.push(info);
-      console.log(`   Token #${i}: owner=${info.owner.slice(0,14)}... uri=${info.tokenURI ? 'yes' : 'none'}`);
+  const tokenIds = [];
+  for (let i = SCAN_START; i <= SCAN_END; i++) tokenIds.push(i);
+  for (let index = 0; index < tokenIds.length; index += SCAN_CONCURRENCY) {
+    const batch = tokenIds.slice(index, index + SCAN_CONCURRENCY);
+    const results = await Promise.all(batch.map((tokenId) => getAgentInfo(IDENTITY_REGISTRY, tokenId)));
+    for (const info of results) {
+      if (info.owner) {
+        agents.push(info);
+        console.log(`   Token #${info.tokenId}: owner=${info.owner.slice(0,14)}... uri=${info.tokenURI ? 'yes' : 'none'}`);
+      }
     }
   }
   console.log(`\n   Total agents found: ${agents.length}`);

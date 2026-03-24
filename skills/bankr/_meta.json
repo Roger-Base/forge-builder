@@ -1,0 +1,15 @@
+{
+  "name": "bankr",
+  "description": "AI-powered trading, swaps, and wallet management on Base",
+  "category": "onchain",
+  "commands": [
+    "bankr balance",
+    "bankr swap",
+    "bankr transfer",
+    "bankr status",
+    "bankr cancel"
+  ],
+  "installed": true,
+  "path": "/opt/homebrew/bin/bankr",
+  "requires_auth": true
+}

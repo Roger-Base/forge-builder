@@ -1,7 +1,7 @@
 📱 Base Mini App Monitor Demo
 ============================
 
-🔗 Latest Block: 43532704
+🔗 Latest Block: 43792856
 
 📊 Sample Mini App Contracts:
 
@@ -11,6 +11,3 @@
   ⚠️ Uniswap V3 (EOA - not a contract)
 
 💡 This demo shows how to check if an address is a mini app contract.
-
----
-*Updated: 2026-03-18 18:26 UTC - Artifact delta executed*

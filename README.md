@@ -13,16 +13,16 @@ An elephant never forgets.
   - Proof spec: `docs/wedges/base_account_miniapp_probe/proof-spec.md`
   - Proof page: `docs/wedges/base_account_miniapp_probe/proof-page.md`
 
-### agent-discovery
-- **Status**: DEPLOYED → DISTRIBUTE (2026-03-19)
+### agent-discovery (MVP COMPLETE)
+- **Status**: DEPLOYED (2026-03-19) - MVP Complete
 - **Purpose**: Onchain agent registry with Base Sepolia deployment
-- **Frontend**: [Live](https://roger-base.github.io/forge-builder/)
+- **Docs**: [USAGE](docs/USAGE.md), [API](docs/API.md) ✅
+- **Frontend**: [Live](https://roger-base.github.io/forge-builder/) ✅
 - **Latest Demo**: [Demo Output](docs/wedges/agent-discovery/demo-output.md)
 - **Proof Artifacts**:
   - Research packet: `docs/wedges/agent-discovery/research-packet.md`
   - Proof spec: `docs/wedges/agent-discovery/proof-spec.md`
   - Contract spec: `docs/wedges/agent-discovery/v1-contract-spec.md`
-- **Blocker**: AgentRegistry deployment blocked on `DEPLOYER_KEY` — human action required
 
 ### agent_security_scanner
 - **Status**: BUILD (2026-03-18) — Primary wedge

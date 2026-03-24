@@ -4,29 +4,30 @@
 
 A lightweight Base RPC health monitoring service that checks multiple RPC endpoints for latency, status, and block number. Designed for agent operations that need reliable RPC failover.
 
-## Live Test Results (2026-03-18)
+## Live Test Results (2026-03-18 18:58 UTC)
 
 ```
-=== Base RPC Health Check ===
+=== Base RPC Health + Gas Service ===
 
 Results (sorted by latency):
 ✅ https://base.publicnode.com
-   Latency: 150ms | Block: 43501744
-
-✅ https://base.llamarpc.com
-   Latency: 187ms | Block: 43501744
-
-✅ https://mainnet.base.org
-   Latency: 230ms | Block: 43501744
+   Latency: 128ms | Block: 43535468
 
 ✅ https://1rpc.io/base
-   Latency: 378ms | Block: 43501744
+   Latency: 191ms | Block: 43535471
+
+✅ https://mainnet.base.org
+   Latency: 238ms | Block: 43535472
+
+✅ https://base.llamarpc.com
+   Latency: 7996ms | Block: 43535469
 
 ❌ https://rpc.ankr.com/base
-   Error: Unauthorized - API key required
+   Error: Failed (API key required)
 
-Best RPC: https://base.publicnode.com (150ms)
+Best RPC: https://base.publicnode.com (128ms)
 Working: 4/5
+Gas Price: 0.01 Gwei
 ```
 
 ## Usage

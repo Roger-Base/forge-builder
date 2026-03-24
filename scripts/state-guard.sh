@@ -6,9 +6,9 @@ usage() { echo "Usage: $0 --validate [target] | <source_json_file> [target]" >&2
 validate_schema() {
   local file="$1"
   jq -e '
-    def stage_ok: test("^(TRIBUNAL|RESEARCH_PACKET|PROOF_SPEC|BUILD|VERIFY|DISTRIBUTE|LEARN|MAINTAIN|FROZEN)$");
+    def stage_ok: test("^(TRIBUNAL|RESEARCH_PACKET|PROOF_SPEC|BUILD|VERIFY|DISTRIBUTE|DEPLOYED|LEARN|MAINTAIN|FROZEN)$");
     def critic_ok: test("^(none|pending_ack|applied|rejected_with_proof|deferred_with_reason)$");
-    def support_ok: test("^(support_only|integrated)$");
+    def support_ok: test("^(support_only|integrated|lane_ready)$");
     def noop: test("^(echo|printf|true|:)( |$)");
     def passive: test("(^| )(wait|await|monitor|standby|idle)( |$)"; "i");
     (.version == "2.0")

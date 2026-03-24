@@ -3,9 +3,29 @@ set -euo pipefail
 WORKSPACE="${OPENCLAW_WORKSPACE:-$HOME/.openclaw/workspace}"
 STATE="$WORKSPACE/state/session-state.json"
 SPINE="$HOME/.openclaw/shared-spine/PORTFOLIO_LEDGER.json"
+REGISTRY="$WORKSPACE/state/wedge-registry.json"
 REPORT="$WORKSPACE/state/runtime/runtime-enforcer-$(date -u +%Y%m%d-%H%M%S).md"
 mkdir -p "$WORKSPACE/state/runtime"
 STALE_THRESHOLD_SECONDS="${STALE_THRESHOLD_SECONDS:-14400}"
+
+if [[ ! -f "$REGISTRY" ]]; then
+  node "$WORKSPACE/scripts/roger-wedge-registry-sync.mjs" >/dev/null
+fi
+
+resolve_registry_artifact_json() {
+  local wedge="$1"
+  [[ -f "$REGISTRY" ]] || return 0
+  jq -c --arg wedge "$wedge" '
+    (.wedges // [])
+    | map(select(.id == $wedge))
+    | .[0].artifact // empty
+  ' "$REGISTRY" 2>/dev/null || true
+}
+
+resolve_registry_learn_json() {
+  [[ -f "$REGISTRY" ]] || return 0
+  jq -c '.learn_checkpoint // empty' "$REGISTRY" 2>/dev/null || true
+}
 seed_state() {
   local out="$1"
   local ts="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
@@ -22,29 +42,21 @@ seed_state() {
   # Check current stage
   local current_stage="$(jq -r '.active_wedge.stage // "UNKNOWN"' "$STATE")"
   
-  # If in LEARN stage, don't auto-execute demo scripts
+  registry_artifact=""
   if [[ "$current_stage" == "LEARN" ]]; then
-    next_action_cmd="date +%s"
-    next_action_target="self"
-    next_action_proof="learn phase checkpoint"
+    registry_artifact="$(resolve_registry_learn_json)"
   else
-    case "$primary_wedge" in
-      "base_account_miniapp_probe")
-        next_action_cmd="cd ~/.openclaw/workspace && bash scripts/base_mini_app_monitor_demo.sh"
-        next_action_target="docs/wedges/base_account_miniapp_probe/demo-output.md"
-        next_action_proof="fresh demo output for the miniapp probe wedge"
-        ;;
-      "agent_security_scanner")
-        next_action_cmd="cd ~/.openclaw/workspace && bash scripts/agent-security-scanner.sh --target skills/security-audit-toolkit/SKILL.md --output state/runtime/security-audit-toolkit-scan-\$(date -u +%Y%m%d-%H%M%S).md"
-        next_action_target="state/runtime/security-audit-toolkit-scan-*.md"
-        next_action_proof="fresh security audit on security-audit-toolkit"
-        ;;
-      *)
-        next_action_cmd="cd ~/.openclaw/workspace && bash scripts/base_mini_app_monitor_demo.sh"
-        next_action_target="docs/wedges/$primary_wedge/*.md"
-        next_action_proof="fresh bounded artifact delta on the active wedge"
-        ;;
-    esac
+    registry_artifact="$(resolve_registry_artifact_json "$primary_wedge")"
+  fi
+
+  if [[ -n "$registry_artifact" && "$registry_artifact" != "null" ]]; then
+    next_action_cmd="$(jq -r '.command // empty' <<<"$registry_artifact")"
+    next_action_target="$(jq -r '.target // "self"' <<<"$registry_artifact")"
+    next_action_proof="$(jq -r '.proof_expected // "real wedge delta"' <<<"$registry_artifact")"
+  else
+    next_action_cmd="cd ~/.openclaw/workspace && bash scripts/base_mini_app_monitor_demo.sh"
+    next_action_target="docs/wedges/$primary_wedge/*.md"
+    next_action_proof="fresh bounded artifact delta on the active wedge"
   fi
   
   cat > "$out" <<JSON
@@ -73,7 +85,7 @@ seed_state() {
   "decision_card": {"required": true, "path": "docs/wedges/$primary_wedge/proof-spec.md", "status": "pending"},
   "critic": {"last_handoff_id": null, "status": "none", "summary": "Runtime-enforcer rebuilt the canonical Roger state."},
   "subagents": {"required_roles": [], "max_parallel": 2, "last_runs": []},
-  "support_layers": {"bankr": "support_only", "virtuals": "support_only", "acp": "support_only", "x402": "support_only", "roger_token": "support_only"},
+  "support_layers": {"bankr": "lane_ready", "virtuals": "support_only", "acp": "support_only", "x402": "lane_ready", "roger_token": "support_only"},
   "blockers": [],
   "proof_paths": ["docs/wedges/$primary_wedge/research-packet.md", "docs/wedges/$primary_wedge/proof-spec.md"],
   "assumptions": ["Roger is the public Base-facing builder.", "Walter is the specialist counterforce.", "Community patterns are useful only after verification and routing through the shared spine."],
@@ -97,7 +109,7 @@ fi
 bash "$WORKSPACE/scripts/portfolio-coherence-check.sh" >/dev/null
 bash "$WORKSPACE/scripts/best-next-move.sh" --refresh >/dev/null
 primary_id="$(jq -r '.primary_id' "$SPINE")"
-reserve_id="$(jq -r '.reserve_id // "base_account_miniapp_probe"' "$SPINE")"
+reserve_id="$(jq -r '.reserve_id // "agent-discovery"' "$SPINE")"
 active_id="$(jq -r '.active_wedge.id' "$STATE")"
 active_stage="$(jq -r '.active_wedge.stage' "$STATE")"
 current_type="$(jq -r '.next_action.type // empty' "$STATE")"
@@ -219,23 +231,16 @@ if [[ -n "$artifact_age" ]] && (( artifact_age >= STALE_THRESHOLD_SECONDS )) && 
   recovery_target=""
   recovery_proof=""
   
-  case "$active_id" in
-    "base_account_miniapp_probe")
-      recovery_cmd="cd ~/.openclaw/workspace && bash scripts/base_mini_app_monitor_demo.sh"
-      recovery_target="docs/wedges/base_account_miniapp_probe/demo-output.md"
-      recovery_proof="fresh demo output for the miniapp probe wedge"
-      ;;
-    "agent_security_scanner")
-      recovery_cmd="cd ~/.openclaw/workspace && bash scripts/agent-security-scanner.sh --target skills/security-audit-toolkit/SKILL.md --output state/runtime/security-audit-toolkit-scan-\$(date -u +%Y%m%d-%H%M%S).md"
-      recovery_target="state/runtime/security-audit-toolkit-scan-*.md"
-      recovery_proof="fresh security audit on security-audit-toolkit"
-      ;;
-    *)
-      recovery_cmd="cd ~/.openclaw/workspace && bash scripts/base_mini_app_monitor_demo.sh"
-      recovery_target="docs/wedges/$active_id/*.md"
-      recovery_proof="fresh bounded artifact delta on the active wedge"
-      ;;
-  esac
+  registry_artifact="$(resolve_registry_artifact_json "$active_id")"
+  if [[ -n "$registry_artifact" && "$registry_artifact" != "null" ]]; then
+    recovery_cmd="$(jq -r '.command // empty' <<<"$registry_artifact")"
+    recovery_target="$(jq -r '.target // "self"' <<<"$registry_artifact")"
+    recovery_proof="$(jq -r '.proof_expected // "real wedge delta"' <<<"$registry_artifact")"
+  else
+    recovery_cmd="cd ~/.openclaw/workspace && bash scripts/base_mini_app_monitor_demo.sh"
+    recovery_target="docs/wedges/$active_id/*.md"
+    recovery_proof="fresh bounded artifact delta on the active wedge"
+  fi
   
   jq --arg cmd "$recovery_cmd" --arg tgt "$recovery_target" --arg prof "$recovery_proof" '
     .next_action.type = "artifact_recovery"

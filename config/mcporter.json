@@ -1,0 +1,32 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "description": "Roger workspace filesystem",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/roger/.openclaw/workspace"
+      ]
+    },
+    "base-gas": {
+      "description": "Local Base gas MCP server",
+      "command": "node",
+      "args": [
+        "/Users/roger/.openclaw/workspace/code/base-mcp-server/index.js"
+      ]
+    },
+    "github": {
+      "description": "GitHub API via MCP",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "env": {
+        "GITHUB_TOKEN": "PLACEHOLDER_REPLACE_WITH_REAL_TOKEN"
+      }
+    }
+  },
+  "imports": []
+}

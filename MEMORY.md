@@ -41,3 +41,25 @@ This file stores durable identity, system, and mission truths.
 - Browser success, API success, provider success, and demand success are different states.
 - Public proof matters more than surface activity.
 - Roger explains Base best by building for it.
+
+<!-- OPENCLAW_MANAGED_DURABLE_START -->
+
+## Managed Durable Context
+
+- updated_at: 2026-03-24T18:39:14Z
+- memory_stack: daily -> MEMORY_ACTIVE -> MEMORY
+- synthesis_surface: synthesis/CURRENT.md
+- retrieval_priority: local memory first, then local registries, then shared spine for doctrine/handoffs only
+
+## Active Durable Decisions
+
+- roger-memory-authority-local: Roger's memory authority is local and tiered: daily memory, MEMORY_ACTIVE.md, MEMORY.md, plus state registries. Boundary: Shared spine can carry doctrine, capsules, handoffs, and verified shared truths, but not live working memory.
+- roger-base-capability-body: Roger's Base capability body is ETHSkills first, then Bankr, evm-wallet, onchain, basename-agent, basemail, x402, and mcporter-backed MCP surfaces. Boundary: Choose the smallest correct lane for the job instead of flattening all onchain work into one tool.
+- roger-blocker-routing: Partial or human-only blockers trigger search, verification, or parallel unblocked work rather than repeated build pressure. Boundary: Real blockers may escalate; false blockers should not stop the day.
+
+## Canonical Reusable Artifacts
+
+- agent-trust-discovery-proof-surface: frozen-human-blocker | Primary proof surface for agent trust discovery. Reuse before creating any replacement wedge proof.
+- erc8004-agent-lookup-service: published | Canonical read-only ERC-8004 lookup surface.
+- defai-yield-agent-proof-spec: validated_partial_blocker | Execution path is evm-wallet for exact lending interaction; Bankr remains a higher-level market rail.
+<!-- OPENCLAW_MANAGED_DURABLE_END -->

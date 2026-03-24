@@ -26,3 +26,11 @@ memory/
 archive/
 inbox/
 reports/
+
+# Frontend build artifacts
+frontend/dist/
+frontend/node_modules/
+frontend/.vercel/
+
+config/mcporter.json
+code/SwarmAgenticCode/

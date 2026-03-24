@@ -77,6 +77,8 @@ def infer_type(role: str) -> str:
 def infer_wedge(task: str, fallback: str) -> str:
     text = task or ""
     known = [
+        "agent-trust-discovery",
+        "agent-discovery",
         "agent_security_scanner",
         "base_account_miniapp_probe",
         "base_gas_tracker_v2",
@@ -112,7 +114,7 @@ def parse_main_session_id():
 
 def current_active_wedge():
     state = load_json(RSTATE, {})
-    return state.get("active_wedge", {}).get("id", "agent_security_scanner")
+    return state.get("active_wedge", {}).get("id", "agent-trust-discovery")
 
 
 def parse_transcript(session_id: str):

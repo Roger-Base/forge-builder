@@ -4,7 +4,7 @@ WORKSPACE="${OPENCLAW_WORKSPACE:-$HOME/.openclaw/workspace}"
 STATE="$WORKSPACE/state/session-state.json"
 SPINE="$HOME/.openclaw/shared-spine/PORTFOLIO_LEDGER.json"
 primary="$(jq -r '.roger.primary_wedge' "$SPINE")"
-reserve="$(jq -r '.roger.reserve_wedge // "base_account_miniapp_probe"' "$SPINE")"
+reserve="$(jq -r '.roger.reserve_wedge // "agent-discovery"' "$SPINE")"
 current_primary="$(jq -r '.portfolio.primary_id' "$STATE")"
 current_reserve="$(jq -r '.portfolio.reserve_id' "$STATE")"
 if [[ "$current_primary" == "$primary" && "$current_reserve" == "$reserve" ]]; then

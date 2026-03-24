@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 RWS="${OPENCLAW_WORKSPACE:-$HOME/.openclaw/workspace}"
-WWS="$HOME/.openclaw/workspace-qwen-support"
+WWS="${WALTER_WORKSPACE:-$HOME/.openclaw/workspace-walter}"
 SPINE="$HOME/.openclaw/shared-spine"
 critical=0
 ok(){ echo "OK: $*"; }
@@ -17,5 +17,6 @@ bash "$WWS/scripts/kernel-audit.sh" >/dev/null 2>&1 && ok "Walter kernel audit p
 [[ -f "$RWS/state/walter-handoff.json" ]] && ok "Walter handoff file present" || fail "Walter handoff missing"
 [[ -f "$RWS/state/subagent-ledger.json" ]] && ok "Roger subagent ledger present" || fail "Roger subagent ledger missing"
 [[ -f "$WWS/state/subagent-ledger.json" ]] && ok "Walter subagent ledger present" || fail "Walter subagent ledger missing"
+[[ -f "$WWS/state/priority-queue.json" ]] && ok "Walter priority queue present" || fail "Walter priority queue missing"
 echo "critical=$critical"
 [[ "$critical" -eq 0 ]]

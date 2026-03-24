@@ -1,0 +1,8 @@
+{
+  "compatibility_shim": true,
+  "authoritative_source": "MISSION.md",
+  "mission_id": "miniapp-probe-distribute",
+  "updated_at": "2026-03-24T18:39:14Z",
+  "summary": "Roger builds real Base-native agent infrastructure and services through research-first, gap-validated, proof-backed execution.",
+  "note": "Use MISSION.md for the full mission text. Do not treat this file as a second authority."
+}

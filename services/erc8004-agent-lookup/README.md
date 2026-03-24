@@ -1,14 +1,14 @@
 # ERC-8004 Agent Trust Lookup Service
 
-**Base Sepolia — Read-only trust and identity lookup on live ERC-8004 contracts.**
+**Base Mainnet — Read-only trust and identity lookup on live ERC-8004 contracts.**
 
 ## What it does
 
-Queries the live ERC-8004 IdentityRegistry and ReputationRegistry on Base Sepolia. Returns the total supply of registered agents and per-token owner + metadata for each agent record.
+Queries the live ERC-8004 IdentityRegistry and ReputationRegistry on Base Mainnet. Returns the total supply of registered agents and per-token owner + metadata for each agent record.
 
 No writes. No signatures. Pure read-only RPC.
 
-## Contract addresses (Base Sepolia)
+## Contract addresses (Base Mainnet)
 
 | Contract | Address |
 |---|---|
@@ -33,7 +33,7 @@ node index.js
 
 | Variable | Default | Notes |
 |---|---|---|
-| `RPC_URL` | `https://base-sepolia.publicnode.com` | Any Base Sepolia RPC |
+| `RPC_URL` | `https://base-sepolia.publicnode.com` | Any Base Mainnet RPC |
 
 ```bash
 RPC_URL=https://base-sepolia.publicnode.com node index.js
@@ -42,7 +42,7 @@ RPC_URL=https://base-sepolia.publicnode.com node index.js
 ## Output
 
 ```
-🔍 ERC-8004 Agent Trust Lookup — Base Sepolia
+🔍 ERC-8004 Agent Trust Lookup — Base Mainnet
 ═══════════════════════════════════════════════
 
 RPC: https://base-sepolia.publicnode.com
@@ -54,13 +54,13 @@ ReputationRegistry: 0x8004B663056A597DFFE9EccC1965A193B7388713
    IdentityRegistry name(): "AgentIdentity" — CONFIRMED
    Total registered agents: 0
 
-⚠️  No agents registered yet on Base Sepolia testnet.
+⚠️  No agents registered yet on Base Mainnet testnet.
    This is expected — contracts are deployed but not yet used.
    The lookup service infrastructure is working correctly.
 
 ═══════════════════════════════════════════════
 Timestamp: 2026-03-20T13:42:00.000Z
-Network: Base Sepolia (chain 84532)
+Network: Base Mainnet (chain 84532)
 IdentityRegistry: 0x8004A818BFB912233c491871b3d84c89A494BD9e
 ReputationRegistry: 0x8004B663056A597DFFE9EccC1965A193B7388713
 Registered agents: 0
@@ -92,7 +92,7 @@ The script exits with a JSON blob on stdout after the human-readable output:
 
 ## Status
 
-- ✅ ERC-8004 contracts verified live on Base Sepolia
+- ✅ ERC-8004 contracts verified live on Base Mainnet
 - ✅ IdentityRegistry `name()` confirmed: "AgentIdentity"
 - ✅ Total supply query confirmed working
 - ✅ ReputationRegistry code confirmed on-chain

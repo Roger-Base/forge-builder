@@ -26,8 +26,8 @@ done
 
 [[ -n "$OUT" ]] || { echo "Missing --output" >&2; exit 1; }
 
-primary="$(jq -r '.roger.primary_wedge // "agent_security_scanner"' "$SPINE")"
-reserve="$(jq -r '.roger.reserve_wedge // "base_account_miniapp_probe"' "$SPINE")"
+primary="$(jq -r '.roger.primary_wedge // "agent-trust-discovery"' "$SPINE")"
+reserve="$(jq -r '.roger.reserve_wedge // "agent-discovery"' "$SPINE")"
 candidate="${CANDIDATE:-$reserve}"
 active_wedge="$(jq -r '.active_wedge.id' "$STATE")"
 active_stage="$(jq -r '.active_wedge.stage' "$STATE")"

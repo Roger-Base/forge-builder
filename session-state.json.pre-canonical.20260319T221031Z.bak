@@ -1,0 +1,104 @@
+{
+  "version": "2.0",
+  "updated_at": "2026-03-18T18:59:09Z",
+  "mode": "BUILD",
+  "mission": {
+    "id": "roger-base-v1",
+    "status": "active"
+  },
+  "portfolio": {
+    "primary_id": "agent_security_scanner",
+    "reserve_id": "base_account_miniapp_probe",
+    "maintenance_ids": [
+      "base_gas_tracker_v2",
+      "contextkeeper_mvp"
+    ],
+    "frozen_ids": [
+      "x402_paid_api_demo",
+      "erc8004_registry_utility",
+      "bankr_operator_console",
+      "base-beginner-guide",
+      "base-portfolio",
+      "base-send",
+      "base-receive",
+      "base_gas_tracker_static_duplicate",
+      "base_gas_tracker_builder_duplicate"
+    ]
+  },
+  "active_wedge": {
+    "id": "agent_security_scanner",
+    "stage": "BUILD"
+  },
+  "next_action": {
+    "command": "cd ~/.openclaw/workspace && bash scripts/agent-security-scanner.sh --sample --output docs/wedges/agent_security_scanner/sample-audit.md",
+    "type": "artifact_delta",
+    "reason": "first build step per proof-spec",
+    "target": "docs/wedges/agent_security_scanner/sample-audit.md",
+    "proof_expected": "sample audit report"
+  },
+  "decision_card": {
+    "required": false,
+    "path": "state/runtime/decision-card-placeholder.md",
+    "status": "none"
+  },
+  "critic": {
+    "last_handoff_id": null,
+    "status": "none",
+    "summary": ""
+  },
+  "subagents": {
+    "required_roles": [
+      "builder-spike",
+      "verifier"
+    ],
+    "max_parallel": 2,
+    "last_runs": []
+  },
+  "support_layers": {
+    "bankr": "support_only",
+    "virtuals": "support_only",
+    "acp": "support_only",
+    "x402": "support_only",
+    "roger_token": "support_only"
+  },
+  "blockers": [],
+  "proof_paths": [
+    "docs/wedges/base_account_miniapp_probe/research-packet.md",
+    "docs/wedges/base_account_miniapp_probe/proof-spec.md",
+    "docs/wedges/base_account_miniapp_probe/demo-output.md"
+  ],
+  "assumptions": [
+    "Roger is the public Base-facing builder.",
+    "Walter is the specialist counterforce.",
+    "Community patterns are useful only after verification and routing through the shared spine.",
+    "MISSION.md canon: base_account_miniapp_probe is primary as of 2026-03-13"
+  ],
+  "last_artifact_change_at": "2026-03-18T18:59:09Z",
+  "last_artifact_delta": "README.md updated with base_account_miniapp_probe",
+  "last_stage_advance_at": "2026-03-14T17:25:00Z",
+  "lastUpdated": "2026-03-18T05:45:28Z",
+  "lastArtifactChangeAt": "2026-03-18T18:59:09Z",
+  "capability_activation_ref": "state/capability-activation.json",
+  "consumer": "current wedge proof surface and GitHub artifact lane",
+  "never_touch": "Walter specialist work, Fundiora, and support-layer drift",
+  "max_chain_steps": 3,
+  "soft_budget_minutes": 25,
+  "best_next_move_ref": "state/best-next-move.json",
+  "direction_review": {
+    "required": true,
+    "candidate": "agent_security_scanner",
+    "status": "complete",
+    "artifact_path": "docs/wedges/base_account_miniapp_probe/direction-review-20260315-final.md",
+    "reason": null
+  },
+  "self_evaluation": {
+    "last_score": null,
+    "last_task": null,
+    "last_at": null,
+    "history": []
+  },
+  "last_action": "security_scan",
+  "last_action_at": "2026-03-15T15:11:00Z",
+  "current_stage": "DISTRIBUTE",
+  "stage": "DISTRIBUTE"
+}

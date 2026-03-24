@@ -15,12 +15,33 @@ bash "$WORKSPACE/scripts/memory-active-parity-guard.sh" || {
   # Don't apply best-next-move if manual fix exists - preserve the manual change
 }
 
-bash "$WORKSPACE/scripts/portfolio-coherence-check.sh" >/dev/null
+node "$WORKSPACE/scripts/roger-artifact-reuse-sync.mjs" >/dev/null
+node "$WORKSPACE/scripts/roger-state-digest.mjs" >/dev/null
+bash "$WORKSPACE/scripts/portfolio-coherence-check.sh" >/dev/null || {
+  echo "ACTIVE_SURFACE_SYNC: portfolio coherence check failed; continuing canonical repair"
+}
+node "$WORKSPACE/scripts/roger-self-audit.mjs" >/dev/null
 bash "$WORKSPACE/scripts/best-next-move.sh" --refresh --apply >/dev/null
+node "$WORKSPACE/scripts/roger-capability-body-sync.mjs" >/dev/null
 bash "$WORKSPACE/scripts/capability-activation.sh" --ensure >/dev/null
+node "$WORKSPACE/scripts/roger-state-digest.mjs" >/dev/null
+node "$WORKSPACE/scripts/roger-synthesis-sync.mjs" >/dev/null
+node "$WORKSPACE/scripts/roger-priority-queue-sync.mjs" >/dev/null
+node "$WORKSPACE/scripts/roger-memory-compact.mjs" >/dev/null
 python3 "$WORKSPACE/scripts/subagent-ledger-sync.py" >/dev/null
 bash "$WORKSPACE/scripts/daily-plan.sh" --refresh >/dev/null
 ts="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+today_mem="memory/$(date -u +%Y-%m-%d).md"
+if yesterday_day="$(date -u -v-1d +%Y-%m-%d 2>/dev/null)"; then
+  :
+else
+  yesterday_day="$(python3 - <<'PY'
+from datetime import datetime, timedelta, timezone
+print((datetime.now(timezone.utc) - timedelta(days=1)).strftime('%Y-%m-%d'))
+PY
+)"
+fi
+yesterday_mem="memory/${yesterday_day}.md"
 active_wedge="$(jq -r '.active_wedge.id' "$STATE")"
 stage="$(jq -r '.active_wedge.stage' "$STATE")"
 next_cmd="$(jq -r '.next_action.command' "$STATE")"
@@ -72,6 +93,39 @@ $candidate_lines
 2. Use the winning capability and lane before widening scope.
 3. If no real delta appears, delegate or direction-review instead of repeating the same command.
 NOW
-files_json='["BOOT.md","MISSION.md","state/session-state.json","state/capability-activation.json","state/best-next-move.json","state/daily-plan.md","state/subagent-ledger.json","NOW.md","MEMORY_ACTIVE.md","MEMORY.md","WORKSPACE_SURFACE.md","/Users/roger/.openclaw/shared-spine/MISSION_SPINE.md","/Users/roger/.openclaw/shared-spine/PORTFOLIO_LEDGER.json"]'
-jq -n --arg ts "$ts" --arg sid "$(date -u +%Y%m%dT%H%M%SZ)-roger-surface-sync" --argjson files "$files_json" '{session_id:$sid,files_read:$files,skills_opened:[],runtime_sources_used:["state/session-state.json","state/capability-activation.json","state/daily-plan.md","NOW.md"],external_sources_used:[],generated_at:$ts}' > "$CTX"
+bash "$WORKSPACE/scripts/compatibility-surface-sync.sh" >/dev/null
+files_json="$(jq -n \
+  --arg today "$today_mem" \
+  --arg yesterday "$yesterday_mem" \
+  '[
+    "SOUL.md",
+    "IDENTITY.md",
+    "USER.md",
+    "MISSION.md",
+    "AGENTS.md",
+    "TOOLS.md",
+    "BOOT.md",
+    "HEARTBEAT.md",
+    "state/session-state.json",
+    "state/capability-activation.json",
+    "state/capability-body.json",
+    "state/best-next-move.json",
+    "state/daily-plan.md",
+    "state/subagent-ledger.json",
+    "state/artifact-registry.json",
+    "state/decision-registry.json",
+    "state/synthesis-registry.json",
+    "synthesis/CURRENT.md",
+    "state/priority-queue.json",
+    $today,
+    $yesterday,
+    "NOW.md",
+    "MEMORY_ACTIVE.md",
+    "MEMORY.md",
+    "WORKSPACE_SURFACE.md",
+    "/Users/roger/.openclaw/shared-spine/MISSION_SPINE.md",
+    "/Users/roger/.openclaw/shared-spine/PORTFOLIO_LEDGER.json"
+  ]'
+)"
+jq -n --arg ts "$ts" --arg sid "$(date -u +%Y%m%dT%H%M%SZ)-roger-surface-sync" --argjson files "$files_json" '{session_id:$sid,files_read:$files,skills_opened:[],runtime_sources_used:["SOUL.md","IDENTITY.md","USER.md","MISSION.md","state/session-state.json","state/capability-activation.json","state/capability-body.json","state/artifact-registry.json","state/decision-registry.json","state/synthesis-registry.json","synthesis/CURRENT.md","state/priority-queue.json","state/daily-plan.md","NOW.md"],external_sources_used:[],generated_at:$ts}' > "$CTX"
 echo "ACTIVE_SURFACE_SYNC_OK $NOW_FILE"

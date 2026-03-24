@@ -141,6 +141,7 @@ if [ "$UPDATE_STATE" = true ]; then
     --arg report_rel "${REPORT#$WORKSPACE/}" \
     --arg packet "$research_packet" \
     --arg spec "$proof_spec" \
+    --arg reserve "$reserve_id" \
     '
     .version = "14.0"
     | .mode = "BUILD"
@@ -148,17 +149,17 @@ if [ "$UPDATE_STATE" = true ]; then
     | .lastUpdated = $ts
     | .last_verified_at = $ts
     | .portfolio = {
-        primary_id: "agent_security_scanner",
-        reserve_id: "base_account_miniapp_probe",
+        primary_id: $op,
+        reserve_id: $reserve,
         maintenance_ids: ["base_gas_tracker_v2", "contextkeeper_mvp"],
         frozen_ids: ["x402_paid_api_demo", "erc8004_registry_utility", "bankr_operator_console", "base-beginner-guide", "base-portfolio", "base-send", "base-receive", "base_gas_tracker_static_duplicate", "base_gas_tracker_builder_duplicate"]
       }
     | .active_wedge = {id: $op, stage: $stage}
     | .support_layers = {
-        bankr: "support_only",
+        bankr: "lane_ready",
         virtuals: "support_only",
         acp: "support_only",
-        x402: "support_only",
+        x402: "lane_ready",
         roger_token: "support_only"
       }
     | .research_packet_required = ($stage == "TRIBUNAL" or $stage == "RESEARCH_PACKET" or $stage == "PROOF_SPEC")

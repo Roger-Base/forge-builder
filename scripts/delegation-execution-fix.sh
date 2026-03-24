@@ -6,7 +6,7 @@
 WORKSPACE="${OPENCLAW_WORKSPACE:-$HOME/.openclaw/workspace}"
 ROLE="${1:-verifier}"
 TASK="${2:-Verify the strongest proof for the active wedge}"
-TARGET_WEDGE="${3:-base_account_miniapp_probe}"
+TARGET_WEDGE="${3:-agent-trust-discovery}"
 
 echo "=== DELEGATION EXECUTION ==="
 echo "Role: $ROLE"

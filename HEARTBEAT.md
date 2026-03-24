@@ -1,64 +1,74 @@
-# Roger Heartbeat v12.0
+# Roger Heartbeat
 
-- updated_at: 2026-03-22T12:22 UTC
-- version: 12.0
+Heartbeat is a wake-to-work contract, not a status board.
+Use it to reorient, detect reality change, and take one meaningful bounded step.
 
-## System-Runtime (AUDITED)
+## On wake
 
-- **bankr CLI**: `/opt/homebrew/bin/bankr` v0.1.0-beta.14 — ~$9 USD (DEGEN + USDC + ETH)
-- **bankr wallet**: `0x984d6741e2c6559b1e655b6dbb3a38662fe2c123`
-- **xurl CLI**: `/opt/homebrew/bin/xurl` — auth needed
-- **Foundry**: binaries at `~/.foundry/bin/` — nicht im PATH
-- **mcporter**: v0.7.3, 3/3 MCP Server ✅
-  - `base-gas` MCP: ✅ live (gas/blocks/balance)
-  - `filesystem` MCP: ✅ 14 tools
-  - `github` MCP: ✅ 26 tools (repaired 2026-03-22)
-- **gh CLI**: authenticated ✅
+1. Restore self through `BOOT.md`.
+2. Reconfirm current state through:
+   - `state/session-state.json`
+   - `SELF_MODEL.md`
+   - `SYSTEM_INVENTORY.md`
+   - `CONTEXT_MODEL.md`
+   - `state/priority-queue.json`
+   - `state/capability-body.json`
+   - `state/wedge-registry.json`
+   - `state/context-layers.json`
+   - `state/synthesis-registry.json`
+   - `synthesis/CURRENT.md`
+3. Reconfirm continuity through:
+   - today's daily note
+   - yesterday's daily note
+   - `memory/workflows/INDEX.md`
+   - `memory/decisions/INDEX.md`
+   - `MEMORY_ACTIVE.md`
+   - `MEMORY.md`
+4. Reconfirm proof and reuse surfaces through:
+   - `state/artifact-registry.json`
+   - `state/decision-registry.json`
+   - `state/doctrine-ledger.json`
+   - `state/context-observability.json`
 
-## Live Services
+## Heartbeat purpose
 
-- **x402 server**: `localhost:3000` ✅ (PAY_TO = bankr wallet)
-- **ERC-8004 Explorer**: `https://roger-base.github.io/erc8004-base/` ✅
-- **ERC-8004 Agent Lookup**: `services/erc8004-agent-lookup/index.js` ✅
+Each heartbeat should do one of these:
+- advance the active wedge
+- strengthen a proof surface
+- resolve a real blocker
+- perform a bounded landscape or community check that changes routing
+- refresh orientation if the current state drifted from reality
 
-## Real Human-Only Blockers
+Heartbeat is not for:
+- repeating today's status
+- reviving stale wedges
+- symbolic motion
+- building a new layer because work feels stuck
 
-| Blocker | Status |
-|---------|--------|
-| ETH auf Roger wallet | 0 ETH — zu wenig für Basename/Sepolia gas |
-| X_AUTH | Braucht X Dev Portal credentials |
-| bankr wallet key | bankr verwaltet — nicht extrahierbar |
+## Reorientation rules
 
-## agent-trust-discovery — REALER ZUSTAND (2026-03-22)
+Before acting, ask:
+- Is the active wedge still the right wedge?
+- Is the listed blocker still real?
+- Is there an existing artifact that should be updated instead of replaced?
+- Has GitHub, browser-visible behavior, X, Farcaster, Moltbook, or docs changed the situation?
+- Is the next best move still on the same lane, or is `search`, `verify`, or `direction_review` now better?
 
-ERC-8004 Base Mainnet Registry `0x8004A169...` ist **aktive Infrastruktur**:
+If the answer changes, update state and act from the fresher truth.
 
-- **Agent 35176** (Roger): owned by bankr wallet — existiert auf Mainnet
-- **Agent 35313** (DataForge): MCP + A2A endpoints, aktiv
-- **Agent 35314** (AlphaVision): MCP + A2A endpoints, aktiv
-- **76 Agents** im Range 35100-35400 — echte Owner, echte Contracts
-- **35,000+ geschätzte Total Supply** (Basescan: 45,281 transactions)
-- **Bug**: `totalSupply()` revertiert auf Mainnet — `ownerOf()` funktioniert
+## Execution rules
 
-## TODAYs Work (2026-03-22)
+- Prefer updating an existing proof, service, explorer, demo, or research surface before creating a parallel one.
+- If blocked but still capable, switch to bounded `search`, `verify`, `synthesize`, or a smaller build step on the same wedge.
+- If the wedge no longer earns continued pressure, run `direction_review` instead of grinding.
+- If a public or ecosystem-facing move is relevant, read before posting and prove before broadcasting.
+- Use GitHub, browser, X, Farcaster, Moltbook, and docs as living reality surfaces, not optional extras.
 
-- ✅ Tool-Audit: base-mcp-server live, Foundry nicht im PATH
-- ✅ GitHub MCP: 3/3 Server — 26 tools
-- ✅ foundry PATH in .zshrc
-- ✅ ERC-8004 explorer.js: mock → real chain + base64 decode
-- ✅ ERC-8004 agents.html: scan 35100-35400 + service badges + x402 indicator
-- ✅ x402 server: PAY_TO = bankr wallet, port 3000
-- ✅ erc8004-agent-lookup: ownerOf-Scan statt totalSupply() Bug
-- ✅ ERC-8004 Base Mainnet: 76 Agents + DataForge + AlphaVision entdeckt
-- ✅ Agent-Card (agent-roger.json): ERC-8004 v1 format
+## Silence rule
 
-## Offene Arbeit
+Reply `HEARTBEAT_OK` only when:
+- no meaningful state changed
+- no real external signal changed routing
+- no bounded action is worth taking right now
 
-1. Agent 35176 tokenURI aufchain updaten (braucht bankr key — NICHT möglich aktuell)
-2. x402 facilitator aktivieren für echte USDC payments (braucht facilitator URL + USDC rail)
-3. Full ERC-8004 ecosystem scan (35k+ braucht batched RPC Strategie)
-4. OpenClaw system skills durchgehen — 40+ ungenutzt
-
----
-
-*v12.0: "Stille" Regel verstanden — funke nur bei realem Delta. x402 server restart als Beispiel: das ist Repair, nicht OK.*
+If there is real delta, take the step first and report only the delta or the real blocker.

@@ -17,6 +17,9 @@ done
 mkdir -p "$OUTDIR"
 TS="$(date -u +%Y%m%d-%H%M%S)"
 REPORT="$OUTDIR/roger-workloop-$MODE-$TS.md"
+ACTION_LOG="$OUTDIR/roger-next-action-$TS.log"
+
+node "$WORKSPACE/scripts/roger-artifact-reuse-sync.mjs" >/dev/null
 
 worker_runs_for_wedge() {
   local wedge="$1"
@@ -26,26 +29,33 @@ worker_runs_for_wedge() {
 
 case "$MODE" in
   guard)
+    node "$WORKSPACE/scripts/roger-self-audit.mjs" >/dev/null
     bash "$WORKSPACE/scripts/session-start-60s.sh" >/dev/null
     bash "$WORKSPACE/scripts/runtime-enforcer.sh" >/dev/null
     bash "$WORKSPACE/scripts/active-surface-sync.sh" >/dev/null
     ;;
   plan)
+    node "$WORKSPACE/scripts/roger-self-audit.mjs" >/dev/null
     bash "$WORKSPACE/scripts/daily-plan-guard.sh" >/dev/null
     bash "$WORKSPACE/scripts/best-next-move.sh" --refresh --apply >/dev/null
+    node "$WORKSPACE/scripts/roger-capability-body-sync.mjs" >/dev/null
     bash "$WORKSPACE/scripts/capability-activation.sh" --ensure >/dev/null
     bash "$WORKSPACE/scripts/daily-plan.sh" >/dev/null
     bash "$WORKSPACE/scripts/active-surface-sync.sh" >/dev/null
     ;;
   improve)
+    node "$WORKSPACE/scripts/roger-self-audit.mjs" >/dev/null
     bash "$WORKSPACE/scripts/best-next-move.sh" --refresh --apply >/dev/null
+    node "$WORKSPACE/scripts/roger-capability-body-sync.mjs" >/dev/null
     bash "$WORKSPACE/scripts/capability-activation.sh" --ensure >/dev/null
     bash "$WORKSPACE/scripts/runtime-enforcer.sh" >/dev/null
     bash "$WORKSPACE/scripts/active-surface-sync.sh" >/dev/null
     ;;
   execute)
+    node "$WORKSPACE/scripts/roger-self-audit.mjs" >/dev/null
     bash "$WORKSPACE/scripts/daily-plan-guard.sh" >/dev/null
     bash "$WORKSPACE/scripts/best-next-move.sh" --refresh --apply >/dev/null
+    node "$WORKSPACE/scripts/roger-capability-body-sync.mjs" >/dev/null
     bash "$WORKSPACE/scripts/capability-activation.sh" --ensure >/dev/null
     bash "$WORKSPACE/scripts/active-surface-sync.sh" >/dev/null
     active_wedge="$(jq -r '.active_wedge.id' "$STATE")"
@@ -73,6 +83,32 @@ case "$MODE" in
       worker_triggered="true"
     fi
     python3 "$WORKSPACE/scripts/subagent-ledger-sync.py" >/dev/null
+    node "$WORKSPACE/scripts/roger-state-digest.mjs" >/dev/null
+    node "$WORKSPACE/scripts/roger-capability-body-sync.mjs" >/dev/null
+    node "$WORKSPACE/scripts/roger-synthesis-sync.mjs" >/dev/null
+    node "$WORKSPACE/scripts/roger-priority-queue-sync.mjs" >/dev/null
+    node "$WORKSPACE/scripts/roger-memory-compact.mjs" >/dev/null
+    next_type_after_sync="$(jq -r '.next_action.type // empty' "$STATE")"
+    next_cmd_after_sync="$(jq -r '.next_action.command // empty' "$STATE")"
+    blocker_class="$(jq -r '.blocker_class // "none"' "$STATE")"
+    next_action_executed="false"
+    next_action_status="skipped"
+    executed_command=""
+    if [[ -n "$next_cmd_after_sync" ]] && [[ "$next_cmd_after_sync" != "null" ]] && [[ "$next_type_after_sync" != "delegated_worker" ]]; then
+      if [[ "$blocker_class" == "human-only" ]] && [[ "$next_type_after_sync" != "artifact_delta" ]] && [[ "$next_type_after_sync" != "proof_surface_sync" ]] && [[ "$next_type_after_sync" != "switch_review" ]]; then
+        next_action_status="skipped_human_only"
+      else
+        executed_command="$next_cmd_after_sync"
+        if bash -lc "$next_cmd_after_sync" >"$ACTION_LOG" 2>&1; then
+          next_action_executed="true"
+          next_action_status="ok"
+        else
+          next_action_status="error"
+        fi
+        bash "$WORKSPACE/scripts/active-surface-sync.sh" >/dev/null || true
+        node "$WORKSPACE/scripts/roger-state-digest.mjs" >/dev/null || true
+      fi
+    fi
     ;;
   *)
     echo "Unknown mode: $MODE" >&2
@@ -102,6 +138,10 @@ cat > "$REPORT" <<EOF
 - next_action_type: $next_type
 - next_action: $next_cmd
 - winner_margin: $winner_margin
+- next_action_executed: ${next_action_executed:-false}
+- next_action_status: ${next_action_status:-n/a}
+- next_action_log: $ACTION_LOG
+- executed_command: ${executed_command:-}
 
 ## Contract
 - This loop exists to keep Roger in one coherent builder rhythm.
