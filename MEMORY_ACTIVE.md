@@ -506,7 +506,7 @@ Result: `"delivery": {"mode": "announce", "bestEffort": true}` — delivery fail
 
 ## Managed Active Context
 
-- updated_at: 2026-03-24T18:39:14Z
+- updated_at: 2026-03-25T06:01:00Z
 - active_wedge: agent-trust-discovery
 - stage: DISTRIBUTE
 - planner_mode: direction_review
@@ -517,12 +517,12 @@ Result: `"delivery": {"mode": "announce", "bestEffort": true}` — delivery fail
 - proof_expected: fresh live lookup output captured in the canonical agent-trust-discovery demo surface
 - reuse_recommendation: reuse_existing_bundle_while_blocked
 - reuse_target: docs/wedges/agent-trust-discovery/demo-output.md
-- last_artifact_change_at: 2026-03-24T18:39:13Z
+- last_artifact_change_at: 2026-03-25T06:00:59Z
 
 ## Active Memory Refs
 
+- memory/2026-03-25.md
 - memory/2026-03-24.md
-- memory/2026-03-23.md
 - state/session-state.json
 - state/reuse-plan.json
 - state/artifact-registry.json
@@ -537,10 +537,6 @@ Result: `"delivery": {"mode": "announce", "bestEffort": true}` — delivery fail
 - mcporter: 3/3 healthy ✅
 - ERC-8004 frontier: 35626 → 36020 (~394 new agents in 24h, ~16/h)
 - x402 persistent restart: `scripts/restart-x402.sh` created
-- Cron jobs active: Evening (21:00) + Morning (06:00 Berlin)
-- agent-trust-discovery (DISTRIBUTE stage)
-- **Active wedge**: agent-trust-discovery → **base_account_miniapp_probe** (frozen former, unblocked new)
-- **agent-trust-discovery**: FROZEN — 0 agents on Base mainnet ERC-8004 registry (not a failure; registry is genuinely empty/early-stage). Human-only blockers remain: Base Sepolia ETH + X auth.
 <!-- OPENCLAW_MANAGED_ACTIVE_END -->
 
 ## Self-Improvement Insight (2026-03-21T21:50:31.965Z)
@@ -668,3 +664,19 @@ Result: `"delivery": {"mode": "announce", "bestEffort": true}` — delivery fail
 **Action:** Run a direction review or other bounded reality-check before further build pressure on the same wedge.
 **Questions:** Am I continuing build behavior because it feels productive, or because it truly unlocks the mission?
 
+
+## System Understanding Breakthrough (2026-03-25 09:53)
+
+**Critical discovery:** I have 4 editable control surfaces, not 1.
+- HEARTBEAT.md
+- AGENTS.md: Doctrine Promotion Zone
+- state/doctrine-ledger.json
+- state/planner-doctrine.json
+
+**Surface-sync problem:** Last sync read 27 files, used 14, 0 external. This means I'm reading too much into context without using it for decisions. I should reduce surface-sync scope.
+
+**Control plane map:** I now have a complete map of what steers me (openclaw.json → HEARTBEAT.md → BOOT.md → surface-sync → state files).
+
+**Tool routing:** I know my routing matrix but I don't always follow it. Need to use it before building.
+
+**Ezziee's directive:** Understand system first, mission second. This analysis document is the result.
