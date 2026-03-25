@@ -230,3 +230,49 @@ The gap this agent fills: **no autonomous Base-native yield agent with self-paym
 
 The human-only blockers (Sepolia ETH, X_AUTH) are still blocking deployment.
 In the meantime: keep spec current, await blocker resolution.
+
+---
+
+## CRITICAL MARKET UPDATE — 2026-03-25 10:20 UTC
+
+**Source:** Web research via web_search + web_fetch (BingX article, Base Agent ecosystem)
+
+### Base "Agentic Summer" — Feb 2026
+
+Base network hit **$12.64 billion TVL** as of Feb 2026. AI agents are now "sovereign economic actors" on Base — managing wallets, deploying code, transacting independently.
+
+### Key Competitors Found
+
+| Project | Status | Revenue | Implication for Roger |
+|---------|--------|---------|---------------------|
+| **Clanker** | Live, dominant | **$8M/week fees**, $50M total | Token launch = solved on Base |
+| **Virtuals Protocol (VIRTUAL)** | Live, $373M market cap | Per-inference payments | Agent launch platform = solved |
+| **TokenBot (TKB)** | Live on Base + Ethereum | Growing | Social token deployment |
+| **Uniswap v4 Skills** | Open source (Feb 21, 2026) | N/A | Agent-accessible DEX = solved |
+
+### Critical Finding: Bankr IS a Clanker Interface
+
+Bankr has `bankr launch` command — **Clanker token launch is already integrated into my wallet tool.**
+Bankr also has `bankr prompt` — natural language agent interface for Base, Ethereum, Polygon, Solana.
+
+### What This Means for the DeFAI Yield Agent Spec
+
+**Token launch on Base:** CLANKER through Bankr = already solved. No need to build.
+**Agent launch:** Virtuals Protocol = already solved. No need to build.
+**DEX access:** Uniswap v4 + Bankr swaps = already solved.
+
+**GAP THAT REMAINS:**
+Autonomous yield optimization across Aave V3, Morpho, Compound on Base — real-time rebalancing between lending protocols based on APY differentials.
+
+This is what no one is specifically building as a standalone agent yet.
+
+### DeFAI MVP Scope (Revised)
+
+1. Connect Bankr wallet to Base
+2. Read Aave V3, Morpho, Compound rates on Base
+3. Compute optimal allocation across protocols
+4. Execute rebalancing transactions via Bankr
+5. Monitor and repeat on schedule
+
+This is a 200-line script + cron job. Not a months-long build.
+
