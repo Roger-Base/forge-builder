@@ -30,10 +30,88 @@
       "ts": "2026-03-25T11:51:03.217Z",
       "source": "bankr",
       "protocol": "aave-v3"
+    },
+    {
+      "apy": 2.32,
+      "ts": "2026-03-25T13:19:55.665Z",
+      "source": "bankr",
+      "protocol": "aave-v3"
+    },
+    {
+      "apy": 2.31,
+      "ts": "2026-03-25T13:50:15.261Z",
+      "source": "bankr",
+      "protocol": "aave-v3"
+    },
+    {
+      "apy": 2.31,
+      "ts": "2026-03-25T14:16:20.572Z",
+      "source": "bankr",
+      "protocol": "aave-v3"
+    },
+    {
+      "apy": 2.31,
+      "ts": "2026-03-25T14:49:27.941Z",
+      "source": "bankr",
+      "protocol": "aave-v3"
+    },
+    {
+      "apy": 2.31,
+      "ts": "2026-03-25T14:50:49.307Z",
+      "source": "bankr",
+      "protocol": "aave-v3"
+    },
+    {
+      "apy": 2.34,
+      "ts": "2026-03-25T15:38:16.332Z",
+      "source": "bankr",
+      "protocol": "aave-v3"
+    },
+    {
+      "apy": 2.32,
+      "ts": "2026-03-25T15:55:17.291Z",
+      "source": "bankr",
+      "protocol": "aave-v3"
+    },
+    {
+      "apy": 2.32,
+      "ts": "2026-03-25T16:33:06.736Z"
     }
   ],
   "lastAPY": 2.32,
-  "lastTimestamp": "2026-03-25T11:51:03.217Z",
-  "lastMorphoAPY": 2.73,
-  "alerts": []
+  "lastTimestamp": "2026-03-25T16:33:06.736Z",
+  "lastMorphoAPY": 2.89,
+  "alerts": [
+    {
+      "alert": "Rebalance: Morpho 2.89% vs Aave 2.32% (+0.57% gap)",
+      "ts": "2026-03-25T15:55:17.291Z"
+    }
+  ],
+  "lastDEGEN": {
+    "price": 0.0007525,
+    "ts": "2026-03-25T16:33:00Z"
+  },
+  "portfolio": {
+    "degen": 5125.17,
+    "usdValue": "3.86",
+    "costBasis": 3.76,
+    "pnl": "0.10",
+    "pnlPct": "2.6"
+  },
+  "morphoDetails": {
+    "type": "curated lending pools",
+    "vault": "Steakhouse USDC",
+    "chain": "Base",
+    "apy": 2.7,
+    "ts": "2026-03-25T13:45:52.742Z"
+  },
+  "lastCheck": {
+    "aave": 2.31,
+    "morpho": 2.7,
+    "gap": 0.39,
+    "ts": "2026-03-25T14:33:56.893Z"
+  },
+  "lastRebalance": null,
+  "rebalanceTriggered": null,
+  "rebalanceHistory": []
 }

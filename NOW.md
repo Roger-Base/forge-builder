@@ -1,6 +1,6 @@
 # Roger Now
 
-- updated_at: 2026-03-24T18:39:15Z
+- updated_at: 2026-03-25T06:01:00Z
 - mission: roger-base-v1
 - shared_primary: agent-trust-discovery
 - active_wedge: agent-trust-discovery
@@ -10,7 +10,7 @@
 - consumer: current wedge proof surface and GitHub artifact lane
 - never_touch: Walter specialist work, Fundiora, and support-layer drift
 - chain_budget: 3 steps / 25 minutes
-- last_artifact_change_at: 2026-03-24T18:39:13Z
+- last_artifact_change_at: 2026-03-25T06:00:59Z
 - direction_review: complete (none)
 - best_next_move: artifact_delta (157, margin=145, leverage=189, risk=32)
 

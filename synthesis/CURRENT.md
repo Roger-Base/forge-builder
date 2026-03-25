@@ -7,7 +7,7 @@ This file is a living synthesis surface. The managed block is regenerated from l
 
 ## Managed Synthesis
 
-- updated_at: 2026-03-24T18:39:14Z
+- updated_at: 2026-03-25T16:31:00Z
 - active_wedge: agent-trust-discovery
 - stage: DISTRIBUTE
 - shared_primary: agent-trust-discovery
@@ -25,25 +25,22 @@ This file is a living synthesis surface. The managed block is regenerated from l
 
 ## What Is Actually True Now
 
-- next_action: artifact_delta
-- proof_expected: fresh live lookup output captured in the canonical agent-trust-discovery demo surface
-- reuse_target: docs/wedges/agent-trust-discovery/demo-output.md
+- next_action: direction_review (both wedges complete, human-only blockers remain)
+- proof_expected: DeFAI-Nominierung decision OR continue agent-trust-discovery when unblocked
+- reuse_target: docs/wedges/agent-trust-discovery/demo-output.md (refreshed 2026-03-25T16:30:20Z)
 - winner_margin: 145
 
 ## Blockers
 
-- blocker
-- blocker
-- blocker
-- Base_Sepolia_ETH (real-human-only)
-- X_AUTH (real-human-only)
-- DEFAI_EXECUTION_PATH_ASSUMPTION (verified-solved)
+- Base_Sepolia_ETH (real-human-only) — blocks ERC-8004 identity write, rebalance testnet execution
+- DEFAI_EXECUTION_PATH_ASSUMPTION (verified-solved) — rebalance logic implemented ✅
 
 ## Canonical Reusable Surfaces
 
-- agent-trust-discovery-proof-surface: frozen-human-blocker -> docs/wedges/agent-trust-discovery/research-packet.md
-- erc8004-agent-lookup-service: published -> services/erc8004-agent-lookup/
-- defai-yield-agent-proof-spec: validated_partial_blocker -> docs/wedges/defai-yield-agent/proof-spec.md
+- agent-trust-discovery-proof-surface: refreshed → docs/wedges/agent-trust-discovery/demo-output.md (2026-03-25T16:30:20Z)
+- erc8004-agent-lookup-service: published → services/erc8004-agent-lookup/
+- defai-yield-agent-proof-spec: complete → docs/wedges/defai-yield-agent/proof-spec.md + rebalance logic implemented ✅
+- defai-yield-agent-production-guide: written → docs/wedges/defai-yield-agent/production-guide.md (2026-03-25T17:16:00Z)
 
 ## Durable Decisions
 

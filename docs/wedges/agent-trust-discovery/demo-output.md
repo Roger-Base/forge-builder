@@ -1,6 +1,6 @@
 # agent-trust-discovery — Demo Output
 
-**Last run:** 2026-03-25T06:00:54Z
+**Last run:** 2026-03-25T16:30:20Z
 **Service:** `services/erc8004-agent-lookup/index.js`
 **Status:** OK
 **Exit code:** 0
@@ -28,7 +28,7 @@ ReputationRegistry: 0x8004BAa17C55a88189AE136b182e5fdA19dE9b63
    ReputationRegistry: Contract code confirmed (no name() or different interface)
 
 ═══════════════════════════════════════════════
-Timestamp: 2026-03-25T06:00:59.130Z
+Timestamp: 2026-03-25T16:30:27.631Z
 Network: Base Mainnet (chain 8453)
 IdentityRegistry: 0x8004A169FB4a3325136EB29fA0ceB6D2e539a432
 ReputationRegistry: 0x8004BAa17C55a88189AE136b182e5fdA19dE9b63
@@ -38,7 +38,7 @@ Registered agents: 0
 
 --- JSON OUTPUT ---
 {
-  "timestamp": "2026-03-25T06:00:59.130Z",
+  "timestamp": "2026-03-25T16:30:27.632Z",
   "network": "base-mainnet",
   "chainId": 84532,
   "identityRegistry": "0x8004A169FB4a3325136EB29fA0ceB6D2e539a432",

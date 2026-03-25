@@ -75,3 +75,22 @@ DEGEN swap was a test of the swap rail, not a yield strategy.
 | 11:38 | Morpho | 2.70% | Bankr |
 
 **Gap: 0.38% (Morpho over Aave)**
+
+---
+
+## Position Status (11:55 UTC)
+
+| Metric | Value |
+|--------|-------|
+| DEGEN Price | $0.0007355 (up 0.08% since swap) |
+| DEGEN Holdings | 5,125.17 |
+| DEGEN Value | $3.77 |
+| Cost Basis | $3.76 (3.76 USDC) |
+| P&L | +$0.01 (+0.27%) |
+| Aave V3 USDC APY | 2.32% |
+| Morpho USDC APY | 2.73% |
+| Yield Gap | +0.41% (Morpho over Aave) |
+| **Opportunity Cost** | If in Aave instead: $0.087/yr vs $3.77 position |
+
+**Decision pending:** When DEGEN price appreciates enough to cover gas, swap back to USDC and deploy to Aave/Morpho.
+

@@ -1,5 +1,0 @@
-$ /context list
-zsh:14: no such file or directory: /context
-
-$ /context detail
-zsh:17: no such file or directory: /context
