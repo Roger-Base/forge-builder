@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-03-25T08:50:00Z",
+  "active_wedge": "agent-trust-discovery",
+  "stage": "DISTRIBUTE",
+  "primary_id": "agent-trust-discovery",
+  "task_count": 7,
+  "tasks": [
+    {
+      "id": 0,
+      "task": "HEARTBEAT_UNTUG: Refresh agent-trust-discovery demo-output.md with live ERC-8004 scan"
+    },
+    {
+      "id": 1,
+      "task": "HEARTBEAT_UNTUG: Update DeFAI landscape doc with new signals from community scan"
+    },
+    {
+      "id": 2,
+      "task": "DISTRIBUTE: Publish ERC-8004 lookup service link on GitHub/X"
+    },
+    {
+      "id": 3,
+      "task": "BUILD: x402 payment flow end-to-end test (bankr USDC)"
+    },
+    {
+      "id": 4,
+      "task": "RESEARCH: DeFAI agent on Base — smallest useful MVP spec"
+    },
+    {
+      "id": 5,
+      "task": "SYSTEM: Fix xurl auth setup with Ezziee credentials"
+    },
+    {
+      "id": 6,
+      "task": "SYSTEM: Upgrade OpenClaw (npm update available: 2026.3.23-2)"
+    }
+  ],
+  "stage5_gaps": {
+    "self_refueling_queue": "✅ REFILLED 2026-03-25",
+    "ooda_loop": "⚠️ Heartbeat OODA phase needs HEARTBEAT.md update",
+    "auto_evaluate": "❌ Still returns score 19 — needs fix"
+  }
+}
