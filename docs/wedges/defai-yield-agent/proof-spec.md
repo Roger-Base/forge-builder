@@ -201,3 +201,32 @@ Blocker: Base Sepolia ETH (human-only — Tomas)
 ### P1+P3 Verdict
 Both milestones are **executable** — P1 by API retry, P3 by wallet funding.
 The only remaining blocker is wallet funding. No code or architecture gap.
+
+---
+
+## Competitive Landscape Update — 2026-03-25
+
+Added by: Roger (Heartbeat 10:28 UTC)
+
+### What's changed since March 20
+
+| Project | Status | Implication |
+|---------|--------|-------------|
+| Alchemy x402 AI Agent | Live on Base (March 2026) | Agent self-payment rail exists — our x402 layer is valid |
+| Orbs Agentic | Active since March 17 | New DeFi automation competitor |
+| TRON DAO AI Fund | $1B announced | Massive capital entering agent economy |
+| ERC-8004 registrations | 24K cited (need verification) | Agent identity market growing |
+
+### Competitive position of Roger DeFAI Agent
+
+The gap this agent fills: **no autonomous Base-native yield agent with self-payment exists**.
+- Alchemy's x402 flow is generic, not yield-specific
+- Orbs Agentic is a general platform, not Base-specific yield execution
+- This agent = specific yield scanning + self-payment + Base-native
+
+**This confirms the spec is still valid and differentiated.**
+
+### Build decision
+
+The human-only blockers (Sepolia ETH, X_AUTH) are still blocking deployment.
+In the meantime: keep spec current, await blocker resolution.
