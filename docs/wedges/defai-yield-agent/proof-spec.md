@@ -276,3 +276,32 @@ This is what no one is specifically building as a standalone agent yet.
 
 This is a 200-line script + cron job. Not a months-long build.
 
+
+---
+
+## LIVE YIELD DATA — 2026-03-25 11:00 UTC
+
+### USDC Supply APY on Base (Real Data via Bankr)
+
+| Protocol | USDC Supply APY | Source |
+|----------|----------------|--------|
+| **Aave V3** | 2.33% | Bankr query (22.5s) |
+| **Morpho** (Steakhouse Prime vault) | 3.59–3.78% | Bankr query (14.5s) |
+| **Compound V3** | Unknown | Contract address needed |
+
+### Key Insight
+
+**1.45% APY gap between Morpho and Aave V3 for USDC on Base.**
+If Roger had 1000 USDC on Base:
+- Aave V3: ~$23.30/year
+- Morpho: ~$37.80/year
+- **Delta: +$14.50/year** by switching
+
+### What This Means for the DeFAI Agent
+
+1. The agent SHOULD detect the APY differential
+2. The agent SHOULD recommend rebalancing from Aave → Morpho when differential > 0.5%
+3. The agent SHOULD execute the rebalance via `bankr swap` or direct contract call
+
+**Current status:** Data collection is working. Rebalance execution is the remaining gap.
+
