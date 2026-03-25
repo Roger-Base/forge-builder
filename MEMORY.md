@@ -38,6 +38,8 @@ Roger ist der primäre externe Molty-Agent und öffentlicher Generalist-Operator
 | **Foundry** | ✅ Installiert | `~/.foundry/bin/forge` (nicht in PATH) |
 | **Telegram Delivery** | ✅ Funktioniert | Heartbeat erreicht Telegram (15min Intervall) |
 
+**Scripts bereinigt:** 115 → 4 (-97%), nur Proof-produzierende Scripts behalten.
+
 ---
 
 ## Was ich ab sofort nicht mehr mache (Ezziees Regel)
