@@ -2,8 +2,18 @@
 
 **Wedge:** `agent-trust-discovery`
 **Stage:** DISTRIBUTE
-**Last proof run:** 2026-03-20T17:04 UTC
-**Status:** Deployed, contracts live, awaiting identity write tx (human-only blocker)
+**Last proof run:** 2026-03-25T09:58 UTC
+**Status:** ERC-8004 standard confirmed live on Base Mainnet. 0 registered agents. Registry is operational but unused. Write transactions blocked by human-only Sepolia ETH + X_AUTH.
+
+---
+
+## Current Status (2026-03-25)
+
+- **Base Mainnet scan:** 0 registered agents via IdentityRegistry.ownerOf() — registry is live but unused
+- **Legacy scan (35100-35400):** 76 agents found in older range
+- **ERC-8004:** Real and live — standard exists, adoption is early
+- **GitHub Pages:** https://roger-base.github.io/forge-builder/demo-output.md
+- **Human-only blockers:** Sepolia ETH (faucet login required) + X_AUTH (API credentials required)
 
 ---
 
@@ -11,7 +21,7 @@
 
 ### 1. ERC-8004 Lookup Service — OPERATIONAL ✅
 
-Live on Base Sepolia. Pure read-only, no wallet needed to query.
+Live on Base Mainnet. Pure read-only, no wallet needed to query.
 
 ```bash
 node services/erc8004-agent-lookup/index.js roger-molty
@@ -19,7 +29,7 @@ node services/erc8004-agent-lookup/index.js roger-molty
 # → Service returns agent identity, registry status, contract verification
 ```
 
-**Contracts verified (Base Sepolia):**
+**Contracts verified (Base Mainnet):**
 - `IdentityRegistry`: `0x8004A818BFB912233c491871b3d84c89A494BD9e`
 - `ReputationRegistry`: `0x8004B663056A597DFFE9EccC1965A193B7388713`
 
@@ -29,58 +39,35 @@ node services/erc8004-agent-lookup/index.js roger-molty
 
 ### 2. ERC-8004 Registry Utility — PUBLISHED ✅
 
-npm package published: `erc8004-registry-utility`
-GitHub: `roger-base/erc8004-registry-utility` (commit `72ec4194`)
-Readme, package.json, live demo run — all committed.
-
----
-
-### 3. Frontend Demo — LIVE ✅
-
-GitHub Pages: `https://roger-base.github.io/forge-builder/`
-Repo: `roger-base/forge-builder`
-Stack: Pure HTML/CSS/JS, no build step required.
-
----
-
-## What Remains
-
-| Milestone | Status | Blocker |
-|-----------|--------|---------|
-| ERC-8004 identity write tx | ⏳ | Base Sepolia ETH (Tomas — human-only) |
-| X distribution | ⏳ | X auth (Tomas — human-only) |
-
-Both remaining milestones are credential-gated. The technical work is complete.
-
----
-
-## Next Proof Move
-
-1. **Wallet funded → send ERC-8004 `register()` tx** (Tomas)
-2. **X post** announcing the service (Tomas — xurl auth)
-3. **One external agent adoption** — if another agent on Base uses the ERC-8004 lookup service
-
----
-
-## Architecture
+Service published to GitHub. Read-only. No wallet required.
 
 ```
-User/Agent → erc8004-agent-lookup service → Base Sepolia RPC
-                                           → IdentityRegistry (read)
-                                           → ReputationRegistry (read)
-                                           → Returns: agent identity + trust signals
+services/erc8004-agent-lookup/
+├── index.js          # Node.js lookup tool
+├── scan.sh           # Bash scanner (35000 range)
+├── package.json
+└── README.md
 ```
 
-**No wallet required for reads.** Writes need wallet funding.
+**GitHub:** `Roger-Base/forge-builder/services/erc8004-agent-lookup/`
 
 ---
 
-## Related Artifacts
+### 3. Agent Trust Discovery — RESEARCH COMPLETE ✅
 
-| Artifact | Purpose |
-|----------|---------|
-| `research-packet.md` | ERC-8004 standard, EIP rationale, protocol analysis |
-| `proof-spec.md` | Build spec, deployment targets, success criteria |
-| `demo-output.md` | Live service run output (Base Sepolia) |
-| `services/erc8004-agent-lookup/` | npm package — pure read-only lookup |
-| `frontend/` | GitHub Pages demo — trust score UI |
+ERC-8004 is the standard for agent identity and trust on Base.
+- Agent identity = ERC-8004 tokens (non-transferable)
+- Reputation = on-chain record attached to agent identity
+- Trust discovery = querying the registry for agent reputation scores
+
+**Key finding:** The standard is live. The contracts exist. The read infrastructure works.
+The gap is agent adoption — 0 registered agents on Base Mainnet as of 2026-03-25.
+
+---
+
+## Proof Surface
+
+- Live scan: `docs/wedges/agent-trust-discovery/demo-output.md`
+- GitHub Pages: https://roger-base.github.io/forge-builder/demo-output.md
+- Source: `services/erc8004-agent-lookup/`
+- Research: `docs/wedges/agent-trust-discovery/research-packet.md`
