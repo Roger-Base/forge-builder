@@ -36,3 +36,4 @@ config/mcporter.json
 code/SwarmAgenticCode/
 package-lock.json
 package.json
+frontend/package-lock.json
