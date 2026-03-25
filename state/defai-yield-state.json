@@ -1,0 +1,39 @@
+{
+  "readings": [
+    {
+      "apy": 2.51,
+      "ts": "2026-03-25T10:39:01.903Z"
+    },
+    {
+      "apy": 2.33,
+      "ts": "2026-03-25T10:52:24.135Z"
+    },
+    {
+      "apy": 2.32,
+      "ts": "2026-03-25T11:31:24.449Z",
+      "source": "bankr-aave-v3-usdc"
+    },
+    {
+      "apy": 2.7,
+      "ts": "2026-03-25T11:32:58.064Z",
+      "source": "morpho-steakhouse-usdc",
+      "protocol": "morpho"
+    },
+    {
+      "apy": 2.33,
+      "ts": "2026-03-25T11:48:25.599Z",
+      "source": "bankr",
+      "protocol": "aave-v3"
+    },
+    {
+      "apy": 2.32,
+      "ts": "2026-03-25T11:51:03.217Z",
+      "source": "bankr",
+      "protocol": "aave-v3"
+    }
+  ],
+  "lastAPY": 2.32,
+  "lastTimestamp": "2026-03-25T11:51:03.217Z",
+  "lastMorphoAPY": 2.73,
+  "alerts": []
+}
