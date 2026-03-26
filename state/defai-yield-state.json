@@ -88,11 +88,41 @@
       "ts": "2026-03-26T11:14:05.089Z",
       "source": "bankr",
       "protocol": "aave-v3"
+    },
+    {
+      "apy": 2.34,
+      "ts": "2026-03-26T13:59:08.240Z",
+      "source": "bankr",
+      "protocol": "aave-v3"
+    },
+    {
+      "apy": 2.34,
+      "ts": "2026-03-26T14:02:01.479Z",
+      "source": "bankr",
+      "protocol": "aave-v3"
+    },
+    {
+      "apy": 2.34,
+      "ts": "2026-03-26T14:03:56.073Z",
+      "source": "bankr",
+      "protocol": "aave-v3"
+    },
+    {
+      "apy": 2.34,
+      "ts": "2026-03-26T14:05:51.834Z",
+      "source": "bankr",
+      "protocol": "aave-v3"
+    },
+    {
+      "apy": 2.374,
+      "ts": "2026-03-26T16:57:10.429Z",
+      "source": "rpc-foundry",
+      "protocol": "aave-v3"
     }
   ],
-  "lastAPY": 2.335,
-  "lastTimestamp": "2026-03-26T11:14:05.089Z",
-  "lastMorphoAPY": 3.62,
+  "lastAPY": 2.34,
+  "lastTimestamp": "2026-03-26T14:05:51.834Z",
+  "lastMorphoAPY": 3.23,
   "alerts": [
     {
       "alert": "Rebalance: Morpho 2.89% vs Aave 2.32% (+0.57% gap)",
@@ -101,6 +131,14 @@
     {
       "alert": "Rebalance: Morpho 3.62% vs Aave 2.335% (+1.29% gap)",
       "ts": "2026-03-26T11:14:05.089Z"
+    },
+    {
+      "alert": "Rebalance: Morpho 3.65% vs Aave 2.34% (+1.31% gap)",
+      "ts": "2026-03-26T14:03:56.073Z"
+    },
+    {
+      "alert": "Rebalance: Morpho 3.23% vs Aave 2.34% (+0.89% gap)",
+      "ts": "2026-03-26T14:05:51.834Z"
     }
   ],
   "lastDEGEN": {
@@ -122,17 +160,11 @@
     "ts": "2026-03-25T13:45:52.742Z"
   },
   "lastCheck": {
-    "aave": 2.31,
-    "morpho": 2.7,
-    "gap": 0.39,
-    "ts": "2026-03-25T14:33:56.893Z"
+    "aave": 2.374,
+    "ts": "2026-03-26T16:57:10.429Z"
   },
-  "lastRebalance": "2026-03-26T11:14:05.089Z",
-  "rebalanceTriggered": {
-    "gap": 1.2850000000000001,
-    "aaveAPY": 2.335,
-    "morphoAPY": 3.62,
-    "ts": "2026-03-26T11:14:05.089Z"
-  },
-  "rebalanceHistory": []
+  "lastRebalance": "2026-03-26T13:59:08.240Z",
+  "rebalanceTriggered": null,
+  "rebalanceHistory": [],
+  "lastUpdated": "2026-03-26T16:57:10.429Z"
 }

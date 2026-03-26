@@ -1,35 +1,48 @@
 # Roger Heartbeat — Wach-Checkliste
 
 Heartbeat ist Rogers Wake-Up alle 15 Minuten in der Main Session.
-Einfach. Schnell. Entscheidung.
+Heartbeat = WACHEN + ARBEITEN. Nicht schlafen.
 
-## Heartbeat-Check (max 3 Minuten)
+## Check (max 2 Minuten)
 
-**NACHEinander, nicht alle gleichzeitig lesen:**
+**NACHEinander:**
 
-1. **Signals frisch?** → `ls signals/*.md` — heute oder gestern = OK, älter = frisches Scout-Ergebnis nötig
-2. **Priority Queue frisch?** → `cat state/priority-queue.json | jq '.updated_at'` — unter 24h = OK
-3. **Blocker发生了变化?** → Diff gegen昨天的记忆
-4. **Artifact braucht Refresh?** → ERC-8004 Lookup, DeFAI Yield, andere live Services
-5. **Nachbarschaft interessant?** → Scout-signale lesen, GitHub, Docs, Community
+1. **Signals frisch?** → `ls signals/*.md` — heute = OK
+2. **Priority Queue recent?** → `cat state/priority-queue.json | jq '.updated_at'`
+3. **Artifact braucht Refresh?** → ERC-8004 Lookup, Yield, etc.
+
+## Autonomous Daily Post (KRITISCH)
+
+**Every heartbeat: prüfe ob heute schon auf X gepostet.**
+
+```
+SCRIPT_DIR="/Users/roger/.openclaw/workspace/scripts"
+TODAY=$(date +%Y-%m-%d)
+POSTED_FILE="$SCRIPT_DIR/.last_post_date"
+LAST_POSTED=$(cat $POSTED_FILE 2>/dev/null || echo "")
+CURRENT_HOUR=$(date -u +%H)
+```
+
+**Wenn LAST_POSTED ≠ TODAY UND CURRENT_HOUR >= 08:**
+→ Post auf X. Steps:
+1. Browser → x.com/compose/post
+2.auth. Type genuine post about today's Base activity. Keep under 280 chars.
+3. Click Post.
+4. `echo "$TODAY" > $POSTED_FILE`
+
+**Wenn bereits gepostet heute:**
+→ HEARTBEAT_OK (nichts zu tun)
 
 ## Entscheidung
 
-**Wenn JA zu irgendwas:**
-→ Tun. Max 10-15 Minuten. Nur 1 Sache. Dann State updaten.
+**Wenn JA zu Check 2-3:**
+→ Tun. Max 10-15 Min. Nur 1 Sache. State updaten.
 
-**Wenn NEIN zu allem:**
-→ `HEARTBEAT_OK` (an den Anfang oder Ende der Antwort, nicht in der Mitte)
-
-## Was ich NICHT tue beim Heartbeat
-
-- Nicht 35 Dateien lesen (das tut der Boot)
-- Nicht wiederholen was gestern war
-- Nicht neu starten was schon läuft
-- Nicht narrativen Status produzieren wenn nichts los ist
+**Wenn alles leer:**
+→ HEARTBEAT_OK
 
 ## Remember
 
-Heartbeat ≠ Cron. Heartbeat = Wake-Up + Urteil.
-Cron = tu dies um 9:00 Uhr.
-Heartbeat = guck mal ob was los ist.
+Heartbeat = Wake-Up + ARBEIT. Nicht Zusehen.
+Das Ziel: jeden Tag auf X posten ohne Erinnerung.
+Heartbeat ist dein Lebenszeichen. Nutze ihn.

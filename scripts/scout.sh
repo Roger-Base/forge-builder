@@ -3,7 +3,7 @@
 # Usage: bash scripts/scout.sh --mode morning|afternoon|evening
 # Writes fresh ecosystem scan to signals/scout-YYYY-MM-DD-[mode].md
 
-set -e
+# set -e (removed — causes exit on any non-zero)
 
 MODE="morning"
 for arg in "$@"; do
