@@ -122,6 +122,7 @@ async function main() {
   if (morphoAPY) {
     state.lastMorphoAPY = morphoAPY;
     const gap = morphoAPY - aaveAPY;
+    state.lastCheck = { aave: aaveAPY, morpho: morphoAPY, gap, ts: now };
     log(`Gap: ${gap >= 0 ? '+' : ''}${gap.toFixed(2)}% (Morpho over Aave)`);
     if (gap > GAP_THRESHOLD) {
       const alert = `Rebalance: Morpho ${morphoAPY}% vs Aave ${aaveAPY}% (+${gap.toFixed(2)}% gap)`;
@@ -135,17 +136,28 @@ async function main() {
         log(`🎯  EXECUTION: Rebalance triggered (gap ${gap.toFixed(2)}% > ${GAP_THRESHOLD}%)`);
         log(`Executing: bankr "swap all my USDC from Aave V3 to Morpho Steakhouse on Base"`);
         state.rebalanceTriggered = { gap, aaveAPY, morphoAPY, ts: now };
-        // Execution happens via Bankr CLI (human confirms or auto on Sepolia)
-        // TODO: Auto-execute on Sepolia testnet when ETH unblocked
       } else {
         log(`ℹ️  Already rebalanced today (${lastRebalance}) — skipping duplicate execution`);
       }
+    } else {
+      // Gap closed — clear stale rebalanceTriggered
+      if (state.rebalanceTriggered) {
+        log(`ℹ️  Gap closed (${gap.toFixed(2)}% < ${GAP_THRESHOLD}%) — clearing stale rebalanceTriggered`);
+        state.rebalanceTriggered = null;
+      }
+    }
+  } else {
+    // No Morpho data — cannot verify gap, clear stale rebalanceTriggered
+    if (state.rebalanceTriggered) {
+      log(`ℹ️  No Morpho data — clearing stale rebalanceTriggered`);
+      state.rebalanceTriggered = null;
     }
   }
   
   state.lastRebalance = state.rebalanceTriggered ? now : state.lastRebalance || null;
   saveState(state);
-  log(`Saved. Readings: ${state.readings.length}, Alerts: ${state.alerts.length}, Rebalance: ${state.lastRebalance ? 'YES' : 'NO'}`);
+  const statusRebalance = state.rebalanceTriggered ? 'YES' : 'NO';
+  log(`Saved. Readings: ${state.readings.length}, Alerts: ${state.alerts.length}, Rebalance: ${statusRebalance}`);
 }
 
 main().catch(e => {
