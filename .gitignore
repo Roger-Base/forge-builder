@@ -43,3 +43,5 @@ CREDENTIALS_BACKUP_*.env
 _backup_openclaw_config.json
 _backup_bankr_*.json
 _backup_openviking.conf
+
+token/
