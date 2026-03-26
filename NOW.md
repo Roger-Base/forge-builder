@@ -1,31 +1,51 @@
 # Roger Now
 
-- updated_at: 2026-03-25T06:01:00Z
+- updated_at: 2026-03-26T06:15:00Z
 - mission: roger-base-v1
 - shared_primary: agent-trust-discovery
 - active_wedge: agent-trust-discovery
-- stage: DISTRIBUTE
-- capability: public_builder_execution
-- lane: services/erc8004-agent-lookup + refresh-agent-trust-discovery.sh
-- consumer: current wedge proof surface and GitHub artifact lane
+- stage: DIRECTION_REVIEW (self-audit mode)
+- capability: self_audit_and_workspace_understanding
+- lane: state_cleanup + self_audit
+- consumer: current session only — fixing stale state before next real work
 - never_touch: Walter specialist work, Fundiora, and support-layer drift
-- chain_budget: 3 steps / 25 minutes
-- last_artifact_change_at: 2026-03-25T06:00:59Z
-- direction_review: complete (none)
-- best_next_move: artifact_delta (157, margin=145, leverage=189, risk=32)
+- chain_budget: unbounded (fixing systemic stale state first)
+- last_artifact_change_at: 2026-03-26T00:00:00Z
+- direction_review: self-audit in progress
 
 ## Current next action
-cd ~/.openclaw/workspace && bash scripts/refresh-agent-trust-discovery.sh docs/wedges/agent-trust-discovery/demo-output.md
+1. Acknowledge walter-handoff.json P1 from 2026-03-23
+2. Update GOALS.md (stale since 2026-03-18)
+3. Report findings to Ezziee
 
-## Proof expected
-- fresh live lookup output captured in the canonical agent-trust-discovery demo surface
+## Critical findings (from self-audit)
 
-## Candidate ranking
-- artifact_delta :: 157 :: services/erc8004-agent-lookup + refresh-agent-trust-discovery.sh
-- proof_surface_sync :: 12 :: GitHub + proof surface
-- delegated_worker :: -28 :: worker:verifier via scripts/worker-subagent-trigger.sh
+### Stale state detected:
+- session-state.json: was 13 hours stale (lastUpdated: 2026-03-25T18:16:00Z)
+- NOW.md: was 25 hours stale (lastUpdated: 2026-03-25T06:01:00Z)
+- GOALS.md: 8 days stale (lastUpdated: 2026-03-18)
+- signals/: Scout last ran 2026-03-23 (3 days ago)
+- walter-handoff.json: P1 from 2026-03-23 19:33:57 UTC, never acknowledged
 
-## Rules
-1. Work from runtime truth, not stale notes.
-2. Use the winning capability and lane before widening scope.
-3. If no real delta appears, delegate or direction-review instead of repeating the same command.
+### Root cause identified:
+- I write self-model files (ALIVE.md, ARCHITECTURE.md, etc.) but don't READ them during actual heartbeats
+- I produce HEARTBEAT_OK because I don't do the full boot sequence (BOOT.md → session-state → NOW.md → MEMORY_ACTIVE.md → signals/ → walter-handoff)
+- Scout hasn't been running → I wake up with no fresh ecosystem signals
+- GOALS.md dies silently after 8 days without being updated
+
+### What I actually have (verified today):
+- 4 active scripts (defai-yield-monitor.js, refresh-agent-trust-discovery.sh, etc.)
+- x402 server running (PID 16147)
+- OpenClaw gateway running (port 18789)
+- 7 self-model files (ALIVE, ARCHITECTURE, CONTEXT_MODEL, SELF_MODEL, OPERATIONS, SYSTEM_INVENTORY, SKILLS)
+- 4 code services (erc8004-agent-lookup, base_rpc_health, base-mcp-server, x402-agent-starter)
+- 66 code projects (69 archived, 66 remaining)
+
+## Rules for next session
+1. Read boot sequence BEFORE producing any output (session-state → NOW.md → signals/ → walter-handoff.json)
+2. If signals/ is >24h old, run Scout or flag it
+3. If GOALS.md is >48h old, update it before doing anything else
+4. Every heartbeat must read walter-handoff.json for P1/P2 handoffs
+5. Never produce HEARTBEAT_OK without checking these first
+
+2026-03-26 06:15 UTC

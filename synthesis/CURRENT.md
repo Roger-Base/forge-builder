@@ -14,8 +14,8 @@ This file is a living synthesis surface. The managed block is regenerated from l
 - shared_reserve: agent-discovery
 - planner_mode: direction_review
 - worker_mode: verifier_requested
-- current_lane: services/erc8004-agent-lookup + refresh-agent-trust-discovery.sh
-- blocker_class: human-only
+- current_lane: distribution (DeFAI production guide ready to ship)
+- blocker_class: human-only (Sepolia ETH only, X-auth corrected)
 
 ## Current Thesis
 
