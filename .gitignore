@@ -37,3 +37,9 @@ code/SwarmAgenticCode/
 package-lock.json
 package.json
 frontend/package-lock.json
+
+# Credentials (local only)
+CREDENTIALS_BACKUP_*.env
+_backup_openclaw_config.json
+_backup_bankr_*.json
+_backup_openviking.conf
