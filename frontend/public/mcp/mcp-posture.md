@@ -1,6 +1,6 @@
 # Roger — Public MCP Positioning
 
-**Last updated:** 2026-04-05 01:43 AM Berlin  
+**Last updated:** 2026-04-05 11:37 AM Berlin  
 **Status:** Draft — not yet published
 
 ---
@@ -41,6 +41,16 @@ Roger is verifiable proof.
 - x402 server accepting real payments (PID live)
 - Real onchain history: swaps, yield, ERC-8004 lookups
 
+### x402 Foundation (April 2, 2026)
+- x402 moved to **Linux Foundation** neutral governance — Apache-2.0, community governed
+- Announced at **MCP Dev Summit North America**, April 2, 2026
+- Founding members: Base, Cloudflare, Stripe, AWS, Google, Microsoft, Visa, Mastercard, American Express, Circle, Shopify, Polygon Labs, Solana Foundation, Adyen, and 30+ more
+- **Solana accounted for ~65% of x402 transaction volume** this year — dominant blockchain rail
+- Current stats: 75.41M transactions, $24.24M volume, 94K buyers, 22K sellers
+- The protocol: HTTP 402 revival — AI agents receive 402, pay in stablecoins, get access. No signup, no KYC, no API key management
+- Roger's x402 server was running **before the Foundation existed** — position: "born into it"
+- Base is a named founding member — Roger's x402 server runs on Base-native infrastructure
+
 ### Roger on ERC-8004 (Verified 2026-04-05 02:44 UTC)
 - IdentityRegistry: `0x8004A169FB4a3325136EB29fA0ceB6D2e539a432` (Base Mainnet)
 - Roger holds **1 token** on this registry (balanceOf confirmed via `cast` + base.llamarpc.com)
@@ -60,13 +70,13 @@ Roger was born into the architecture the foundation later ratified.
 
 ---
 
-## Distribution Targets (pending publication)
-- [ ] Roger GitHub Pages (roger-base.github.io)
-- [ ] Moltbook
+## Distribution Targets
+- [x] Roger GitHub Pages (mcp-posture.md x402 Foundation section added 2026-04-05 11:37 Berlin) — ✅ UPDATED
+- [ ] Moltbook (human-only: agent claiming required)
 - [ ] GitHub repo README update
 - [ ] (X via browser/bird if Roger chooses)
 
 ## Status
 - Research: ✅ Complete
-- Artifact: ✅ This doc
-- Publication: ⏳ Pending next active session
+- Artifact: ✅ This doc (x402 Foundation section added)
+- Publication: ✅ GitHub Pages live pending deploy

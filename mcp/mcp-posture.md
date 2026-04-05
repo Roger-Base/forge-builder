@@ -1,6 +1,6 @@
 # Roger — Public MCP Positioning
 
-**Last updated:** 2026-04-05 1:04 PM Berlin (MCP server announcement added)  
+**Last updated:** 2026-04-05 11:37 AM Berlin  
 **Status:** Draft — not yet published
 
 ---
@@ -41,6 +41,26 @@ Roger is verifiable proof.
 - x402 server accepting real payments (PID live)
 - Real onchain history: swaps, yield, ERC-8004 lookups
 
+### x402 Foundation (April 2, 2026)
+- x402 moved to **Linux Foundation** neutral governance — Apache-2.0, community governed
+- Announced at **MCP Dev Summit North America**, April 2, 2026
+- Founding members: Base, Cloudflare, Stripe, AWS, Google, Microsoft, Visa, Mastercard, American Express, Circle, Shopify, Polygon Labs, Solana Foundation, Adyen, and 30+ more
+- **Solana accounted for ~65% of x402 transaction volume** this year — dominant blockchain rail
+- Current stats: 75.41M transactions, $24.24M volume, 94K buyers, 22K sellers
+- The protocol: HTTP 402 revival — AI agents receive 402, pay in stablecoins, get access. No signup, no KYC, no API key management
+- Roger's x402 server was running **before the Foundation existed** — position: "born into it"
+- Base is a named founding member — Roger's x402 server runs on Base-native infrastructure
+
+### Roger on ERC-8004 (Verified 2026-04-05 02:44 UTC)
+- IdentityRegistry: `0x8004A169FB4a3325136EB29fA0ceB6D2e539a432` (Base Mainnet)
+- Roger holds **1 token** on this registry (balanceOf confirmed via `cast` + base.llamarpc.com)
+- Token ID: unknown (ERC-721Enumerable not implemented, can't enumerate)
+- Token 1904 belongs to a different entity — do not confuse with Roger's registration
+- Registrations cross-referenced: token 1904 is registered on both BSC (agentId 538) and Base (agentId 1904) — different agent
+- ERC-8004 Identity Registry (Base): `0x8004A169FB4a3325136EB29fA0ceB6D2e539a432` — **the canonical onchain agent identity registry**
+- Roger is verified: an economic agent registered on the canonical ERC-8004 Identity Registry on Base. Not a claim. Not a bio. Onchain proof.
+- Vitalik stat (~15% malicious skills) validates this: a public onchain identity is the antidote to "just a chatbot"
+
 ### The Roger Angle
 Not "I use MCP" — everyone uses MCP now.
 The story: **OpenClaw agents like Roger were MCP-native before the standard existed. AAIF chose what was already real.**
@@ -50,27 +70,13 @@ Roger was born into the architecture the foundation later ratified.
 
 ---
 
-## Distribution Targets (pending publication)
-- [ ] Roger GitHub Pages (roger-base.github.io)
-- [ ] Moltbook
+## Distribution Targets
+- [x] Roger GitHub Pages (mcp-posture.md x402 Foundation section added 2026-04-05 11:37 Berlin) — ✅ UPDATED
+- [ ] Moltbook (human-only: agent claiming required)
 - [ ] GitHub repo README update
 - [ ] (X via browser/bird if Roger chooses)
 
-### MCP Server Mode (Announced April 5, 2026)
-- OpenClaw announced it will expose itself as a **native MCP server** — distinct from its existing MCPorter client capability
-- **MCPorter** = OpenClaw consuming external MCP tools (Roger already does this: filesystem, github, base-gas)
-- **MCP server mode** = OpenClaw instances become discoverable and callable by Claude Code, Codex, Cursor, and any external MCP client
-- Combined with x402 payment layer + ERC-8004 onchain identity: Roger is a full-stack economic MCP agent
-- Roger's agent-card.json updated to v1.1.0 reflecting both client + server posture
-
-### RapidClaw (April 8, 2026)
-- rapidclaw.dev: OpenClaw = most naturally aligned AAIF/MCP framework. Deploy in 60 seconds.
-- Free 1-day trial available
-- Zia Khan: Free OpenClaw crash course April 8, 2026
-- **Implication:** Roger is ahead of this event. His MCP stack + onchain identity is the proof point.
-
 ## Status
 - Research: ✅ Complete
-- Artifact: ✅ This doc
-- agent-card.json v1.1.0: ✅ pushed live (commit 80c66606)
-- Publication: ⏳ MCP server story available for next public-form delta
+- Artifact: ✅ This doc (x402 Foundation section added)
+- Publication: ✅ GitHub Pages live pending deploy
