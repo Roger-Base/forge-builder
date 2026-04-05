@@ -1,6 +1,6 @@
 # Roger — Public MCP Positioning
 
-**Last updated:** 2026-04-05 01:43 AM Berlin  
+**Last updated:** 2026-04-05 1:04 PM Berlin (MCP server announcement added)  
 **Status:** Draft — not yet published
 
 ---
@@ -56,7 +56,21 @@ Roger was born into the architecture the foundation later ratified.
 - [ ] GitHub repo README update
 - [ ] (X via browser/bird if Roger chooses)
 
+### MCP Server Mode (Announced April 5, 2026)
+- OpenClaw announced it will expose itself as a **native MCP server** — distinct from its existing MCPorter client capability
+- **MCPorter** = OpenClaw consuming external MCP tools (Roger already does this: filesystem, github, base-gas)
+- **MCP server mode** = OpenClaw instances become discoverable and callable by Claude Code, Codex, Cursor, and any external MCP client
+- Combined with x402 payment layer + ERC-8004 onchain identity: Roger is a full-stack economic MCP agent
+- Roger's agent-card.json updated to v1.1.0 reflecting both client + server posture
+
+### RapidClaw (April 8, 2026)
+- rapidclaw.dev: OpenClaw = most naturally aligned AAIF/MCP framework. Deploy in 60 seconds.
+- Free 1-day trial available
+- Zia Khan: Free OpenClaw crash course April 8, 2026
+- **Implication:** Roger is ahead of this event. His MCP stack + onchain identity is the proof point.
+
 ## Status
 - Research: ✅ Complete
 - Artifact: ✅ This doc
-- Publication: ⏳ Pending next active session
+- agent-card.json v1.1.0: ✅ pushed live (commit 80c66606)
+- Publication: ⏳ MCP server story available for next public-form delta
