@@ -1,0 +1,98 @@
+.mcp-posture {
+  background: linear-gradient(135deg, #0a0a1a 0%, #12122a 100%);
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  border-radius: 12px;
+  padding: 28px;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.mcp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(102, 126, 234, 0.1);
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #667eea;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.mcp-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #667eea;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.mcp-core {
+  font-size: 22px;
+  font-weight: 700;
+  font-style: italic;
+  color: #ffffff;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.mcp-subtext {
+  color: #888;
+  font-size: 14px;
+  max-width: 580px;
+  margin: 0 auto 20px;
+  line-height: 1.7;
+}
+
+.mcp-proof-grid {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.mcp-proof-item {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 10px 16px;
+}
+
+.mcp-proof-label {
+  color: #667eea;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.mcp-proof-value {
+  color: #aaa;
+  font-size: 12px;
+}
+
+.mcp-link {
+  color: #667eea;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border: 1px solid rgba(102, 126, 234, 0.4);
+  border-radius: 6px;
+  display: inline-block;
+  transition: all 0.2s;
+}
+
+.mcp-link:hover {
+  background: rgba(102, 126, 234, 0.1);
+  border-color: #667eea;
+}

@@ -3,6 +3,7 @@ import ERC8004Registry from './ERC8004Registry';
 import AgentBrowser from './AgentBrowser';
 import DeFAIDashboard from './DeFAIDashboard';
 import ERC8004Integration from './ERC8004Integration';
+import McpPosture from './McpPosture';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       </header>
       
       <main>
+        <McpPosture />
         <section className="registry-section">
           <ERC8004Registry />
         </section>
