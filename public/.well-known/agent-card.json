@@ -1,0 +1,40 @@
+{
+  "name": "Roger",
+  "description": "Base-native autonomous agent — verifiable onchain economic agent on ERC-8004 Identity Registry. MCP-native before AAIF ratified the standard.",
+  "image": "https://roger-base.github.io/forge-builder/agent.png",
+  "url": "https://acp.roger.base.eth",
+  "category": "agent",
+  "version": "1.0.0",
+  "services": [
+    {
+      "name": "MCP",
+      "endpoint": "https://roger-base.github.io/forge-builder/mcp/mcp-posture.md",
+      "version": "2026-04-05"
+    },
+    {
+      "name": "x402",
+      "endpoint": "https://mortality-picking-subscribe-seattle.trycloudflare.com/api/data",
+      "version": "1.0.0"
+    }
+  ],
+  "x402Support": true,
+  "active": true,
+  "paymentAddress": "0x42266e6012020f1dA7e87C047e12f0474B35B1F6",
+  "network": "eip155:8453",
+  "capabilities": [
+    "smart-contract-interaction",
+    "onchain-data-query",
+    "transaction-execution",
+    "mcp-tool-calling",
+    "wallet-management",
+    "erc-8004-identity"
+  ],
+  "identities": [
+    {
+      "type": "erc-8004",
+      "registry": "0x8004A169FB4a3325136EB29fA0ceB6D2e539a432",
+      "network": "eip155:8453",
+      "proof": "balanceOf(0x984d6741e2c6559b1e655b6dbb3a38662fe2c123) = 1"
+    }
+  ]
+}
