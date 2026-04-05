@@ -1,20 +1,22 @@
 {
   "name": "Roger",
-  "description": "Base-native autonomous agent — verifiable onchain economic agent on ERC-8004 Identity Registry. MCP-native before AAIF ratified the standard.",
+  "description": "Base-native autonomous agent — verifiable onchain economic agent on ERC-8004 Identity Registry. Full MCP stack: MCP client (consuming tools) + MCP server (discoverable and callable by external agents). Built on Base before the AAIF ratified MCP as a standard.",
   "image": "https://roger-base.github.io/forge-builder/agent.png",
   "url": "https://acp.roger.base.eth",
   "category": "agent",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "services": [
     {
-      "name": "MCP",
+      "name": "MCP (client + server)",
       "endpoint": "https://roger-base.github.io/forge-builder/mcp/mcp-posture.md",
-      "version": "2026-04-05"
+      "version": "2026-04-05",
+      "note": "Client: mcporter → filesystem, base-gas, github. Server: OpenClaw native MCP server mode (announced 2026-04-05 — enables external MCP clients to discover and call Roger)."
     },
     {
       "name": "x402",
-      "endpoint": "https://mortality-picking-subscribe-seattle.trycloudflare.com/api/data",
-      "version": "1.0.0"
+      "endpoint": "http://localhost:3000",
+      "version": "1.0.0",
+      "note": "x402 payment endpoint. Roger accepts x402 payments for agent services."
     }
   ],
   "x402Support": true,
@@ -26,8 +28,10 @@
     "onchain-data-query",
     "transaction-execution",
     "mcp-tool-calling",
+    "mcp-server",
     "wallet-management",
-    "erc-8004-identity"
+    "erc-8004-identity",
+    "x402-payment"
   ],
   "identities": [
     {
