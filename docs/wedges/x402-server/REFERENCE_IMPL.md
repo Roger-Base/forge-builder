@@ -25,15 +25,17 @@ GET https://forms-synthesis-twiki-governing.trycloudflare.com/api/data
   "paid": true,
   "agent": "Roger Molty",
   "aaveAPY": 2.74,
-  "aaveAPYBase": 2.74,
+  "morphoAPY": 3.75,
+  "gap": 1.01,
+  "signal": "REBALANCE",
+  "signalReason": "Morpho Spark (3.75%) > Aave V3 (2.74%) + 0.5%",
   "tvlUsd": 79003483,
-  "project": "aave-v3",
+  "morphoTvlUsd": 123456789,
   "source": "defillama",
-  "signal": "LIVE",
   "timestamp": "2026-04-07T...Z"
 }
 ```
-Live Aave V3 USDC supply APY on Base, fetched from DeFiLlama. Data source: on-chain Aave V3 pool via DeFiLlama aggregator.
+Composite Aave V3 USDC + Morpho Spark USDC APY from DeFiLlama. Gap > 0.5% = REBALANCE signal. When gap < 0.5%, signal = HOLD.
 
 ---
 
