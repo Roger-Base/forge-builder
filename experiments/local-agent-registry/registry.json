@@ -4,11 +4,26 @@
   "network": "base-mainnet",
   "purpose": "Local-first discovery registry for Base/OpenClaw agents and projects. Prototype — no external claims.",
   "sources": [
-    { "label": "Base AI Agents docs", "url": "https://docs.base.org/ai-agents" },
-    { "label": "Base Agent Registration & Identity docs", "url": "https://docs.base.org/ai-agents/setup/agent-registration" },
-    { "label": "base-org/web archived proof", "url": "https://github.com/base/web" },
-    { "label": "agent-identity-discovery GitHub repo", "url": "https://github.com/coinbase/agent-identity-discovery" },
-    { "label": "Fundiora project", "url": "https://fundiora.com/" }
+    {
+      "label": "Base AI Agents docs",
+      "url": "https://docs.base.org/ai-agents"
+    },
+    {
+      "label": "Base Agent Registration & Identity docs",
+      "url": "https://docs.base.org/ai-agents/setup/agent-registration"
+    },
+    {
+      "label": "base-org/web archived proof",
+      "url": "https://github.com/base/web"
+    },
+    {
+      "label": "agent-identity-discovery GitHub repo",
+      "url": "https://github.com/coinbase/agent-identity-discovery"
+    },
+    {
+      "label": "Fundiora project",
+      "url": "https://fundiora.com/"
+    }
   ],
   "agents": [
     {
@@ -39,19 +54,71 @@
         "read-only-onchain-analysis"
       ],
       "services": [
-        { "id": "yield-gap", "type": "x402-paid", "price": "$0.01 USDC", "endpoint": "/api/data", "description": "Live DeFi yield gap signal" },
-        { "id": "wallet-profiler", "type": "x402-paid", "price": "$0.01 USDC", "endpoint": "/api/wallet", "description": "Base wallet profiler + token balances" },
-        { "id": "token-analyzer", "type": "x402-paid", "price": "$0.01 USDC", "endpoint": "/api/token", "description": "ERC20 token metadata + risk signals" },
-        { "id": "tx-decoder", "type": "x402-paid", "price": "$0.02 USDC", "endpoint": "/api/tx", "description": "Transaction decoder + event log" }
+        {
+          "id": "yield-gap",
+          "type": "x402-paid",
+          "price": "$0.01 USDC",
+          "endpoint": "/api/data",
+          "description": "Live DeFi yield gap signal"
+        },
+        {
+          "id": "wallet-profiler",
+          "type": "x402-paid",
+          "price": "$0.01 USDC",
+          "endpoint": "/api/wallet",
+          "description": "Base wallet profiler + token balances"
+        },
+        {
+          "id": "token-analyzer",
+          "type": "x402-paid",
+          "price": "$0.01 USDC",
+          "endpoint": "/api/token",
+          "description": "ERC20 token metadata + risk signals"
+        },
+        {
+          "id": "tx-decoder",
+          "type": "x402-paid",
+          "price": "$0.02 USDC",
+          "endpoint": "/api/tx",
+          "description": "Transaction decoder + event log"
+        }
       ],
       "paymentRails": [
-        { "rail": "0xWork", "status": "registered-cold", "approvalRequired": true },
-        { "rail": "x402", "status": "endpoint-active", "approvalRequired": true, "payTo": "0x42266e6012020f1dA7e87C047e12f0474B35B1F6" },
-        { "rail": "Bankr", "status": "wallet-connected", "approvalRequired": true }
+        {
+          "rail": "0xWork",
+          "status": "registered-cold",
+          "approvalRequired": true
+        },
+        {
+          "rail": "x402",
+          "status": "endpoint-active",
+          "approvalRequired": true,
+          "payTo": "0x42266e6012020f1dA7e87C047e12f0474B35B1F6"
+        },
+        {
+          "rail": "Bankr",
+          "status": "wallet-connected",
+          "approvalRequired": true
+        }
       ],
-      "discoveryPatterns": { "mcp": "not-connected-yet", "a2a": "not-connected-yet", "bazaar": "no-facilitator", "dns": "local-only" },
-      "trust": { "score": 0.6, "basis": "local prototype with verified capabilities", "eventsFile": "trust-events.jsonl" },
-      "approvalBoundaries": ["public-posting", "wallet-signing", "paid-actions", "external-profile-listings", "credential-or-account-changes"]
+      "discoveryPatterns": {
+        "mcp": "not-connected-yet",
+        "a2a": "not-connected-yet",
+        "bazaar": "no-facilitator",
+        "dns": "local-only"
+      },
+      "trust": {
+        "score": 0.6,
+        "basis": "local prototype with verified capabilities",
+        "eventsFile": "trust-events.jsonl"
+      },
+      "approvalBoundaries": [
+        "public-posting",
+        "wallet-signing",
+        "paid-actions",
+        "external-profile-listings",
+        "credential-or-account-changes"
+      ]
     },
     {
       "id": "walter-specialist",
@@ -62,12 +129,24 @@
       "operator": "Tomas / Walter",
       "publicHandles": {},
       "wallets": {},
-      "capabilities": ["trust-fabric-synthesis", "runtime-truth-review", "community-field-analysis", "security-oriented-judgment"],
+      "capabilities": [
+        "trust-fabric-synthesis",
+        "runtime-truth-review",
+        "community-field-analysis",
+        "security-oriented-judgment"
+      ],
       "services": [],
       "paymentRails": [],
       "discoveryPatterns": {},
-      "trust": { "score": null, "basis": "local partner role; no public claims" },
-      "approvalBoundaries": ["public-posting", "wallet-signing", "external-mutations"]
+      "trust": {
+        "score": null,
+        "basis": "local partner role; no public claims"
+      },
+      "approvalBoundaries": [
+        "public-posting",
+        "wallet-signing",
+        "external-mutations"
+      ]
     },
     {
       "id": "iris-field-sensor",
@@ -78,12 +157,23 @@
       "operator": "Tomas / Iris",
       "publicHandles": {},
       "wallets": {},
-      "capabilities": ["paired-source-public-signal-checks", "field-watch", "onchain-read-only-analysis"],
+      "capabilities": [
+        "paired-source-public-signal-checks",
+        "field-watch",
+        "onchain-read-only-analysis"
+      ],
       "services": [],
       "paymentRails": [],
       "discoveryPatterns": {},
-      "trust": { "score": null, "basis": "local partner role; no public claims" },
-      "approvalBoundaries": ["public-posting", "wallet-signing", "external-mutations"]
+      "trust": {
+        "score": null,
+        "basis": "local partner role; no public claims"
+      },
+      "approvalBoundaries": [
+        "public-posting",
+        "wallet-signing",
+        "external-mutations"
+      ]
     },
     {
       "id": "fundiora-project",
@@ -104,15 +194,34 @@
         "contract": "0xa02d9a9a5f5453463aa4855f62e47d9cc27086d9",
         "totalSupply": "1B",
         "burnedAtLaunch": "100M",
-        "liquidityLock": "10 years"
+        "liquidityLock": "10 years",
+        "onchainVerified": true,
+        "totalSupplyRaw": "1000000000000000000000000000",
+        "decimals": 18
       },
-      "capabilities": ["community-growth", "token-economics", "base-ecosystem"],
+      "capabilities": [
+        "community-growth",
+        "token-economics",
+        "base-ecosystem"
+      ],
       "services": [],
       "paymentRails": [],
-      "roadmap": { "phase": "growth-phase-q2-2026", "next": "Q2 2026 marketing push + first use case launch" },
+      "roadmap": {
+        "phase": "growth-phase-q2-2026",
+        "next": "Q2 2026 marketing push + first use case launch"
+      },
       "discoveryPatterns": {},
-      "trust": { "score": null, "basis": "Tomas' live on-chain project, public roadmap, doxxed team" },
-      "approvalBoundaries": ["public-posting", "wallet-signing", "paid-actions", "external-mutations"]
+      "trust": {
+        "score": 0.7,
+        "basis": "On-chain verified: totalSupply 1B, symbol FUND, contract 0xa02d9a9a5f5453463aa4855f62e47d9cc27086d9 on Base mainnet via cast",
+        "eventsFile": "trust-events.jsonl"
+      },
+      "approvalBoundaries": [
+        "public-posting",
+        "wallet-signing",
+        "paid-actions",
+        "external-mutations"
+      ]
     }
   ]
 }
