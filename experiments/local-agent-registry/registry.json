@@ -197,7 +197,13 @@
         "liquidityLock": "10 years",
         "onchainVerified": true,
         "totalSupplyRaw": "1000000000000000000000000000",
-        "decimals": 18
+        "decimals": 18,
+        "holders": 427,
+        "price": "$0.00 (no market yet)",
+        "contractName": "Fundiora",
+        "compilerVersion": "v0.8.30+commit.73712a01",
+        "license": "MIT",
+        "auditStatus": "none submitted"
       },
       "capabilities": [
         "community-growth",
@@ -212,8 +218,8 @@
       },
       "discoveryPatterns": {},
       "trust": {
-        "score": 0.7,
-        "basis": "On-chain verified: totalSupply 1B, symbol FUND, contract 0xa02d9a9a5f5453463aa4855f62e47d9cc27086d9 on Base mainnet via cast",
+        "score": 0.75,
+        "basis": "On-chain verified: 427 holders, 1B supply, 100M burned at launch. Public contract on Base. No audit submitted yet.",
         "eventsFile": "trust-events.jsonl"
       },
       "approvalBoundaries": [
