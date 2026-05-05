@@ -1,0 +1,155 @@
+{
+  "version": "0.2.0-local",
+  "updatedAt": "2026-05-05T09:30:00+02:00",
+  "network": "base-mainnet",
+  "purpose": "Local-first discovery registry for Base/OpenClaw agents. Prototype — no external claims.",
+  "sources": [
+    { "label": "Base AI Agents docs", "url": "https://docs.base.org/ai-agents" },
+    { "label": "Base Agent Registration & Identity docs", "url": "https://docs.base.org/ai-agents/setup/agent-registration" },
+    { "label": "base-org/web archived proof", "url": "https://github.com/base/web" },
+    { "label": "agent-identity-discovery GitHub repo", "url": "https://github.com/coinbase/agent-identity-discovery" }
+  ],
+  "agents": [
+    {
+      "id": "roger-base",
+      "name": "Roger",
+      "type": "molty-openclaw-agent",
+      "status": "active-local",
+      "description": "Roger is Tomas' main OpenClaw Molty on Base: field sensing, proof-backed artifacts, runtime repair, and Base agent economy experiments.",
+      "operator": "Tomas / Roger",
+      "publicHandles": {
+        "x": "@roger_base_eth",
+        "devto": "roger_base_eth",
+        "moltbook": "roger-base",
+        "githubRuntime": "forge-builder",
+        "githubBrand": "roger-base-eth"
+      },
+      "wallets": {
+        "baseMain": "0x984d6741e2c6559b1e655b6dbb3a38662fe2c123",
+        "erc8004Agent": "0x8004A169FB4a3325136EB29fA0ceB6D2e539a432",
+        "workAgent": "0x6D0d1acB0fE227C30984cA87bfb6A9eD8729DAc5"
+      },
+      "capabilities": [
+        "openclaw-runtime-audit",
+        "base-field-research",
+        "local-artifact-prototyping",
+        "agent-memory-state-repair",
+        "github-read-research",
+        "read-only-onchain-analysis"
+      ],
+      "services": [
+        {
+          "id": "yield-gap",
+          "type": "x402-paid",
+          "price": "$0.01 USDC",
+          "endpoint": "/api/data",
+          "description": "Live DeFi yield gap signal",
+          "x402-enabled": true,
+          "network": "base-mainnet"
+        },
+        {
+          "id": "wallet-profiler",
+          "type": "x402-paid",
+          "price": "$0.01 USDC",
+          "endpoint": "/api/wallet",
+          "description": "Base wallet profiler + token balances",
+          "x402-enabled": true
+        },
+        {
+          "id": "token-analyzer",
+          "type": "x402-paid",
+          "price": "$0.01 USDC",
+          "endpoint": "/api/token",
+          "description": "ERC20 token metadata + risk signals"
+        },
+        {
+          "id": "tx-decoder",
+          "type": "x402-paid",
+          "price": "$0.02 USDC",
+          "endpoint": "/api/tx",
+          "description": "Transaction decoder + event log"
+        }
+      ],
+      "paymentRails": [
+        { "rail": "0xWork", "status": "registered-cold", "approvalRequired": true },
+        { "rail": "x402", "status": "endpoint-active", "approvalRequired": true, "payTo": "0x42266e6012020f1dA7e87C047e12f0474B35B1F6" },
+        { "rail": "Bankr", "status": "wallet-connected", "approvalRequired": true }
+      ],
+      "discoveryPatterns": {
+        "mcp": "not-connected-yet",
+        "a2a": "not-connected-yet",
+        "bazaar": "no-facilitator",
+        "dns": "local-only"
+      },
+      "trust": {
+        "score": 0.5,
+        "basis": "local prototype with verified capabilities",
+        "eventsFile": "trust-events.jsonl"
+      },
+      "approvalBoundaries": [
+        "public-posting",
+        "wallet-signing",
+        "paid-actions",
+        "external-profile-listings",
+        "credential-or-account-changes"
+      ]
+    },
+    {
+      "id": "walter-specialist",
+      "name": "Walter",
+      "type": "openclaw-specialist-partner",
+      "status": "active-local",
+      "description": "Walter is a parallel specialist partner for trust fabric, structural synthesis, Fundiora/community intelligence, runtime truth, and deeper design judgment.",
+      "operator": "Tomas / Walter",
+      "publicHandles": {},
+      "wallets": {},
+      "capabilities": [
+        "trust-fabric-synthesis",
+        "runtime-truth-review",
+        "community-field-analysis",
+        "security-oriented-judgment"
+      ],
+      "services": [],
+      "paymentRails": [],
+      "discoveryPatterns": {},
+      "trust": {
+        "score": null,
+        "basis": "local partner role; no public claims",
+        "eventsFile": null
+      },
+      "approvalBoundaries": [
+        "public-posting",
+        "wallet-signing",
+        "external-mutations"
+      ]
+    },
+    {
+      "id": "iris-field-sensor",
+      "name": "Iris",
+      "type": "openclaw-field-sensor",
+      "status": "active-local",
+      "description": "Iris is a field-sensor partner for paired source/public signals and onchain/context checks.",
+      "operator": "Tomas / Iris",
+      "publicHandles": {},
+      "wallets": {},
+      "capabilities": [
+        "paired-source-public-signal-checks",
+        "field-watch",
+        "onchain-read-only-analysis"
+      ],
+      "services": [],
+      "paymentRails": [],
+      "discoveryPatterns": {},
+      "trust": {
+        "score": null,
+        "basis": "local partner role; no public claims",
+        "eventsFile": null
+      },
+      "approvalBoundaries": [
+        "public-posting",
+        "wallet-signing",
+        "external-mutations"
+      ]
+    }
+  ]
+}
