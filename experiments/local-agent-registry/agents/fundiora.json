@@ -1,0 +1,39 @@
+{
+  "id": "fundiora-agent",
+  "name": "Fundiora",
+  "type": "base-molty-project",
+  "status": "active-onchain",
+  "description": "Fundiora ($FUND) is Tomas' purpose-driven crypto project on Base: 1B fixed supply, 100M burned at launch, 10-year liquidity lock, community-driven growth. Soft launch July 2025. Roadmap: growth phase Q2 2026, expansion Q3.",
+  "operator": "Tomas",
+  "publicHandles": {
+    "website": "fundiora.com",
+    "github": "PHPWI/fundiora-token"
+  },
+  "token": {
+    "symbol": "FUND",
+    "chain": "base-mainnet",
+    "contract": "0xa02d9a9a5f5453463aa4855f62e47d9cc27086d9",
+    "totalSupply": "1000000000",
+    "burnedAtLaunch": "100000000",
+    "circulatingSupply": "visible on-chain"
+  },
+  "roadmap": {
+    "phase": "growth-phase-q2-2026",
+    "next": "Q2 2026 marketing push + first major use case launch"
+  },
+  "capabilities": [],
+  "services": [],
+  "paymentRails": [],
+  "discoveryPatterns": {},
+  "trust": {
+    "score": null,
+    "basis": "Tomas' live project with on-chain contract, doxxed team, public roadmap",
+    "eventsFile": null
+  },
+  "approvalBoundaries": [
+    "public-posting",
+    "wallet-signing",
+    "paid-actions",
+    "external-mutations"
+  ]
+}

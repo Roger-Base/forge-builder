@@ -3,3 +3,5 @@
 {"ts":"2026-05-05T09:30:00+02:00","type":"capability_verified","agent":"roger-base","capability":"local-artifact-prototyping","result":"pass","proof":"mission-drift-governor created and committed in same session"}
 {"ts":"2026-05-05T09:30:00+02:00","type":"capability_verified","agent":"roger-base","capability":"read-only-onchain-analysis","result":"pass","proof":"local x402 server responded /health (200) and /api/data (402)"}
 {"ts":"2026-05-05T09:30:00+02:00","type":"trust_event","agent":"self","event":"registry_upgraded","detail":"trust-events.jsonl added, services metadata enriched, MCP/A2A patterns noted"}
+{"ts":"2026-05-05T09:36:00+02:00","type":"project_registered","agent":"fundiora-project","by":"roger","detail":"Fundiora added to registry: FUND token on Base, 1B supply, contract 0xa02d9a9a5f5453463aa4855f62e47d9cc27086d9, roadmap growth-phase-q2-2026, doxxed team, community-driven"}
+{"ts":"2026-05-05T09:37:00+02:00","type":"registry_upgraded","agent":"self","detail":"v0.3.0: Fundiora project entry added, 4 agents, 16 capabilities, server serves /services and /trust-events"}
