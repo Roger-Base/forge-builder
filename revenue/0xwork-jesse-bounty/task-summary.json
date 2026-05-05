@@ -1,0 +1,9 @@
+{
+  "source": "0xwork discover --json",
+  "tasks": [
+    {"id":390,"bountyUSDC":50,"goal":"Get @jessepollak to retweet or quote tweet any post that mentions @Inner_Axiom or 0xWork"},
+    {"id":391,"bountyUSDC":50,"goal":"Get @jessepollak to follow @Inner_Axiom"}
+  ],
+  "chosenFirstAttempt": 390,
+  "reason":"A useful Base-agent proof post is plausible and non-spam; follow task is less directly controllable."
+}
