@@ -1,47 +1,89 @@
-# Backups - NEVER track these
-backups/
-.backups/
-
-# OS
+# macOS / local system noise
 .DS_Store
 .DS_Store?
 
-# OpenClaw
-.openclaw/
+# Dependencies
+node_modules/
+frontend/node_modules/
 
-# Large caches and indexes
+# Generated / cache / temp artifacts
+.cache/
 .clawvault-index.json
 .clawvault/
-
-# Temp files
---help.tmp-*
+tmp/
+temp/
 *.tmp
+--help.tmp-*
 NOW.md.tmp
-
-# Large data folders (not source)
-state/
-signals/
-tasks/
-memory/
-archive/
-inbox/
-reports/
-
-# Frontend build artifacts
+build/
+dist/
+coverage/
 frontend/dist/
-frontend/node_modules/
 frontend/.vercel/
 
-config/mcporter.json
-code/SwarmAgenticCode/
-package-lock.json
-package.json
-frontend/package-lock.json
-
-# Credentials (local only)
+# Environment / credentials / secrets
+.env
+.env.*
+service-env
+secrets/
+credentials/
+token/
+*.key
+*.pem
 CREDENTIALS_BACKUP_*.env
 _backup_openclaw_config.json
 _backup_bankr_*.json
 _backup_openviking.conf
 
-token/
+# Memory DBs / local persistence
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+memory/*.sqlite
+memory/*.sqlite-shm
+memory/*.sqlite-wal
+
+# Raw session / continuity surfaces that require explicit review
+sessions/
+transcripts/
+raw-sessions/
+
+# Local backup / rollback artifacts
+*.bak
+*.before
+backups/
+.backups/
+legacy/
+
+# Local state surfaces kept out by default unless explicitly allowlisted
+state/current/
+state/runtime/
+state/tmp/
+state/cache/
+state/queues/
+state/session-state*
+state/*queue*
+state/*priority*
+
+# Preserve approved state/project policy artifacts as visible commit candidates
+!state/
+!state/projects/
+!state/projects/agent-quality-review-kit-v0.md
+!state/autonomy-policy.md
+!state/github-autonomy-policy.md
+!state/logs/
+!state/logs/github-actions.md
+
+# Archive / task intake surfaces are local by default
+archive/
+tasks/
+inbox/
+signals/
+reports/
+
+# Project-specific local/generated surfaces needing separate review
+config/mcporter.json
+code/SwarmAgenticCode/
+package-lock.json
+package.json
+frontend/package-lock.json
