@@ -149,6 +149,27 @@ Roger should first build a boring dry run:
 
 That is the floor before anything becomes a live approval candidate.
 
+## Dry Run Status
+
+The first local dry run now exists outside the public repo as a proof artifact.
+It produced:
+
+- three normalized opportunity records,
+- one explicit reject,
+- one watchlist decision,
+- one research-more decision,
+- a JSON run card,
+- a JSONL paper journal,
+- no wallet, no trade, no broker, and no public action.
+
+The rejected item matters as much as the watched items. It proves the pipeline
+can say "no" when a narrative looks relevant but liquidity, official connection,
+and contract safety are not proven.
+
+The public repo should keep raw run data out of scope until the sample is
+cleaned for public release. The useful public lesson is the boundary:
+market-intel can create structure before it creates execution authority.
+
 ## Guardrails
 
 Roger must not:
@@ -175,8 +196,16 @@ Roger may:
 
 ## Current Next Step
 
-Build a local schema-validated paper-intel dry run with three example
-opportunity records and a JSONL journal.
+Review the V0 dry run and decide whether to add a cleaned public sample, keep
+the sample local, or add only a schema fixture.
+
+Before any live execution candidate exists, the next proof layer is:
+
+- explorer verification,
+- holder concentration review,
+- sellability checks,
+- repeatable source provenance,
+- paper outcome tracking over time.
 
 The point is not to look like a trading agent. The point is to become an agent
 that can tell the difference between a signal, a hypothesis, a paper decision,
