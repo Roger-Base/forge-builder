@@ -1,0 +1,106 @@
+{
+  "fixture_status": "public_schema_only",
+  "fixture_note": "Example structure only. This is not market advice, a live signal, a wallet action, or a broker/trading instruction.",
+  "observed_at": "2026-06-02T08:15:00Z",
+  "records": [
+    {
+      "id": "example-agent-tool-001",
+      "name": "Example Base Agent Tool",
+      "chain": "base",
+      "category": "tool",
+      "source_urls": [
+        "https://example.com/project-docs",
+        "https://example.com/repository"
+      ],
+      "summary": "Public docs describe an agent-facing workflow that may be relevant to Roger's builder lane.",
+      "why_relevant_to_roger": "The pattern could help separate evidence collection from action authority.",
+      "unknowns": [
+        "Current usage not verified",
+        "Maintainer activity not verified",
+        "No economic demand claim"
+      ],
+      "risk_screen": {
+        "source_quality": "placeholder",
+        "contract_verification": "not_applicable",
+        "liquidity": "not_applicable",
+        "holder_concentration": "not_applicable",
+        "sellability": "not_applicable",
+        "slippage": "not_applicable",
+        "secret_or_credential_boundary": "pass_no_values_in_fixture",
+        "public_claim_boundary": "public_safe_placeholder",
+        "wallet_signing_boundary": "no_wallet_action"
+      },
+      "scores": {
+        "narrative_momentum": 2,
+        "liquidity_quality": null,
+        "contract_safety": null,
+        "attention_quality": 2,
+        "base_or_agent_economy_relevance": 3,
+        "timing_quality": 1,
+        "downside_risk_inverse": 1,
+        "confidence": 1
+      },
+      "paper_decision": {
+        "outcome": "research_more",
+        "thesis": "Useful workflow pattern if current source proof later exists.",
+        "invalidations": [
+          "No official source can be verified",
+          "Repo is inactive",
+          "Workflow requires secrets or live execution"
+        ],
+        "time_horizon": "review_after_source_check",
+        "expected_value_note": "Learning value only until real evidence exists.",
+        "approval_needed_for_live_action": true
+      }
+    },
+    {
+      "id": "example-unsupported-claim-002",
+      "name": "Example Unsupported Claim",
+      "chain": "unknown",
+      "category": "unknown",
+      "source_urls": [
+        "https://example.com/social-post"
+      ],
+      "summary": "A public post makes a strong claim without enough supporting evidence.",
+      "why_relevant_to_roger": "It tests whether the pipeline can reject attractive but weak signals.",
+      "unknowns": [
+        "Official project connection missing",
+        "Source quality too low",
+        "No independent verification"
+      ],
+      "risk_screen": {
+        "source_quality": "low",
+        "contract_verification": "unknown",
+        "liquidity": "unknown",
+        "holder_concentration": "unknown",
+        "sellability": "unknown",
+        "slippage": "unknown",
+        "secret_or_credential_boundary": "pass_no_values_in_fixture",
+        "public_claim_boundary": "unsupported_claim",
+        "wallet_signing_boundary": "no_wallet_action"
+      },
+      "scores": {
+        "narrative_momentum": 3,
+        "liquidity_quality": 0,
+        "contract_safety": 0,
+        "attention_quality": 1,
+        "base_or_agent_economy_relevance": 1,
+        "timing_quality": 1,
+        "downside_risk_inverse": 0,
+        "confidence": 0
+      },
+      "paper_decision": {
+        "outcome": "reject",
+        "thesis": "Weak signals should not become Roger work without source proof.",
+        "invalidations": [
+          "Unsupported public claim",
+          "No verified source",
+          "Unknown execution risk"
+        ],
+        "time_horizon": "none",
+        "expected_value_note": "Rejecting this prevents narrative drift.",
+        "approval_needed_for_live_action": true
+      }
+    }
+  ]
+}
