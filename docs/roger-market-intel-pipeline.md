@@ -201,6 +201,7 @@ the sample local, or add only a schema fixture.
 
 Before any live execution candidate exists, the next proof layer is:
 
+- a repeatable run card template,
 - explorer verification,
 - holder concentration review,
 - sellability checks,
